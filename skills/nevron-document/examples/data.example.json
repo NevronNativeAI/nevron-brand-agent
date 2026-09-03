@@ -1,0 +1,26 @@
+{
+  "slug": "2026-09-Document_NevronCore_Integration_Guide",
+  "variant": "full",
+
+  "docType": "Technical documentation",
+  "title": "NevronCore Integration Guide",
+  "subtitle": "Property management system interfaces",
+  "runningHead": "NevronCore  I  Integration Guide",
+  "date": "September 3, 2026",
+  "year": 2026,
+  "coverIcon": "contentware/APPSB.svg",
+
+  "introTitle": "Introduction",
+  "intro": [
+    "This guide describes how NevronCore connects to a property management system, what each interface expects, and how to verify a deployment before handover.",
+    "It is written for integration engineers and hotel IT staff. Familiarity with the PMS in use is assumed."
+  ],
+
+  "toc": true,
+  "tocTitle": "Table of contents",
+  "numbered": true,
+
+  "markdownFile": "sample.md",
+
+  "backHeadline": "Let there\nbe content!"
+}

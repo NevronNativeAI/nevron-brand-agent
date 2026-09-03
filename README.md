@@ -37,6 +37,17 @@ nevron-brand-agent/
 │       └── README.md            # Font licensing info
 ├── tokens/
 │   └── nevron-tokens.css        # CSS custom properties (all brand tokens)
+├── skills/                      # Claude Code skills (install these too)
+│   ├── nevron-document/         # Full document PDF — cover, TOC, back cover
+│   │   ├── SKILL.md
+│   │   ├── build.mjs            # The shared engine (both skills call it)
+│   │   ├── styles.css
+│   │   ├── paginate.js
+│   │   ├── reference/style-notes.md
+│   │   └── examples/
+│   └── nevron-document-nocover/ # Short document PDF — no cover, no TOC
+│       ├── SKILL.md
+│       └── examples/
 └── examples/
     ├── web-component.html       # Branded feature card demo (PrimeIcons)
     ├── presentation-guide.md    # PowerPoint/Keynote slide templates
@@ -60,8 +71,58 @@ The agent file is intentionally **slim** (~180 lines). It holds brand philosophy
 | `assets/primeicons-list.txt` | Authoritative list of valid PrimeIcons names — greps instead of WebFetches |
 | `tokens/nevron-tokens.css` | All brand tokens as CSS custom properties |
 | `examples/` | Working reference snippets for web / presentations / documents |
+| `skills/` | Skills that *produce* branded output, not just advise on it |
 
 Keeps each session's context small, icon verification fast, and gives the agent one source of truth per topic.
+
+---
+
+```
+ ╔══════════════════════════════════════╗
+ ║  📄  DOCUMENT SKILLS                ║
+ ╚══════════════════════════════════════╝
+```
+
+Two skills turn text into a print-ready A4 PDF in the house document style. They
+reproduce the Word templates in
+`J:\Produkcija\_Brand Identity\08_Documents\_Document Template\` as HTML/CSS and
+render with headless Chrome — no Word, no InDesign, no npm install.
+
+| Skill | Use it for | Pages |
+|-------|-----------|-------|
+| `nevron-document` | Reports, guides, specifications, proposals, manuals | Cover → introduction + disclaimer → table of contents → numbered body → back cover |
+| `nevron-document-nocover` | Meeting notes, memos, letters, checklists, short notes | Body from page 1 → back cover |
+
+Both are **layout only** by default: they set the text you give them and do not
+write copy unless you ask. Neither has a default save location — they ask.
+
+### Install
+
+```bash
+mkdir -p ~/.claude/skills
+cp -r ~/nevron-brand-agent/skills/nevron-document          ~/.claude/skills/
+cp -r ~/nevron-brand-agent/skills/nevron-document-nocover  ~/.claude/skills/
+```
+
+On Windows, junctions keep one source of truth instead of a copy that drifts:
+
+```powershell
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\nevron-document"         -Target "<repo>\skills\nevron-document"
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\nevron-document-nocover" -Target "<repo>\skills\nevron-document-nocover"
+```
+
+Restart Claude Code, then ask for "a Nevron document about X" or "short Nevron
+document, no cover page".
+
+### Build one by hand
+
+```bash
+node <repo>/skills/nevron-document/build.mjs <workdir>/data.json <workdir>/output --png
+```
+
+`--png` also writes one PNG per page under `output/preview/` — the only practical
+way to check a page from a terminal. Type sizes, colours and every measurement
+are documented in `skills/nevron-document/reference/style-notes.md`.
 
 ---
 
