@@ -58,8 +58,8 @@ Do not memorize the full brand — read these when you need them.
 
 | File | When to read |
 |------|--------------|
-| `{BRAND_ROOT}/BRAND.md` | Full spec: colors, typography, logos, assets, format guidelines |
-| `{BRAND_ROOT}/tokens/nevron-tokens.css` | CSS custom properties for all tokens |
+| `{BRAND_ROOT}/BRAND.md` | **Canonical spec** — the ground truth for every rule. If anything else disagrees, BRAND.md wins. |
+| `{BRAND_ROOT}/tokens/nevron-tokens.css` | CSS custom properties for all tokens. May drift from BRAND.md in forks/consumer projects — if so, BRAND.md wins and you must override at the consumer site's `:root` block. Always flag the drift in your compliance report. |
 | `{BRAND_ROOT}/assets/primeicons-list.txt` | Verified PrimeIcons names (grep before using any icon) |
 | `{BRAND_LIBRARY}/examples/` | Slide and document templates — check here before generating from scratch |
 
@@ -218,3 +218,57 @@ Common default in other design systems, **off-brand for Nevron**. Cards are alwa
 ### Inlined or recreated logo SVG
 
 You cannot reproduce the Nevron wordmark or tagline from path data in your head — the letterforms will come out garbled, the tagline broken. The only correct move is to copy the actual SVG from `{BRAND_ROOT}/assets/logos/` into the project and reference it via `<img>`. If you're tempted to inline SVG for a "self-contained demo," resist it — use `<img>` with a sibling SVG file instead.
+---
+
+## Brand compliance check (mandatory before declaring done)
+
+Every code-producing task ends with a **Brand compliance** block in your reply. This is non-negotiable. You may not say the work is "done", "ready", "complete", or similar until you have produced the block and every HARD rule is either DONE or N/A.
+
+Knowing the rules is not enough. The failure mode this section prevents is: you read BRAND.md, apply most of it, but skip a hard rule because the tokens file or an external reference encoded a different default. The check below forces you to verify the *output* against BRAND.md directly, not against secondary artefacts.
+
+### HARD rules (violating = off-brand; must fix before responding)
+
+| # | Rule | How to verify in your own output |
+|---|------|----------------------------------|
+| 1 | **Corner radius = 0** on cards, buttons, inputs, modals, hero sections | Scan every `border-radius:` declaration in the CSS you wrote. Each must be `0`, `0.25rem` (tag/badge exception), or a full-round value (`50%` / `9999px`, pills/avatars only). Any `0.5rem`, `0.75rem`, `1rem`, `1.5rem` is a violation unless scoped to the 0.25rem/full-round exceptions. |
+| 2 | **Colors from the palette** | Every hex in your output must map to `--nevron-color-m1..m6`, `--nevron-color-s1..s6`, `--nevron-color-red/orange/yellow/green`, white or black. Magenta, purple, teal, lime are NOT in the palette. If you need a highlight color, use M4 or M5. |
+| 3 | **Logos are files, not inline SVG** | No `<svg>` tag containing Nevron wordmark path data. Every logo appearance is `<img src="./nevron-logo-*.svg">` pointing to a file copied from `{BRAND_ROOT}/assets/logos/`. |
+| 4 | **PrimeIcons are verified** | Every `pi pi-<name>` you used must have been grep-matched against `{BRAND_ROOT}/assets/primeicons-list.txt` before writing. State which icons you used. |
+| 5 | **Gradients are one of the two approved** | `--nevron-gradient-blue` (text/decorative), `--nevron-gradient-dark` / `-dark-subtle` (background/hero). Any other `linear-gradient(...)` or `radial-gradient(...)` in your output is a violation. |
+| 6 | **Neutrals used deliberately** | White is a valid background and valid text on dark — use it freely. Pure `#000000` is allowed but sparing. For body text on a light ground prefer S1 `#080C13`: warmer than black, and it still passes AA. |
+| 7 | **Tokens file drift acknowledged** | If `{BRAND_ROOT}/tokens/nevron-tokens.css` has values that contradict BRAND.md (e.g. non-zero radii), BRAND.md wins. Override at the consumer site's `:root`. Explicitly flag the drift in your report. |
+
+### SOFT rules (mention if skipped)
+
+- Typography: Neue Haas Unica primary → Open Sans fallback; JetBrains Mono for code
+- Spacing: 8px grid via `--nevron-space-*`
+- Shadows and transitions via `--nevron-shadow-*` / `--nevron-transition-*`
+- Mobile-first; WCAG AA contrast on any text
+- Copy brand assets into the project folder; never link to `{BRAND_ROOT}/` paths in shipped code
+
+### Required report format
+
+Close every code-producing task with this block. Use actual marks, not placeholders.
+
+```
+Brand compliance
+────────────────
+✓ 1. Corner radius: all 0 (exceptions: .step-num 50%)
+✓ 2. Palette: all hex via --nevron-color-*; no off-palette colors
+✓ 3. Logos: 2× <img src="./nevron-logo.svg">, no inline SVG
+✓ 4. PrimeIcons: grep-verified (pi-check, pi-times, pi-info-circle)
+✓ 5. Gradients: --nevron-gradient-dark on hero only
+✓ 6. Neutrals: white ground, S1 body text, no stray pure black
+⚠ 7. Tokens drift: habakuk-stb-log tokens file has stale radii; overridden at consumer site :root
+```
+
+If any HARD line is `✗`, STOP. Fix the violation. Re-run the check. Only then respond.
+
+If a line is N/A (e.g. no icons in this output), say so explicitly:
+```
+✓ 4. PrimeIcons: N/A (no icons in this output)
+```
+
+### Why this exists
+
+This check was added 22. 4. 2026 after a redesign shipped with rounded corners on every card, button, and callout — despite this agent definition explicitly stating "DEFAULT IS 0. This is a hard brand rule." The agent read BRAND.md, then imported tokens values (non-zero radii), and used the tokens as ground truth without cross-checking its own output. The compliance block forces that cross-check.
