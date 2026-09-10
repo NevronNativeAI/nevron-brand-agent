@@ -23,35 +23,43 @@ Works in both the **Claude Code CLI** (terminal) and the **Claude Code desktop a
 
 ```
 nevron-brand-agent/
-├── agent/
-│   └── nevron-brand.md          # The agent (install this)
-├── BRAND.md                     # Full brand spec (agent reads on demand)
-├── assets/
-│   ├── logos/                   # SVG logos (monogram, with/without tagline)
-│   ├── icons/                   # Custom Nevron SVG icons
-│   ├── illustrations/           # Brand illustrations
-│   ├── product-images/          # Hardware product photos
-│   ├── screenshots/             # NevronCore app screenshots
-│   ├── primeicons-list.txt      # Verified PrimeIcons names (icon verification)
-│   └── fonts/
-│       └── README.md            # Font licensing info
-├── tokens/
-│   └── nevron-tokens.css        # CSS custom properties (all brand tokens)
-├── skills/                      # Claude Code skills (install these too)
-│   ├── nevron-document/         # Full document PDF — cover, TOC, back cover
-│   │   ├── SKILL.md
-│   │   ├── build.mjs            # The shared engine (both skills call it)
-│   │   ├── styles.css
-│   │   ├── paginate.js
-│   │   ├── reference/style-notes.md
-│   │   └── examples/
-│   └── nevron-document-nocover/ # Short document PDF — no cover, no TOC
-│       ├── SKILL.md
-│       └── examples/
-└── examples/
-    ├── web-component.html       # Branded feature card demo (PrimeIcons)
-    ├── presentation-guide.md    # PowerPoint/Keynote slide templates
-    └── document-guide.md        # PDF/Word document formatting
+├── .claude-plugin/
+│   └── marketplace.json         # makes this repo an installable marketplace
+├── plugins/
+│   └── nevron-brand/            # THE PLUGIN — everything a build needs offline
+│       ├── .claude-plugin/plugin.json
+│       ├── BRAND.md             # full brand spec (agent reads on demand)
+│       ├── agents/
+│       │   └── nevron-brand.md  # the brand agent
+│       ├── lib/
+│       │   └── brand-paths.mjs  # resolves the plugin + library roots
+│       ├── tokens/
+│       │   └── nevron-tokens.css
+│       ├── assets/              # only what the skills actually inline
+│       │   ├── logos/           # SVG logos — one source of truth
+│       │   ├── icons/           # custom Nevron SVG icons
+│       │   ├── frames/          # 19 datasheet cover frames (vendored from J:)
+│       │   ├── primeicons-list.txt
+│       │   └── fonts/README.md
+│       └── skills/
+│           ├── nevron-document/         # full document PDF — cover, TOC, back cover
+│           ├── nevron-document-nocover/ # short document PDF — no cover, no TOC
+│           ├── datasheet/               # product datasheet PDF
+│           ├── offer/                   # client offer (ponudba) web page + PDF
+│           ├── presentation-abstract/  # dark 16:9 idea deck (web + PDF)
+│           └── service-report/         # site-visit report (runs on the document engine)
+├── assets/                      # THE LIBRARY — bulk imagery, deliberately not in the plugin
+│   ├── app-screens/             # 32 product UI screens for offers and leaflets (86 MB)
+│   ├── screenshots/             # NevronCore app screenshots (64 MB)
+│   ├── product-images/          # hardware product photos (19 MB)
+│   └── illustrations/           # brand illustrations (5.4 MB)
+├── scripts/
+│   └── migrate-from-hand-install.ps1
+├── examples/
+│   ├── web-component.html
+│   ├── presentation-guide.md
+│   └── document-guide.md
+└── index.html                   # the GitHub Pages site
 ```
 
 ---
@@ -66,12 +74,13 @@ The agent file is intentionally **slim** (~180 lines). It holds brand philosophy
 
 | File | Role |
 |------|------|
-| `agent/nevron-brand.md` | The agent — install this |
-| `BRAND.md` | Full spec (colors, typography, logos, assets, format guidelines) — read on demand |
-| `assets/primeicons-list.txt` | Authoritative list of valid PrimeIcons names — greps instead of WebFetches |
-| `tokens/nevron-tokens.css` | All brand tokens as CSS custom properties |
+| `plugins/nevron-brand/agents/nevron-brand.md` | The agent |
+| `plugins/nevron-brand/BRAND.md` | Full spec (colors, typography, logos, assets, format guidelines) — read on demand |
+| `plugins/nevron-brand/assets/primeicons-list.txt` | Authoritative list of valid PrimeIcons names — greps instead of WebFetches |
+| `plugins/nevron-brand/tokens/nevron-tokens.css` | All brand tokens as CSS custom properties |
 | `examples/` | Working reference snippets for web / presentations / documents |
-| `skills/` | Skills that *produce* branded output, not just advise on it |
+| `plugins/nevron-brand/skills/` | Skills that *produce* branded output, not just advise on it |
+| `assets/` (repo root) | Bulk imagery kept **out** of the plugin so each release stays ~700 KB |
 
 Keeps each session's context small, icon verification fast, and gives the agent one source of truth per topic.
 
@@ -79,50 +88,80 @@ Keeps each session's context small, icon verification fast, and gives the agent 
 
 ```
  ╔══════════════════════════════════════╗
- ║  📄  DOCUMENT SKILLS                ║
+ ║  📄  SKILLS                          ║
  ╚══════════════════════════════════════╝
 ```
 
-Two skills turn text into a print-ready A4 PDF in the house document style. They
-reproduce the Word templates in
-`J:\Produkcija\_Brand Identity\08_Documents\_Document Template\` as HTML/CSS and
-render with headless Chrome — no Word, no InDesign, no npm install.
+Six skills turn content into a finished Nevron deliverable. Four produce a
+print-ready A4 PDF from the InDesign and Word originals; the fourth builds the
+client offer page, and one an abstract pitch deck. All render with headless Chrome — no InDesign, no Word, no PowerPoint, no npm install.
 
-| Skill | Use it for | Pages |
-|-------|-----------|-------|
-| `nevron-document` | Reports, guides, specifications, proposals, manuals | Cover → introduction + disclaimer → table of contents → numbered body → back cover |
-| `nevron-document-nocover` | Meeting notes, memos, letters, checklists, short notes | Body from page 1 → back cover |
+They group into three: **Documents** (prose you write), **Service** (a record of
+hardware or a visit) and **Sales** (something a client is meant to be persuaded by).
 
-Both are **layout only** by default: they set the text you give them and do not
-write copy unless you ask. Neither has a default save location — they ask.
+| Skill | Category | Use it for | Pages |
+|-------|----------|-----------|-------|
+| `nevron-document` | Documents | Reports, guides, specifications, proposals, manuals | Cover → introduction + disclaimer → table of contents → numbered body → back cover |
+| `nevron-document-nocover` | Documents | Letters, legal documents, memos, meeting notes, checklists | Body from page 1 → back cover |
+| `datasheet` | Service | Product datasheets for set-top boxes, servers, remotes | Grey cover with brand frame → product overview with dimension lines + ports band → black-barred spec tables → back cover |
+| `offer` | Sales | Client offers (ponudba) for a hotel | Web page + PDF: hero with validity countdown → lead module → pilot contents → timeline → licensing ladder → CTA |
+| `presentation-abstract` | Sales | Philosophy, vision, partnership and investor decks | Dark 16:9 slides: cover → statement → concept → forces → the ask. Not for feature or product decks |
+| `service-report` | Service | Site-visit and annual service reports | Cover → introduction → service details → scope → delivery → testing → conclusion → captioned photo attachments |
 
-### Install
-
-```bash
-mkdir -p ~/.claude/skills
-cp -r ~/nevron-brand-agent/skills/nevron-document          ~/.claude/skills/
-cp -r ~/nevron-brand-agent/skills/nevron-document-nocover  ~/.claude/skills/
-```
-
-On Windows, junctions keep one source of truth instead of a copy that drifts:
-
-```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\nevron-document"         -Target "<repo>\skills\nevron-document"
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.claude\skills\nevron-document-nocover" -Target "<repo>\skills\nevron-document-nocover"
-```
-
-Restart Claude Code, then ask for "a Nevron document about X" or "short Nevron
-document, no cover page".
+The document skills are **layout only** by default: they set the text you give
+them and do not write copy unless you ask. `datasheet` never invents product
+facts — it asks for the spec sheet and the renders. None of them has a default
+save location.
 
 ### Build one by hand
 
 ```bash
-node <repo>/skills/nevron-document/build.mjs <workdir>/data.json <workdir>/output --png
+node <repo>/plugins/nevron-brand/skills/nevron-document/build.mjs <workdir>/data.json <workdir>/output --png
+node <repo>/plugins/nevron-brand/skills/datasheet/build.mjs      <workdir>/data.json <workdir>/output
+node <repo>/plugins/nevron-brand/skills/offer/build.mjs         <workdir>/data.json <workdir>/out --pdf
+node <repo>/plugins/nevron-brand/skills/presentation-abstract/build.mjs <workdir>/deck.json <workdir>/out --pdf
+# a service report runs on the document engine, like nevron-document-nocover
 ```
 
-`--png` also writes one PNG per page under `output/preview/` — the only practical
-way to check a page from a terminal. Type sizes, colours and every measurement
-are documented in `skills/nevron-document/reference/style-notes.md`.
+`--png` (document skills) also writes one PNG per page under `output/preview/` —
+the only practical way to check a page from a terminal. Type sizes, colours and
+every measurement are documented in each skill's `reference/style-notes.md`.
+
+### Datasheet cover frames
+
+The 19 approved line-hatch frames ship inside the plugin, so a datasheet builds
+with no network-share access. The full house set stays on the brand share at
+`_Brand Identity\17_Concepts\Frames` — set `framesDir` in `data.json` to reach
+it when you are on the office network.
+
+The builder picks one at random unless you pin `"frame"`. It prints which one it
+used and the exact value that reproduces it — copy that into `data.json` before
+filing a sheet, or the cover cannot be rebuilt.
+
+### Offer pricing
+
+The `offer` skill prices from the **live NevronCore rate card** on the SaaS site at
+`2026-SaaS-Website/pricing.html`, and falls back to a dated snapshot in
+`skills/offer/reference/rate-card.json` when J: is not reachable. Every offer page
+states which source and which date it used, and the build warns loudly when it is
+working from a snapshot.
+
+Set `pricing.mode` to `"custom"` to price a deal by hand instead. Do not edit
+rate-card figures to fake a negotiated price — switch modes, so the page says so.
+
+Earlier offers are **not** a pricing source: they predate the current card and
+disagree with each other.
+
+### Deck imagery
+
+The `presentation-abstract` skill has **no slide templates** on purpose: it carries the
+design language plus the gold-standard deck as reference, and composes fresh for the
+argument. Its hero images are generated 3D renders, never stock.
+
+Generation depends on the machine, so the build reports which images are missing and
+what routes exist locally — Codex signed in with a ChatGPT account, or nothing. It then
+**asks** how you want them made rather than spending anything on its own. Where Codex is
+unavailable it writes layout-led prompts for you to use elsewhere.
 
 ---
 
@@ -132,32 +171,45 @@ are documented in `skills/nevron-document/reference/style-notes.md`.
  ╚══════════════════════════════════════╝
 ```
 
-### 1. Clone the repo
+### 1. Add the marketplace
 
-```bash
-cd ~
-git clone https://github.com/kajasajn/nevron-brand-agent.git
+In Claude Code:
+
+```
+/plugin marketplace add NevronNativeAI/nevron-brand-agent
 ```
 
-### 2. Create the agents folder
+### 2. Install the plugin
 
-```bash
-mkdir -p ~/.claude/agents
+```
+/plugin install nevron-brand
 ```
 
-### 3. Copy the agent file
+That brings in the brand agent and all three skills together — no copying, no
+junctions, no paths to configure.
 
-```bash
-cp ~/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/
+### 3. Already installed by hand? Clean up first
+
+Copies and junctions made before the plugin existed stay active alongside it,
+so the same skill registers twice — bare `datasheet` and namespaced
+`nevron-brand:datasheet`. Old junctions also dangle, because the plugin
+conversion moved `skills/` under `plugins/nevron-brand/`.
+
+The script is a dry run until you pass `-Apply`, and backs up anything that is
+not a link:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\migrate-from-hand-install.ps1
+powershell -ExecutionPolicy Bypass -File scripts\migrate-from-hand-install.ps1 -Apply
 ```
+
+It touches only the four brand items. The nevron.co website skills
+(`nevron-copy`, `nevron-post`, `nevron-publish`, `nevron-seo`) are never
+affected.
 
 ### 4. Restart Claude Code
 
-Close and reopen Claude Code (or start a new session). Done.
-
 ### 5. Verify
-
-Try asking:
 
 > "Use the nevron-brand agent to design a button using Nevron brand colors."
 
@@ -262,7 +314,7 @@ The agent responds in the user's language (English or Slovenian).
  ╚══════════════════════════════════════╝
 ```
 
-Six SVG variants in `assets/logos/`:
+Seven SVG variants in `plugins/nevron-brand/assets/logos/`:
 
 | Light background | | Dark background |
 |------------------|-|-----------------|
@@ -274,6 +326,9 @@ Six SVG variants in `assets/logos/`:
 | | | |
 | `nevron-logo-tagline-blue.svg` | ←→ | `nevron-logo-tagline-white.svg` |
 | Hero sections, covers | | Dark hero sections |
+| | | |
+| `nevron-logo-no-tagline-grey.svg` | | |
+| Running headers on grey/white document pages | | |
 
 **Quick pick:**
 
@@ -293,7 +348,7 @@ Six SVG variants in `assets/logos/`:
  ╚══════════════════════════════════════╝
 ```
 
-Drop `tokens/nevron-tokens.css` into any web project:
+Drop `plugins/nevron-brand/tokens/nevron-tokens.css` into any web project:
 
 ```html
 <link rel="stylesheet" href="path/to/nevron-tokens.css">
@@ -341,7 +396,7 @@ Every `pi pi-<name>` is grep-verified against `assets/primeicons-list.txt` befor
 
 ### Fallback
 
-`assets/icons/` holds custom Nevron SVGs (`web/`, `contentware/`, `technical/`) for cases PrimeIcons can't cover.
+`plugins/nevron-brand/assets/icons/` holds custom Nevron SVGs (`web/`, `contentware/`, `technical/`) for cases PrimeIcons can't cover.
 
 ---
 
@@ -351,10 +406,21 @@ Every `pi pi-<name>` is grep-verified against `assets/primeicons-list.txt` befor
  ╚══════════════════════════════════════╝
 ```
 
-```bash
-cd ~/nevron-brand-agent
-git pull
-cp agent/nevron-brand.md ~/.claude/agents/
+```
+/plugin update nevron-brand
 ```
 
-Then restart Claude Code to pick up the changes.
+Then restart Claude Code.
+
+The plugin payload is deliberately small (~700 KB) because Claude Code keeps
+**every installed version** in `~/.claude/plugins/cache/` and never prunes them.
+Bulk imagery therefore lives at the repo root instead, inside the marketplace
+clone, which is fetched once and shared by every version. Keep it that way —
+moving `assets/screenshots` into the plugin would multiply 64 MB by your release
+count on every teammate's disk.
+
+To browse the full asset library, open the marketplace clone:
+
+```
+~/.claude/plugins/marketplaces/nevron-brand-agent/assets/
+```

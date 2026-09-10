@@ -1,1607 +1,433 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nevron Brand System — Living Reference</title>
-
-  <!-- Open Sans (fallback for Neue Haas Unica) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- PrimeIcons (mandatory icon library) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons/primeicons.css">
-
-  <!-- Nevron design tokens -->
-  <link rel="stylesheet" href="tokens/nevron-tokens.css?v=heroes">
-
-  <style>
-    /* ==========================================================================
-       TOC sidebar
-       ========================================================================== */
-    .toc {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 260px;
-      height: 100vh;
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-m5);
-      padding: var(--nevron-space-8) var(--nevron-space-6);
-      overflow-y: auto;
-      z-index: 100;
-      font-size: var(--nevron-font-size-body-sm);
-    }
-    .toc__header {
-      display: flex;
-      align-items: center;
-      gap: var(--nevron-space-3);
-      padding-bottom: var(--nevron-space-6);
-      margin-bottom: var(--nevron-space-6);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .toc__logo { height: 28px; width: auto; }
-    .toc__label {
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-white);
-    }
-    .toc__group { margin-bottom: var(--nevron-space-8); }
-    .toc__heading {
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--nevron-color-s4);
-      margin-bottom: var(--nevron-space-3);
-      padding-left: var(--nevron-space-3);
-    }
-    .toc__list { list-style: none; padding: 0; margin: 0; }
-    .toc__link {
-      display: block;
-      padding: var(--nevron-space-2) var(--nevron-space-3);
-      color: var(--nevron-color-m5);
-      text-decoration: none;
-      border-left: 2px solid transparent;
-      transition: background var(--nevron-transition-fast),
-                  color var(--nevron-transition-fast),
-                  border-color var(--nevron-transition-fast);
-    }
-    .toc__link:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--nevron-color-white);
-    }
-    .toc__link--active {
-      background: rgba(27, 146, 255, 0.12);
-      color: var(--nevron-color-white);
-      border-left-color: var(--nevron-color-m3);
-      font-weight: var(--nevron-font-weight-semibold);
-    }
-    @media (max-width: 960px) {
-      body { padding-left: 0 !important; }
-      .toc {
-        position: static;
-        width: 100%;
-        height: auto;
-        padding: var(--nevron-space-5) var(--nevron-space-6);
-      }
-      .toc__header { padding-bottom: var(--nevron-space-4); margin-bottom: var(--nevron-space-4); }
-      .toc__group { margin-bottom: var(--nevron-space-4); }
-    }
-
-    /* ==========================================================================
-       Base
-       ========================================================================== */
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      padding-left: 260px;
-      font-family: var(--nevron-font-family);
-      font-size: var(--nevron-font-size-body);
-      line-height: var(--nevron-line-height-body);
-      color: var(--nevron-color-s1);
-      background: var(--nevron-color-white);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-
-    /* ==========================================================================
-       Layout
-       ========================================================================== */
-    .container {
-      max-width: var(--nevron-max-width);
-      margin: 0 auto;
-      padding: 0 var(--nevron-space-6);
-    }
-
-    .section {
-      padding: var(--nevron-space-16) 0;
-      border-bottom: 1px solid var(--nevron-color-s5);
-    }
-
-    .section__eyebrow {
-      display: inline-block;
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: var(--nevron-letter-spacing-caps);
-      text-transform: uppercase;
-      color: var(--nevron-color-m3);
-      margin-bottom: var(--nevron-space-3);
-    }
-
-    .section__title {
-      font-size: var(--nevron-font-size-h1);
-      font-weight: var(--nevron-font-weight-light);
-      line-height: var(--nevron-line-height-heading);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-      margin: 0 0 var(--nevron-space-3) 0;
-      color: var(--nevron-color-m1);
-    }
-
-    .section__lead {
-      font-size: var(--nevron-font-size-body-lg);
-      line-height: var(--nevron-line-height-body-lg);
-      color: var(--nevron-color-s2);
-      max-width: var(--nevron-max-width-narrow);
-      margin: 0 0 var(--nevron-space-10) 0;
-    }
-
-    /* ==========================================================================
-       1. Header
-       ========================================================================== */
-    .header {
-      background: var(--nevron-gradient-dark);
-      color: var(--nevron-color-white);
-      padding: var(--nevron-space-16) 0 var(--nevron-space-12);
-      text-align: center;
-    }
-
-    .header__logo {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto var(--nevron-space-6);
-      display: block;
-    }
-
-    .header__title {
-      font-size: var(--nevron-font-size-display);
-      font-weight: var(--nevron-font-weight-bold);
-      line-height: var(--nevron-line-height-display);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-      margin: 0 0 var(--nevron-space-3) 0;
-    }
-
-    .header__subtitle {
-      font-size: var(--nevron-font-size-body-lg);
-      font-weight: var(--nevron-font-weight-regular);
-      line-height: var(--nevron-line-height-body-lg);
-      color: var(--nevron-color-m5);
-      max-width: var(--nevron-max-width-narrow);
-      margin: 0 auto;
-    }
-
-    /* ==========================================================================
-       2. Brand personality
-       ========================================================================== */
-    .personality__traits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: var(--nevron-space-4);
-      margin-bottom: var(--nevron-space-10);
-    }
-
-    .trait {
-      padding: var(--nevron-space-6);
-      background: var(--nevron-color-m6);
-      border-left: 4px solid var(--nevron-color-m3);
-    }
-
-    .trait__name {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0;
-    }
-
-    .personality__meta {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--nevron-space-6);
-    }
-
-    @media (min-width: 768px) {
-      .personality__meta { grid-template-columns: 2fr 1fr; }
-    }
-
-    .voice-note {
-      padding: var(--nevron-space-6);
-      background: var(--nevron-color-s6);
-      border-left: 4px solid var(--nevron-color-s3);
-    }
-
-    .voice-note__label,
-    .tagline-block__label {
-      display: block;
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: var(--nevron-letter-spacing-caps);
-      text-transform: uppercase;
-      color: var(--nevron-color-s3);
-      margin-bottom: var(--nevron-space-2);
-    }
-
-    .voice-note__text { margin: 0; color: var(--nevron-color-s2); }
-
-    .tagline-block {
-      padding: var(--nevron-space-6);
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-white);
-    }
-
-    .tagline-block__label { color: var(--nevron-color-m4); }
-
-    .tagline-block__text {
-      font-size: var(--nevron-font-size-h3);
-      font-weight: var(--nevron-font-weight-semibold);
-      font-style: italic;
-      margin: 0;
-    }
-
-    /* ==========================================================================
-       3. Colors
-       ========================================================================== */
-    .color-group { margin-bottom: var(--nevron-space-6); }
-
-    .color-group__title {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0 0 var(--nevron-space-3) 0;
-    }
-
-    .swatches {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: var(--nevron-space-4);
-    }
-
-    .swatch {
-      display: flex;
-      flex-direction: column;
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      box-shadow: var(--nevron-shadow-sm);
-      overflow: hidden;
-      transition: box-shadow var(--nevron-transition-fast),
-                  transform var(--nevron-transition-fast);
-    }
-
-    .swatch:hover {
-      box-shadow: var(--nevron-shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .swatch__chip {
-      height: 88px;
-      border-bottom: 1px solid var(--nevron-color-s5);
-      flex-shrink: 0;
-    }
-
-    .swatch__meta {
-      padding: var(--nevron-space-3);
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      flex: 1;
-    }
-
-    .swatch__role {
-      margin-top: auto;
-      padding-top: var(--nevron-space-2);
-    }
-
-    .swatch__token {
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0 0 var(--nevron-space-1) 0;
-    }
-
-    .swatch__hex {
-      font-size: var(--nevron-font-size-caption);
-      font-family: 'Courier New', monospace;
-      color: var(--nevron-color-s3);
-      margin: 0 0 var(--nevron-space-2) 0;
-    }
-
-    .swatch__role {
-      font-size: var(--nevron-font-size-caption);
-      line-height: var(--nevron-line-height-tight);
-      color: var(--nevron-color-s2);
-      margin: 0;
-    }
-
-    /* ==========================================================================
-       4. Gradients
-       ========================================================================== */
-    .gradients {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--nevron-space-5);
-    }
-
-    @media (min-width: 768px) {
-      .gradients { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .gradient-block {
-      padding: var(--nevron-space-10);
-      min-height: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      color: var(--nevron-color-white);
-    }
-
-    .gradient-block--blue { background: var(--nevron-gradient-blue); color: var(--nevron-color-m1); }
-    .gradient-block--dark { background: var(--nevron-gradient-dark); }
-    .gradient-block--dark-subtle { background: var(--nevron-gradient-dark-subtle); }
-    .gradient-block--dark-top-left {
-      background: radial-gradient(ellipse at top left,
-        var(--nevron-color-m3),
-        var(--nevron-color-m1));
-    }
-
-    .gradient-block__token {
-      font-family: 'Courier New', monospace;
-      font-size: var(--nevron-font-size-body-sm);
-      opacity: 0.85;
-      margin: 0 0 var(--nevron-space-2) 0;
-    }
-
-    .gradient-block__label {
-      font-size: var(--nevron-font-size-h3);
-      font-weight: var(--nevron-font-weight-semibold);
-      margin: 0;
-    }
-
-    /* ==========================================================================
-       5. Typography
-       ========================================================================== */
-    .type-sample {
-      padding: var(--nevron-space-5) 0;
-      border-bottom: 1px dashed var(--nevron-color-s5);
-    }
-
-    .type-sample:last-child { border-bottom: none; }
-
-    .type-sample__example { margin: 0 0 var(--nevron-space-2) 0; color: var(--nevron-color-s1); }
-    .type--display { font-size: var(--nevron-font-size-display); font-weight: 700; line-height: var(--nevron-line-height-display); letter-spacing: var(--nevron-letter-spacing-tight); }
-    .type--h1 { font-size: var(--nevron-font-size-h1); font-weight: 300; line-height: var(--nevron-line-height-heading); letter-spacing: var(--nevron-letter-spacing-tight); }
-    .type--h2 { font-size: var(--nevron-font-size-h2); font-weight: 600; line-height: var(--nevron-line-height-heading); }
-    .type--h3 { font-size: var(--nevron-font-size-h3); font-weight: 600; line-height: var(--nevron-line-height-tight); }
-    .type--h4 { font-size: var(--nevron-font-size-h4); font-weight: 600; line-height: 1.3; }
-    .type--body-lg { font-size: var(--nevron-font-size-body-lg); font-weight: 400; line-height: var(--nevron-line-height-body-lg); }
-    .type--body { font-size: var(--nevron-font-size-body); font-weight: 400; line-height: var(--nevron-line-height-body); }
-    .type--body-sm { font-size: var(--nevron-font-size-body-sm); font-weight: 400; line-height: var(--nevron-line-height-body); }
-    .type--caption { font-size: var(--nevron-font-size-caption); font-weight: 400; line-height: 1.4; }
-
-    .type-sample__meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--nevron-space-4);
-      font-size: var(--nevron-font-size-caption);
-      font-family: 'Courier New', monospace;
-      color: var(--nevron-color-s3);
-    }
-
-    .font-stack-note {
-      margin-top: var(--nevron-space-8);
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-m6);
-      border-left: 4px solid var(--nevron-color-m3);
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s2);
-    }
-
-    .font-stack-note code {
-      font-family: 'Courier New', monospace;
-      background: var(--nevron-color-white);
-      padding: 2px 6px;
-      color: var(--nevron-color-m1);
-    }
-
-    /* ==========================================================================
-       6. Corner radius
-       ========================================================================== */
-    .radius-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: var(--nevron-space-5);
-    }
-
-    .radius-sample { text-align: center; }
-
-    .radius-sample__box {
-      height: 140px;
-      background: var(--nevron-gradient-blue);
-      margin-bottom: var(--nevron-space-3);
-      box-shadow: var(--nevron-shadow-md);
-    }
-
-    .radius-sample__box--card { border-radius: var(--nevron-radius-lg); }
-    .radius-sample__box--button { border-radius: var(--nevron-radius-md); }
-    .radius-sample__box--tag { border-radius: var(--nevron-radius-sm); }
-    .radius-sample__box--pill { border-radius: var(--nevron-radius-full); }
-
-    .radius-sample__label {
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0 0 var(--nevron-space-1) 0;
-    }
-
-    .radius-sample__value {
-      font-size: var(--nevron-font-size-caption);
-      font-family: 'Courier New', monospace;
-      color: var(--nevron-color-s3);
-      margin: 0;
-    }
-
-    /* ==========================================================================
-       7. Motion & polish
-       ========================================================================== */
-    .motion-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--nevron-space-5);
-    }
-
-    .motion-card {
-      padding: var(--nevron-space-6);
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      box-shadow: var(--nevron-shadow-md);
-      cursor: pointer;
-    }
-
-    .motion-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--nevron-shadow-lg);
-    }
-
-    .motion-card--fast    { transition: transform var(--nevron-transition-fast), box-shadow var(--nevron-transition-fast); }
-    .motion-card--base    { transition: transform var(--nevron-transition-base), box-shadow var(--nevron-transition-base); }
-    .motion-card--slow    { transition: transform var(--nevron-transition-slow), box-shadow var(--nevron-transition-slow); }
-    .motion-card--spring  { transition: transform var(--nevron-transition-spring), box-shadow var(--nevron-transition-spring); }
-
-    .motion-card__icon {
-      width: 48px;
-      height: 48px;
-      background: var(--nevron-color-m6);
-      color: var(--nevron-color-m3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: var(--nevron-space-4);
-    }
-
-    .motion-card__title {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0 0 var(--nevron-space-1) 0;
-    }
-
-    .motion-card__desc {
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s2);
-      margin: 0 0 var(--nevron-space-2) 0;
-    }
-
-    .motion-card__token {
-      font-size: var(--nevron-font-size-caption);
-      font-family: 'Courier New', monospace;
-      color: var(--nevron-color-s3);
-      margin: 0;
-    }
-
-    .motion-hint {
-      margin-top: var(--nevron-space-6);
-      text-align: center;
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s3);
-      font-style: italic;
-    }
-
-    /* ==========================================================================
-       8. Icons
-       ========================================================================== */
-    .icons-note {
-      padding: var(--nevron-space-4) var(--nevron-space-5);
-      background: var(--nevron-color-m6);
-      border-left: 4px solid var(--nevron-color-m3);
-      margin-bottom: var(--nevron-space-8);
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s2);
-    }
-
-    .icons-note code {
-      font-family: 'Courier New', monospace;
-      background: var(--nevron-color-white);
-      padding: 2px 6px;
-      color: var(--nevron-color-m1);
-      font-size: var(--nevron-font-size-caption);
-    }
-
-    .icon-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--nevron-space-4);
-    }
-
-    @media (min-width: 640px) { .icon-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width: 1024px) { .icon-grid { grid-template-columns: repeat(6, 1fr); } }
-
-    .icon-card {
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      text-align: center;
-      transition: border-color var(--nevron-transition-base), transform var(--nevron-transition-base);
-    }
-
-    .icon-card:hover {
-      border-color: var(--nevron-color-m3);
-      transform: translateY(-2px);
-    }
-
-    .icon-card i {
-      font-size: 2rem;
-      color: var(--nevron-color-m3);
-      margin-bottom: var(--nevron-space-3);
-      display: inline-block;
-    }
-
-    .icon-card__name {
-      font-size: var(--nevron-font-size-caption);
-      font-family: 'Courier New', monospace;
-      color: var(--nevron-color-s2);
-      margin: 0;
-      word-break: break-all;
-    }
-
-    /* ==========================================================================
-       9. Components
-       ========================================================================== */
-    .component-block {
-      margin-bottom: var(--nevron-space-10);
-    }
-
-    .component-block__label {
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: var(--nevron-letter-spacing-caps);
-      text-transform: uppercase;
-      color: var(--nevron-color-s3);
-      margin-bottom: var(--nevron-space-4);
-    }
-
-    .component-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--nevron-space-4);
-      align-items: center;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--nevron-space-2);
-      min-height: 44px;
-      padding: var(--nevron-space-3) var(--nevron-space-6);
-      border-radius: var(--nevron-radius-md);
-      font-family: var(--nevron-font-family);
-      font-size: var(--nevron-font-size-body);
-      font-weight: var(--nevron-font-weight-semibold);
-      line-height: 1;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: background var(--nevron-transition-fast), border-color var(--nevron-transition-fast), color var(--nevron-transition-fast), transform var(--nevron-transition-fast);
-    }
-
-    .btn--primary {
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-    }
-    .btn--primary:hover {
-      background: var(--nevron-color-m2);
-    }
-
-    .btn--secondary {
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-white);
-    }
-    .btn--secondary:hover { background: var(--nevron-color-s1); }
-
-    .btn--outline {
-      background: transparent;
-      color: var(--nevron-color-m3);
-      border-color: var(--nevron-color-m3);
-    }
-    .btn--outline:hover {
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-    }
-
-    .btn i { font-size: 0.9em; transition: transform var(--nevron-transition-fast); }
-    .btn:hover i.pi-arrow-right { transform: translateX(4px); }
-
-    /* Inputs */
-    .input-group { display: flex; flex-direction: column; gap: var(--nevron-space-2); }
-
-    .input-label {
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-medium);
-      color: var(--nevron-color-s2);
-    }
-
-    .input {
-      min-height: 44px;
-      padding: var(--nevron-space-3) var(--nevron-space-4);
-      border: 1px solid var(--nevron-color-s4);
-      border-radius: var(--nevron-radius-md);
-      font-family: var(--nevron-font-family);
-      font-size: var(--nevron-font-size-body);
-      color: var(--nevron-color-s1);
-      background: var(--nevron-color-white);
-      transition: border-color var(--nevron-transition-fast), box-shadow var(--nevron-transition-fast);
-      width: 240px;
-      max-width: 100%;
-    }
-
-    .input:focus {
-      outline: none;
-      border-color: var(--nevron-color-m3);
-      box-shadow: 0 0 0 3px rgba(27, 146, 255, 0.2);
-    }
-
-    .input--focus-demo {
-      border-color: var(--nevron-color-m3);
-      box-shadow: 0 0 0 3px rgba(27, 146, 255, 0.2);
-    }
-
-    .input--error {
-      border-color: var(--nevron-color-red);
-      box-shadow: 0 0 0 3px rgba(218, 32, 37, 0.15);
-    }
-
-    .input-error-text {
-      font-size: var(--nevron-font-size-caption);
-      color: var(--nevron-color-red);
-      margin: 0;
-    }
-
-    /* Card */
-    .card {
-      max-width: 360px;
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      border-radius: var(--nevron-radius-lg);
-      box-shadow: var(--nevron-shadow-md);
-      overflow: hidden;
-      transition: transform var(--nevron-transition-base), box-shadow var(--nevron-transition-base);
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--nevron-shadow-lg);
-    }
-
-    .card__header {
-      padding: var(--nevron-space-5) var(--nevron-space-6);
-      background: var(--nevron-color-m6);
-      border-bottom: 1px solid var(--nevron-color-s5);
-    }
-
-    .card__title {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0;
-    }
-
-    .card__body { padding: var(--nevron-space-6); }
-
-    .card__desc {
-      color: var(--nevron-color-s2);
-      margin: 0 0 var(--nevron-space-4) 0;
-    }
-
-    .card__link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--nevron-space-2);
-      color: var(--nevron-color-m3);
-      font-weight: var(--nevron-font-weight-semibold);
-      text-decoration: none;
-      transition: color var(--nevron-transition-fast);
-    }
-
-    .card__link i { transition: transform var(--nevron-transition-fast); }
-    .card__link:hover { color: var(--nevron-color-m2); }
-    .card__link:hover i { transform: translateX(4px); }
-
-    /* Pill / tag */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--nevron-space-2);
-      padding: var(--nevron-space-1) var(--nevron-space-3);
-      background: var(--nevron-color-m6);
-      color: var(--nevron-color-m2);
-      border-radius: var(--nevron-radius-sm);
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-    }
-
-    .pill--success { background: rgba(54, 160, 88, 0.12); color: var(--nevron-color-green); }
-    .pill--warning { background: rgba(229, 102, 0, 0.12); color: var(--nevron-color-orange); }
-    .pill--error   { background: rgba(218, 32, 37, 0.12); color: var(--nevron-color-red); }
-
-    /* Avatar */
-    .avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: var(--nevron-radius-full);
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-    }
-
-    .avatar--lg { width: 72px; height: 72px; font-size: var(--nevron-font-size-h3); }
-
-    /* ==========================================================================
-       10. Pitfalls
-       ========================================================================== */
-    .pitfall {
-      margin-bottom: var(--nevron-space-10);
-    }
-
-    .pitfall__title {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-m1);
-      margin: 0 0 var(--nevron-space-4) 0;
-    }
-
-    .pitfall__grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--nevron-space-4);
-    }
-
-    @media (min-width: 768px) {
-      .pitfall__grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .pitfall__case {
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      position: relative;
-    }
-
-    .pitfall__case--wrong { border-top: 4px solid var(--nevron-color-red); }
-    .pitfall__case--right { border-top: 4px solid var(--nevron-color-green); }
-
-    .pitfall__tag {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--nevron-space-1);
-      padding: 2px var(--nevron-space-2);
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: var(--nevron-letter-spacing-caps);
-      text-transform: uppercase;
-      border-radius: var(--nevron-radius-sm);
-      margin-bottom: var(--nevron-space-4);
-    }
-
-    .pitfall__tag--wrong { background: rgba(218, 32, 37, 0.12); color: var(--nevron-color-red); }
-    .pitfall__tag--right { background: rgba(54, 160, 88, 0.12); color: var(--nevron-color-green); }
-
-    .pitfall__demo {
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-s6);
-      min-height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: var(--nevron-space-3);
-    }
-
-    .pitfall__note {
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s2);
-      margin: 0;
-    }
-
-    /* Wrong rounded card demo */
-    .demo-card-wrong {
-      width: 100%;
-      max-width: 240px;
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      border-radius: 16px;
-      box-shadow: var(--nevron-shadow-md);
-      text-align: left;
-    }
-
-    .demo-card-right {
-      width: 100%;
-      max-width: 240px;
-      padding: var(--nevron-space-5);
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      border-radius: var(--nevron-radius-lg);
-      box-shadow: var(--nevron-shadow-md);
-      text-align: left;
-    }
-
-    .demo-card-wrong h4,
-    .demo-card-right h4 {
-      font-size: var(--nevron-font-size-h4);
-      margin: 0 0 var(--nevron-space-2) 0;
-      color: var(--nevron-color-m1);
-    }
-
-    .demo-card-wrong p,
-    .demo-card-right p {
-      margin: 0;
-      font-size: var(--nevron-font-size-body-sm);
-      color: var(--nevron-color-s2);
-    }
-
-    /* Garbled fake-logo recreation */
-    .garbled-logo {
-      font-family: 'Courier New', monospace;
-      font-size: var(--nevron-font-size-h2);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      color: var(--nevron-color-m3);
-      transform: scaleX(1.2) skewX(-4deg);
-      display: inline-block;
-    }
-
-    .real-logo-demo {
-      width: 180px;
-    }
-
-    /* Text-color demo */
-    .demo-text-wrong, .demo-text-right {
-      font-size: var(--nevron-font-size-body-lg);
-      line-height: var(--nevron-line-height-body);
-      margin: 0;
-      max-width: 280px;
-    }
-    .demo-text-wrong { color: #000000; }
-    .demo-text-right { color: var(--nevron-color-s1); }
-
-    /* Gradient demo boxes */
-    .demo-gradient-box {
-      width: 100%;
-      max-width: 280px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--nevron-color-white);
-      font-weight: var(--nevron-font-weight-semibold);
-    }
-
-    .demo-gradient-wrong {
-      background: linear-gradient(135deg, #DA2025, #1B92FF);
-    }
-
-    .demo-gradient-right {
-      background: var(--nevron-gradient-blue);
-      color: var(--nevron-color-m1);
-    }
-
-    /* ==========================================================================
-       11. Footer
-       ========================================================================== */
-    .footer {
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-m5);
-      padding: var(--nevron-space-12) 0;
-      text-align: center;
-      border-bottom: none;
-    }
-
-    .footer__text {
-      font-size: var(--nevron-font-size-body-sm);
-      margin: 0 0 var(--nevron-space-2) 0;
-    }
-
-    .footer__link {
-      color: var(--nevron-color-m4);
-      text-decoration: none;
-      transition: color var(--nevron-transition-fast);
-      font-family: 'Courier New', monospace;
-      font-size: var(--nevron-font-size-body-sm);
-    }
-
-    .footer__link:hover { color: var(--nevron-color-white); }
-
-    /* ==========================================================================
-       Responsive tweaks
-       ========================================================================== */
-    @media (max-width: 640px) {
-      .header__title { font-size: 2.25rem; }
-      .type--display { font-size: 2.25rem; }
-      .section { padding: var(--nevron-space-12) 0; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand system — Nevron Brand Agent</title>
+<meta name="description" content="The Nevron brand system the agent enforces: colour, gradients, type, the radius rule, logos, the frame and icons.">
+<link rel="icon" href="plugins/nevron-brand/assets/logos/nevron-logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide/guide.css">
 </head>
 <body>
 
-  <aside class="toc" aria-label="Navigation">
-    <div class="toc__header">
-      <img class="toc__logo" src="nevron-logo-icon-white.svg" alt="">
-      <span class="toc__label">Brand Agent</span>
-    </div>
+<a class="skip" href="#main">Skip to content</a>
 
-    <nav class="toc__group" aria-label="Pages">
-      <div class="toc__heading">Pages</div>
-      <ul class="toc__list">
-        <li><a class="toc__link" href="index.html">Setup</a></li>
-        <li><a class="toc__link toc__link--active" href="brand-preview.html">Brand</a></li>
-      </ul>
+<div class="shell">
+
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <img src="plugins/nevron-brand/assets/logos/nevron-logo-icon-white.svg" alt="">
+      <b>Brand Agent<span>v2</span></b>
+    </a>
+
+    <p class="rail__label">Pages</p>
+    <nav class="rail__nav">
+      <a href="index.html">Overview</a>
+      <a href="outputs.html">What it makes</a>
+      <a href="brand-preview.html" aria-current="page">Brand system</a>
     </nav>
 
-    <nav class="toc__group" aria-label="On this page">
-      <div class="toc__heading">On this page</div>
-      <ul class="toc__list">
-        <li><a class="toc__link" href="#personality">Personality</a></li>
-        <li><a class="toc__link" href="#colors">Colors</a></li>
-        <li><a class="toc__link" href="#gradients">Gradients</a></li>
-        <li><a class="toc__link" href="#typography">Typography</a></li>
-        <li><a class="toc__link" href="#radius">Corner radius</a></li>
-        <li><a class="toc__link" href="#motion">Motion</a></li>
-        <li><a class="toc__link" href="#icons">Icons</a></li>
-        <li><a class="toc__link" href="#components">Components</a></li>
-        <li><a class="toc__link" href="#pitfalls">Pitfalls</a></li>
-      </ul>
+    <p class="rail__label">On this page</p>
+    <nav class="rail__nav rail__toc" id="toc">
+      <a href="#colour">Colour</a>
+      <a href="#gradients">Gradients</a>
+      <a href="#type">Typography</a>
+      <a href="#radius">Sharp corners</a>
+      <a href="#logo">The logo</a>
+      <a href="#frame">The frame</a>
+      <a href="#icons">Icons</a>
+      <a href="#voice">Voice</a>
     </nav>
+
+    <p class="rail__meta">
+      Nevron d.o.o.<br>
+      <a href="https://github.com/NevronNativeAI/nevron-brand-agent">Source on GitHub</a>
+    </p>
   </aside>
 
-  <!-- ========================================================================
-       1. Header
-       ======================================================================== -->
-  <header class="header">
-    <div class="container">
-      <img class="header__logo" src="nevron-logo-icon-white.svg" alt="Nevron">
-      <h1 class="header__title">Nevron Brand System</h1>
-      <p class="header__subtitle">Living reference for colors, typography, components, and patterns.<br>Enforced by the nevron-brand Claude Code agent.</p>
-    </div>
-  </header>
+  <main class="main" id="main">
 
-  <!-- ========================================================================
-       2. Brand personality
-       ======================================================================== -->
-  <section class="section" id="personality">
-    <div class="container">
-      <span class="section__eyebrow">01 — Personality</span>
-      <h2 class="section__title">Brand personality</h2>
-      <p class="section__lead">Nevron is a technology company serving the hospitality industry. Every design decision flows from these five traits.</p>
-
-      <div class="personality__traits">
-        <div class="trait"><p class="trait__name">Professional</p></div>
-        <div class="trait"><p class="trait__name">Modern</p></div>
-        <div class="trait"><p class="trait__name">Innovative</p></div>
-        <div class="trait"><p class="trait__name">Approachable</p></div>
-        <div class="trait"><p class="trait__name">Confident</p></div>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow"><i></i> Brand system</p>
+        <h1>Nevron is a neutral frame for someone else's content.</h1>
+        <p class="hero__lede">That line from the guidelines decides everything below — restrained,
+          architectural, precise. The full specification lives in
+          <code>plugins/nevron-brand/BRAND.md</code>; the tokens live beside it.</p>
       </div>
+    </header>
 
-      <div class="personality__meta">
-        <div class="voice-note">
-          <span class="voice-note__label">Voice</span>
-          <p class="voice-note__text">Clear, direct, technically competent. Avoids jargon when speaking to hotel staff, embraces it with technical audiences. Never salesy or hyperbolic.</p>
-        </div>
-        <div class="tagline-block">
-          <span class="tagline-block__label">Tagline</span>
-          <p class="tagline-block__text">Smart solutions for smart hotels</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <div class="wrap">
 
-  <!-- ========================================================================
-       3. Colors
-       ======================================================================== -->
-  <section class="section" id="colors">
-    <div class="container">
-      <span class="section__eyebrow">02 — Colors</span>
-      <h2 class="section__title">Color system</h2>
-      <p class="section__lead">All brand tokens live in <code>tokens/nevron-tokens.css</code>. Always use the token — never a raw hex.</p>
+      <section id="colour">
+        <p class="sec__num">01 — Colour</p>
+        <h2>One blue scale, one grey scale, four functional colours</h2>
+        <p class="lede">Always use the token, not the hex. Every value below is a custom property
+          in <code>tokens/nevron-tokens.css</code>.</p>
 
-      <div class="color-group">
-        <h3 class="color-group__title">Primary Blues</h3>
+        <h4>Primary blues</h4>
         <div class="swatches">
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m1);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M1 — Navy</p>
-              <p class="swatch__hex">#000126</p>
-              <p class="swatch__role">Darkest bg</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m2);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M2 — Dark Blue</p>
-              <p class="swatch__hex">#002391</p>
-              <p class="swatch__role">Secondary dark</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m3);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M3 — Brand Blue</p>
-              <p class="swatch__hex">#1B92FF</p>
-              <p class="swatch__role">Primary / CTAs</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m4);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M4 — Medium Blue</p>
-              <p class="swatch__hex">#73C7FF</p>
-              <p class="swatch__role">Interactive states</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m5);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M5 — Light Blue</p>
-              <p class="swatch__hex">#C3E9FF</p>
-              <p class="swatch__role">Light bg</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-m6);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">M6 — Pale Blue</p>
-              <p class="swatch__hex">#E1F4FF</p>
-              <p class="swatch__role">Pale bg / cards</p>
-            </div>
-          </div>
+          <div class="sw"><span class="sw__chip" style="background:#000126"></span><div class="sw__meta"><b>M1 Navy</b><code>#000126</code><span>Darkest backgrounds</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#002391"></span><div class="sw__meta"><b>M2 Dark Blue</b><code>#002391</code><span>Secondary dark, accents</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#1B92FF"></span><div class="sw__meta"><b>M3 Brand Blue</b><code>#1B92FF</code><span>Primary — CTAs, links</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#73C7FF"></span><div class="sw__meta"><b>M4 Medium Blue</b><code>#73C7FF</code><span>Interactive states</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#C3E9FF"></span><div class="sw__meta"><b>M5 Light Blue</b><code>#C3E9FF</code><span>Decorative, tags</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#E1F4FF"></span><div class="sw__meta"><b>M6 Pale Blue</b><code>#E1F4FF</code><span>Light backgrounds</span></div></div>
         </div>
-      </div>
 
-      <div class="color-group">
-        <h3 class="color-group__title">Secondary Grays</h3>
+        <h4>Secondary greys</h4>
         <div class="swatches">
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s1);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S1 — Near Black</p>
-              <p class="swatch__hex">#080C13</p>
-              <p class="swatch__role">Body text</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s2);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S2 — Dark Gray</p>
-              <p class="swatch__hex">#353941</p>
-              <p class="swatch__role">Secondary text</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s3);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S3 — Medium Gray</p>
-              <p class="swatch__hex">#707379</p>
-              <p class="swatch__role">Tertiary / borders</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s4);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S4 — Gray</p>
-              <p class="swatch__hex">#B4B6B9</p>
-              <p class="swatch__role">Disabled</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s5);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S5 — Light Gray</p>
-              <p class="swatch__hex">#E0E1E2</p>
-              <p class="swatch__role">Borders</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-s6);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">S6 — Off White</p>
-              <p class="swatch__hex">#EFF0F0</p>
-              <p class="swatch__role">Subtle bg</p>
-            </div>
-          </div>
+          <div class="sw"><span class="sw__chip" style="background:#080C13"></span><div class="sw__meta"><b>S1 Near Black</b><code>#080C13</code><span>Body text</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#353941"></span><div class="sw__meta"><b>S2 Dark Grey</b><code>#353941</code><span>Secondary text</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#707379"></span><div class="sw__meta"><b>S3 Medium Grey</b><code>#707379</code><span>Tertiary text, borders</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#B4B6B9"></span><div class="sw__meta"><b>S4 Grey</b><code>#B4B6B9</code><span>Disabled, placeholders</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#E0E1E2"></span><div class="sw__meta"><b>S5 Light Grey</b><code>#E0E1E2</code><span>Borders, dividers</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#EFF0F0"></span><div class="sw__meta"><b>S6 Off White</b><code>#EFF0F0</code><span>Subtle backgrounds</span></div></div>
         </div>
-      </div>
 
-      <div class="color-group">
-        <h3 class="color-group__title">Supporting (functional only)</h3>
+        <h4>Supporting — functional only, never decorative</h4>
         <div class="swatches">
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-red);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">Red</p>
-              <p class="swatch__hex">#DA2025</p>
-              <p class="swatch__role">Errors</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-orange);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">Orange</p>
-              <p class="swatch__hex">#E56600</p>
-              <p class="swatch__role">Warnings</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-yellow);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">Yellow</p>
-              <p class="swatch__hex">#F6A900</p>
-              <p class="swatch__role">Caution</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-green);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">Green</p>
-              <p class="swatch__hex">#36A058</p>
-              <p class="swatch__role">Success</p>
-            </div>
-          </div>
+          <div class="sw"><span class="sw__chip" style="background:#DA2025"></span><div class="sw__meta"><b>Red</b><code>#DA2025</code><span>Errors, destructive</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#E56600"></span><div class="sw__meta"><b>Orange</b><code>#E56600</code><span>Warnings</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#F6A900"></span><div class="sw__meta"><b>Yellow</b><code>#F6A900</code><span>Caution, highlights</span></div></div>
+          <div class="sw"><span class="sw__chip" style="background:#36A058"></span><div class="sw__meta"><b>Green</b><code>#36A058</code><span>Success</span></div></div>
         </div>
-      </div>
 
-      <div class="color-group">
-        <h3 class="color-group__title">Neutrals</h3>
-        <div class="swatches">
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-black);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">Black</p>
-              <p class="swatch__hex">#000000</p>
-              <p class="swatch__role">Use sparingly</p>
-            </div>
-          </div>
-          <div class="swatch">
-            <div class="swatch__chip" style="background: var(--nevron-color-white);"></div>
-            <div class="swatch__meta">
-              <p class="swatch__token">White</p>
-              <p class="swatch__hex">#FFFFFF</p>
-              <p class="swatch__role">Bg / text on dark</p>
-            </div>
-          </div>
+        <h4>The rules</h4>
+        <ul>
+          <li>Primary actions use <b>M3</b>. Emphasis uses M3 blue — not bold red.</li>
+          <li>Body text is <b>S1 on light</b>, <b>white on dark</b>.</li>
+          <li>Never mix primary blues with supporting colours as co-equal accents.</li>
+          <li>WCAG AA minimum: 4.5:1 for body text, 3:1 for large text.</li>
+        </ul>
+      </section>
+
+      <section id="gradients">
+        <p class="sec__num">02 — Gradients</p>
+        <h2>Two approved patterns. There is no third.</h2>
+
+        <div class="specimen">
+          <p class="specimen__label"><b>1 — Blue gradient</b> · text accents, decorative elements</p>
+          <div class="gradbox gradbox--blue"></div>
+          <p><code>linear-gradient(135deg, M3, M4, M5)</code> — token
+            <code>--nevron-gradient-blue</code>.</p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ========================================================================
-       4. Gradients
-       ======================================================================== -->
-  <section class="section" id="gradients">
-    <div class="container">
-      <span class="section__eyebrow">03 — Gradients</span>
-      <h2 class="section__title">Approved gradients</h2>
-      <p class="section__lead">Three patterns — nothing else is on-brand. The dark gradient's position is flexible (center, top-left, bottom-right, etc.) — the colors are not.</p>
-
-      <div class="gradients">
-        <div class="gradient-block gradient-block--blue">
-          <p class="gradient-block__token">--nevron-gradient-blue</p>
-          <p class="gradient-block__label">linear 135deg · M3 · M4 · M5</p>
+        <div class="specimen">
+          <p class="specimen__label"><b>2 — Dark gradient</b> · dark backgrounds, hero sections</p>
+          <div class="gradbox gradbox--dark"></div>
+          <p>A radial glow of M3 over M1 Navy — token <code>--nevron-gradient-dark</code>. Corner
+            and edge positions are all on-brand; the hero on these pages is one of them.</p>
         </div>
-        <div class="gradient-block gradient-block--dark">
-          <p class="gradient-block__token">--nevron-gradient-dark</p>
-          <p class="gradient-block__label">radial at center · M3 over M1</p>
+
+        <div class="specimen">
+          <p class="specimen__label"><b>2b — Subtler variant</b> · M2 instead of M3</p>
+          <div class="gradbox gradbox--dark-sub"></div>
+          <p>Token <code>--nevron-gradient-dark-subtle</code>.</p>
         </div>
-        <div class="gradient-block gradient-block--dark-subtle">
-          <p class="gradient-block__token">--nevron-gradient-dark-subtle</p>
-          <p class="gradient-block__label">radial at center · M2 over M1</p>
+
+        <div class="note note--stop">
+          <p class="note__title">Not allowed</p>
+          <p>Linear gradients across the full colour scale · gradients involving red, orange,
+            yellow or green · gradients mixing blues with greys · multi-stop decorative gradients
+            outside these two patterns.</p>
         </div>
-        <div class="gradient-block gradient-block--dark-top-left">
-          <p class="gradient-block__token">radial at top left · M3 over M1</p>
-          <p class="gradient-block__label">Position override — still on-brand</p>
+
+        <div class="note">
+          <p>Applying the blue gradient as <code>background-clip: text</code> clips descenders.
+            Set <code>display: inline-block</code> and <code>line-height: 1.4</code> on the
+            gradient element.</p>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ========================================================================
-       5. Typography
-       ======================================================================== -->
-  <section class="section" id="typography">
-    <div class="container">
-      <span class="section__eyebrow">04 — Typography</span>
-      <h2 class="section__title">Type scale</h2>
-      <p class="section__lead">Primary typeface is Neue Haas Unica, with Open Sans as the freely-available web fallback. All sizes in rem.</p>
+      <section id="type">
+        <p class="sec__num">03 — Typography</p>
+        <h2>Neue Haas Unica, with Open Sans as the free fallback</h2>
 
-      <div class="type-sample">
-        <p class="type-sample__example type--display">Smart solutions for smart hotels</p>
-        <div class="type-sample__meta">
-          <span>Display</span><span>3rem / 48px</span><span>Weight 700</span><span>Line 1.1</span>
+        <pre><code>font-family: 'Neue Haas Unica', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;</code></pre>
+
+        <div class="specimen">
+          <p class="specimen__label">Display · 48px · 700 · line-height 1.1</p>
+          <p style="font-size:48px;font-weight:700;line-height:1.1;letter-spacing:-.02em">Smart solutions for smart hotels</p>
         </div>
-      </div>
-
-      <div class="type-sample">
-        <p class="type-sample__example type--h1">Heading 1 — Page title</p>
-        <div class="type-sample__meta">
-          <span>H1</span><span>2.25rem / 36px</span><span>Weight 300 (light)</span><span>Line 1.2</span>
+        <div class="specimen">
+          <p class="specimen__label">H1 · 36px · 300 light — the thin weight is deliberate</p>
+          <p style="font-size:36px;font-weight:300;line-height:1.15">Elevating guest experience</p>
         </div>
-      </div>
-
-      <div class="type-sample">
-        <p class="type-sample__example type--h2">Heading 2 — Section heading</p>
-        <div class="type-sample__meta">
-          <span>H2</span><span>1.75rem / 28px</span><span>Weight 600</span><span>Line 1.2</span>
+        <div class="specimen">
+          <p class="specimen__label">H2 · 28px · 600</p>
+          <p style="font-size:28px;font-weight:600;line-height:1.2">Section heading</p>
         </div>
-      </div>
-
-      <div class="type-sample">
-        <p class="type-sample__example type--h3">Heading 3 — Subsection heading</p>
-        <div class="type-sample__meta">
-          <span>H3</span><span>1.375rem / 22px</span><span>Weight 600</span><span>Line 1.25</span>
+        <div class="specimen">
+          <p class="specimen__label">Body · 16px · 400 · line-height 1.5</p>
+          <p style="font-size:16px;line-height:1.5;max-width:62ch">Nevron provides a neutral frame for the display of content. The brand recedes so the property's own material can carry the screen — which is why the palette is restrained and the geometry is not.</p>
         </div>
-      </div>
 
-      <div class="type-sample">
-        <p class="type-sample__example type--h4">Heading 4 — Card titles, labels</p>
-        <div class="type-sample__meta">
-          <span>H4</span><span>1.125rem / 18px</span><span>Weight 600</span><span>Line 1.3</span>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Level</th><th>Size</th><th>Weight</th><th>Line height</th><th>Use</th></tr></thead>
+            <tbody>
+              <tr><td>Display</td><td>3rem / 48px</td><td>700</td><td>1.1</td><td>Hero headlines</td></tr>
+              <tr><td>H1</td><td>2.25rem / 36px</td><td>300</td><td>1.15</td><td>Page titles</td></tr>
+              <tr><td>H2</td><td>1.75rem / 28px</td><td>600</td><td>1.2</td><td>Section headings</td></tr>
+              <tr><td>H3</td><td>1.375rem / 22px</td><td>600</td><td>1.25</td><td>Subsections</td></tr>
+              <tr><td>H4</td><td>1.125rem / 18px</td><td>600</td><td>1.3</td><td>Card titles, labels</td></tr>
+              <tr><td>Body large</td><td>1.125rem / 18px</td><td>400</td><td>1.6</td><td>Lead paragraphs</td></tr>
+              <tr><td>Body</td><td>1rem / 16px</td><td>400</td><td>1.5</td><td>Default</td></tr>
+              <tr><td>Body small</td><td>0.875rem / 14px</td><td>400</td><td>1.5</td><td>Captions, metadata</td></tr>
+              <tr><td>Caption</td><td>0.75rem / 12px</td><td>400</td><td>1.4</td><td>Fine print</td></tr>
+            </tbody>
+          </table>
         </div>
-      </div>
 
-      <div class="type-sample">
-        <p class="type-sample__example type--body-lg">Body Large — used for lead paragraphs, intros, and anywhere you want copy to feel more present than body but still read as running text.</p>
-        <div class="type-sample__meta">
-          <span>Body Large</span><span>1.125rem / 18px</span><span>Weight 400</span><span>Line 1.6</span>
-        </div>
-      </div>
+        <ul>
+          <li><code>rem</code> for every font size.</li>
+          <li>Two or three weights per page. Headings 600–700, body 400.</li>
+          <li>Line length 60–75 characters.</li>
+        </ul>
+      </section>
 
-      <div class="type-sample">
-        <p class="type-sample__example type--body">Body — the default reading size. Pair with a 60–75 character line length for comfortable long-form reading. Body text should always use S1 on light backgrounds, white on dark.</p>
-        <div class="type-sample__meta">
-          <span>Body</span><span>1rem / 16px</span><span>Weight 400</span><span>Line 1.5</span>
-        </div>
-      </div>
+      <section id="radius">
+        <p class="sec__num">04 — Geometry</p>
+        <h2>Corner radius is 0. This is a hard rule.</h2>
+        <p class="lede">Sharp corners are the brand's visual language — architectural, confident,
+          precise. Rounding them softens Nevron into every other SaaS template.</p>
 
-      <div class="type-sample">
-        <p class="type-sample__example type--body-sm">Body Small — captions, metadata, secondary information, helper text under form fields.</p>
-        <div class="type-sample__meta">
-          <span>Body Small</span><span>0.875rem / 14px</span><span>Weight 400</span><span>Line 1.5</span>
-        </div>
-      </div>
-
-      <div class="type-sample">
-        <p class="type-sample__example type--caption">Caption — fine print, legal, footnotes, tiny UI labels.</p>
-        <div class="type-sample__meta">
-          <span>Caption</span><span>0.75rem / 12px</span><span>Weight 400</span><span>Line 1.4</span>
-        </div>
-      </div>
-
-      <div class="font-stack-note">
-        <strong>Font stack:</strong> <code>'Neue Haas Unica', 'Open Sans', 'Helvetica Neue', Arial, sans-serif</code> — Open Sans is the free fallback when Neue Haas Unica isn't licensed for the platform.
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       6. Corner radius
-       ======================================================================== -->
-  <section class="section" id="radius">
-    <div class="container">
-      <span class="section__eyebrow">05 — Corner radius</span>
-      <h2 class="section__title">Sharp by default</h2>
-      <p class="section__lead">Sharp corners define Nevron's visual language — architectural, confident, precise. Rounded corners are an exception, reserved for pills and avatars.</p>
-
-      <div class="radius-grid">
-        <div class="radius-sample">
-          <div class="radius-sample__box radius-sample__box--card"></div>
-          <p class="radius-sample__label">Cards — hard rule</p>
-          <p class="radius-sample__value">0 · --nevron-radius-lg</p>
-        </div>
-        <div class="radius-sample">
-          <div class="radius-sample__box radius-sample__box--button"></div>
-          <p class="radius-sample__label">Buttons / inputs</p>
-          <p class="radius-sample__value">0 · --nevron-radius-md</p>
-        </div>
-        <div class="radius-sample">
-          <div class="radius-sample__box radius-sample__box--tag"></div>
-          <p class="radius-sample__label">Tags / indicators</p>
-          <p class="radius-sample__value">0.25rem · --nevron-radius-sm</p>
-        </div>
-        <div class="radius-sample">
-          <div class="radius-sample__box radius-sample__box--pill"></div>
-          <p class="radius-sample__label">Pills / avatars</p>
-          <p class="radius-sample__value">9999px · --nevron-radius-full</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       7. Motion & polish
-       ======================================================================== -->
-  <section class="section" id="motion">
-    <div class="container">
-      <span class="section__eyebrow">06 — Motion &amp; polish</span>
-      <h2 class="section__title">Motion tokens</h2>
-      <p class="section__lead">Four transition speeds cover every need. Always use the token — never hard-code a ms value.</p>
-
-      <div class="motion-grid">
-        <div class="motion-card motion-card--fast">
-          <div class="motion-card__icon"><i class="pi pi-bolt"></i></div>
-          <p class="motion-card__title">Fast</p>
-          <p class="motion-card__desc">Hover/focus, small state flips.</p>
-          <p class="motion-card__token">150ms ease</p>
-        </div>
-        <div class="motion-card motion-card--base">
-          <div class="motion-card__icon"><i class="pi pi-forward"></i></div>
-          <p class="motion-card__title">Base</p>
-          <p class="motion-card__desc">Most interactive transitions.</p>
-          <p class="motion-card__token">250ms ease</p>
-        </div>
-        <div class="motion-card motion-card--slow">
-          <div class="motion-card__icon"><i class="pi pi-stopwatch"></i></div>
-          <p class="motion-card__title">Slow</p>
-          <p class="motion-card__desc">Drawers, modals, bigger state changes.</p>
-          <p class="motion-card__token">350ms ease</p>
-        </div>
-        <div class="motion-card motion-card--spring">
-          <div class="motion-card__icon"><i class="pi pi-sparkles"></i></div>
-          <p class="motion-card__title">Spring</p>
-          <p class="motion-card__desc">Playful bounce — use sparingly.</p>
-          <p class="motion-card__token">500ms cubic-bezier</p>
-        </div>
-      </div>
-
-      <p class="motion-hint">Hover any card above to feel the speed difference · shadow steps from md → lg on hover</p>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       8. Icons
-       ======================================================================== -->
-  <section class="section" id="icons">
-    <div class="container">
-      <span class="section__eyebrow">07 — Icons</span>
-      <h2 class="section__title">PrimeIcons</h2>
-      <p class="section__lead">PrimeIcons is mandatory. Custom SVG icons only when PrimeIcons truly lacks an equivalent.</p>
-
-      <div class="icons-note">
-        <strong>CDN:</strong> <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons/primeicons.css"&gt;</code> · <strong>Usage:</strong> <code>&lt;i class="pi pi-check"&gt;&lt;/i&gt;</code>
-      </div>
-
-      <div class="icon-grid">
-        <div class="icon-card"><i class="pi pi-check"></i><p class="icon-card__name">pi-check</p></div>
-        <div class="icon-card"><i class="pi pi-user"></i><p class="icon-card__name">pi-user</p></div>
-        <div class="icon-card"><i class="pi pi-home"></i><p class="icon-card__name">pi-home</p></div>
-        <div class="icon-card"><i class="pi pi-envelope"></i><p class="icon-card__name">pi-envelope</p></div>
-        <div class="icon-card"><i class="pi pi-cog"></i><p class="icon-card__name">pi-cog</p></div>
-        <div class="icon-card"><i class="pi pi-calendar"></i><p class="icon-card__name">pi-calendar</p></div>
-        <div class="icon-card"><i class="pi pi-shield"></i><p class="icon-card__name">pi-shield</p></div>
-        <div class="icon-card"><i class="pi pi-chart-bar"></i><p class="icon-card__name">pi-chart-bar</p></div>
-        <div class="icon-card"><i class="pi pi-mobile"></i><p class="icon-card__name">pi-mobile</p></div>
-        <div class="icon-card"><i class="pi pi-desktop"></i><p class="icon-card__name">pi-desktop</p></div>
-        <div class="icon-card"><i class="pi pi-arrow-right"></i><p class="icon-card__name">pi-arrow-right</p></div>
-        <div class="icon-card"><i class="pi pi-sparkles"></i><p class="icon-card__name">pi-sparkles</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       9. Component examples
-       ======================================================================== -->
-  <section class="section" id="components">
-    <div class="container">
-      <span class="section__eyebrow">08 — Components</span>
-      <h2 class="section__title">Component examples</h2>
-      <p class="section__lead">Live, on-brand building blocks. All cards sharp. Pills and avatars get the radius-full exception.</p>
-
-      <div class="component-block">
-        <p class="component-block__label">Buttons</p>
-        <div class="component-row">
-          <button class="btn btn--primary" type="button">Primary action <i class="pi pi-arrow-right"></i></button>
-          <button class="btn btn--secondary" type="button">Secondary</button>
-          <button class="btn btn--outline" type="button">Outline</button>
-        </div>
-      </div>
-
-      <div class="component-block">
-        <p class="component-block__label">Inputs</p>
-        <div class="component-row" style="align-items: flex-start;">
-          <div class="input-group">
-            <label class="input-label" for="in1">Default</label>
-            <input class="input" id="in1" type="text" placeholder="hotel@example.com">
-          </div>
-          <div class="input-group">
-            <label class="input-label" for="in2">Focus</label>
-            <input class="input input--focus-demo" id="in2" type="text" value="hotel@example.com">
-          </div>
-          <div class="input-group">
-            <label class="input-label" for="in3">Error</label>
-            <input class="input input--error" id="in3" type="text" value="not-an-email">
-            <p class="input-error-text">Please enter a valid email address.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="component-block">
-        <p class="component-block__label">Card</p>
-        <div class="card">
-          <div class="card__header">
-            <h3 class="card__title">NevronCore Dashboard</h3>
-          </div>
-          <div class="card__body">
-            <p class="card__desc">Real-time hotel operations, guest analytics, and staff coordination in a single pane of glass.</p>
-            <a href="#" class="card__link">Learn more <i class="pi pi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="component-block">
-        <p class="component-block__label">Pills &amp; tags (--nevron-radius-sm)</p>
-        <div class="component-row">
-          <span class="pill">New</span>
-          <span class="pill pill--success"><i class="pi pi-check"></i> Active</span>
-          <span class="pill pill--warning"><i class="pi pi-exclamation-triangle"></i> Pending</span>
-          <span class="pill pill--error"><i class="pi pi-times"></i> Offline</span>
-        </div>
-      </div>
-
-      <div class="component-block">
-        <p class="component-block__label">Avatar (--nevron-radius-full)</p>
-        <div class="component-row">
-          <span class="avatar">KŠ</span>
-          <span class="avatar avatar--lg">KŠ</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================
-       10. Common pitfalls
-       ======================================================================== -->
-  <section class="section" id="pitfalls">
-    <div class="container">
-      <span class="section__eyebrow">09 — Pitfalls</span>
-      <h2 class="section__title">Wrong vs right</h2>
-      <p class="section__lead">The four most common Nevron brand mistakes, side by side.</p>
-
-      <!-- Pitfall 1 — rounded card -->
-      <div class="pitfall">
-        <h3 class="pitfall__title">1. Rounded cards soften the brand</h3>
-        <div class="pitfall__grid">
-          <div class="pitfall__case pitfall__case--wrong">
-            <span class="pitfall__tag pitfall__tag--wrong"><i class="pi pi-times"></i> Wrong</span>
-            <div class="pitfall__demo">
-              <div class="demo-card-wrong">
-                <h4>Soft and generic</h4>
-                <p>16px rounded corners — feels like every SaaS template.</p>
+        <div class="dd">
+          <div class="dd__case dd__case--no">
+            <span class="dd__tag">Wrong</span>
+            <div class="dd__demo">
+              <div style="border:1px solid var(--rule);border-radius:16px;padding:18px 20px;width:100%">
+                <b style="display:block;margin-bottom:4px">Soft and generic</b>
+                <span style="font-size:13px;color:var(--ink-2)">16px radius — could be anyone.</span>
               </div>
             </div>
-            <p class="pitfall__note">Rounded cards dilute the architectural, precise feel Nevron is built on.</p>
+            <p class="dd__note">Rounded cards dilute the architectural feel the brand is built on.</p>
           </div>
-          <div class="pitfall__case pitfall__case--right">
-            <span class="pitfall__tag pitfall__tag--right"><i class="pi pi-check"></i> Right</span>
-            <div class="pitfall__demo">
-              <div class="demo-card-right">
-                <h4>Sharp and confident</h4>
-                <p>0 radius — architectural, on-brand, unmistakably Nevron.</p>
+          <div class="dd__case dd__case--yes">
+            <span class="dd__tag">Right</span>
+            <div class="dd__demo">
+              <div style="border:1px solid var(--rule);padding:18px 20px;width:100%">
+                <b style="display:block;margin-bottom:4px">Sharp and confident</b>
+                <span style="font-size:13px;color:var(--ink-2)">Radius 0 — unmistakably Nevron.</span>
               </div>
             </div>
-            <p class="pitfall__note">Use <code>--nevron-radius-lg</code> (value 0) for every card. Always.</p>
+            <p class="dd__note">Use <code>--nevron-radius-lg</code> (value 0) on every card. Always.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Pitfall 2 — inline fake logo -->
-      <div class="pitfall">
-        <h3 class="pitfall__title">2. Never recreate the logo in code</h3>
-        <div class="pitfall__grid">
-          <div class="pitfall__case pitfall__case--wrong">
-            <span class="pitfall__tag pitfall__tag--wrong"><i class="pi pi-times"></i> Wrong</span>
-            <div class="pitfall__demo">
-              <span class="garbled-logo">NEVRON</span>
-            </div>
-            <p class="pitfall__note">Re-typing "NEVRON" in a condensed font or re-drawing the SVG paths from memory produces garbled letterforms — the custom ligatures and proportions are lost.</p>
-          </div>
-          <div class="pitfall__case pitfall__case--right">
-            <span class="pitfall__tag pitfall__tag--right"><i class="pi pi-check"></i> Right</span>
-            <div class="pitfall__demo">
-              <img src="nevron-logo-tagline-blue.svg" alt="Nevron logo" class="real-logo-demo">
-            </div>
-            <p class="pitfall__note">Copy the source SVG from <code>assets/logos/</code> into your project and reference it via <code>&lt;img&gt;</code>.</p>
-          </div>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Element</th><th>Radius</th><th>Token</th></tr></thead>
+            <tbody>
+              <tr><td><b>Cards</b></td><td><b>0 — always</b></td><td><code>--nevron-radius-lg</code></td></tr>
+              <tr><td>Buttons, inputs</td><td>0</td><td><code>--nevron-radius-md</code></td></tr>
+              <tr><td>Modals, large containers</td><td>0</td><td><code>--nevron-radius-xl</code></td></tr>
+              <tr><td>Hero sections</td><td>0</td><td><code>--nevron-radius-2xl</code></td></tr>
+              <tr><td>Tags, indicators, badges</td><td>0.25rem <i>(exception)</i></td><td><code>--nevron-radius-sm</code></td></tr>
+              <tr><td>Pills, avatars</td><td>9999px <i>(exception)</i></td><td><code>--nevron-radius-full</code></td></tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
 
-      <!-- Pitfall 3 — black vs S1 text -->
-      <div class="pitfall">
-        <h3 class="pitfall__title">3. Pure black text fatigues on long reads</h3>
-        <div class="pitfall__grid">
-          <div class="pitfall__case pitfall__case--wrong">
-            <span class="pitfall__tag pitfall__tag--wrong"><i class="pi pi-times"></i> Wrong</span>
-            <div class="pitfall__demo">
-              <p class="demo-text-wrong">The quick brown fox jumps over the lazy dog. Pure #000000 on white.</p>
-            </div>
-            <p class="pitfall__note"><code>#000000</code> on <code>#FFFFFF</code> is harsh on content-heavy pages and feels flat.</p>
-          </div>
-          <div class="pitfall__case pitfall__case--right">
-            <span class="pitfall__tag pitfall__tag--right"><i class="pi pi-check"></i> Right</span>
-            <div class="pitfall__demo">
-              <p class="demo-text-right">The quick brown fox jumps over the lazy dog. S1 <code>#080C13</code> on white.</p>
-            </div>
-            <p class="pitfall__note">S1 is warmer, more Nevron, and still passes WCAG AAA for body text.</p>
-          </div>
-        </div>
-      </div>
+      <section id="logo">
+        <p class="sec__num">05 — Logo</p>
+        <h2>Seven files. Never a re-drawn one.</h2>
 
-      <!-- Pitfall 4 — gradient -->
-      <div class="pitfall">
-        <h3 class="pitfall__title">4. Gradients stay within the blue family</h3>
-        <div class="pitfall__grid">
-          <div class="pitfall__case pitfall__case--wrong">
-            <span class="pitfall__tag pitfall__tag--wrong"><i class="pi pi-times"></i> Wrong</span>
-            <div class="pitfall__demo" style="padding: 0;">
-              <div class="demo-gradient-box demo-gradient-wrong">Red + blue gradient</div>
-            </div>
-            <p class="pitfall__note">Supporting colors (red, orange, yellow, green) are functional only — never decorative. Mixing with blues breaks the brand.</p>
+        <div class="assetgrid">
+          <figure class="asset">
+            <div class="asset__box asset__box--wash"><img src="plugins/nevron-brand/assets/logos/nevron-logo-icon.svg" alt="Nevron monogram, dark"></div>
+            <figcaption>nevron-logo-icon.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/logos/nevron-logo-icon-white.svg" alt="Nevron monogram, white"></div>
+            <figcaption>nevron-logo-icon-white.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--wash"><img src="plugins/nevron-brand/assets/logos/nevron-logo-no-tagline-blue.svg" alt="Nevron wordmark, blue"></div>
+            <figcaption>nevron-logo-no-tagline-blue.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/logos/nevron-logo-no-tagline-white.svg" alt="Nevron wordmark, white"></div>
+            <figcaption>nevron-logo-no-tagline-white.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--wash"><img src="plugins/nevron-brand/assets/logos/nevron-logo-no-tagline-grey.svg" alt="Nevron wordmark, grey"></div>
+            <figcaption>nevron-logo-no-tagline-grey.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--wash"><img src="plugins/nevron-brand/assets/logos/nevron-logo-tagline-blue.svg" alt="Nevron logo with tagline, blue"></div>
+            <figcaption>nevron-logo-tagline-blue.svg</figcaption>
+          </figure>
+          <figure class="asset">
+            <div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/logos/nevron-logo-tagline-white.svg" alt="Nevron logo with tagline, white"></div>
+            <figcaption>nevron-logo-tagline-white.svg</figcaption>
+          </figure>
+        </div>
+
+        <h4>Choosing one</h4>
+        <pre><code>Space &lt; 80px?             → Monogram / icon
+First-impression (hero)?  → With tagline
+Nav, header, repeated?    → Without tagline
+Dark background?          → White variant
+Light background?         → Blue variant</code></pre>
+
+        <ul>
+          <li><b>Clear space</b> — minimum 1/3 of logo height on all sides; 2/3 is better.</li>
+          <li><b>Minimum size</b> — monogram 24px, wordmark 80px wide, with tagline 120px wide.</li>
+          <li><b>Never</b> stretch, distort, rotate, recolour, add effects, or place it on a busy
+            background.</li>
+        </ul>
+
+        <div class="note note--stop">
+          <p class="note__title">Never inline or recreate the logo SVG</p>
+          <p>Copy the source file out of <code>assets/logos/</code> and reference it with
+            <code>&lt;img&gt;</code>. Redrawing the paths from memory produces garbled
+            letterforms, and &ldquo;it should be a single self-contained file&rdquo; is not a
+            good enough reason.</p>
+        </div>
+      </section>
+
+      <section id="frame">
+        <p class="sec__num">06 — The frame</p>
+        <h2>The frame marks content. That is its whole job.</h2>
+        <p class="lede">A pair of corner brackets — top-right and bottom-left — filled with a
+          pattern, sharing the monogram's grid. Not a border, not a decorative flourish, and
+          never hand-built out of rectangles.</p>
+
+        <div class="assetgrid assetgrid--tight">
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/Full.svg" alt="Full frame pattern"></div><figcaption>Full</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/Thin.svg" alt="Thin frame pattern"></div><figcaption>Thin</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/Horizontal.svg" alt="Horizontal frame pattern"></div><figcaption>Horizontal</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/Vertical.svg" alt="Vertical frame pattern"></div><figcaption>Vertical</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/DiagonalBig.svg" alt="Diagonal frame pattern"></div><figcaption>DiagonalBig</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/Double.svg" alt="Double frame pattern"></div><figcaption>Double</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/DoubleCross.svg" alt="Double cross frame pattern"></div><figcaption>DoubleCross</figcaption></figure>
+          <figure class="asset"><div class="asset__box asset__box--dark"><img src="plugins/nevron-brand/assets/frames/X.svg" alt="X frame pattern"></div><figcaption>X</figcaption></figure>
+        </div>
+
+        <p>Eight of the 19 approved patterns. The variants signal the variety of the content
+          platforms — pick one deliberately and keep it consistent within a single piece.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Use</th><th>Verdict</th></tr></thead>
+            <tbody>
+              <tr><td>Document and datasheet covers</td><td>Yes — the established use</td></tr>
+              <tr><td>Back cover with &ldquo;Let there be content!&rdquo;</td><td>Yes</td></tr>
+              <tr><td>A deck's title, section and closing slides</td><td>Yes</td></tr>
+              <tr><td>Framing one deliberate image or statement</td><td>Yes, sparingly</td></tr>
+              <tr><td>A small mark on every content slide</td><td><b>No</b> — repetition empties it</td></tr>
+              <tr><td>Pulled apart into a single bar or arm</td><td><b>No</b> — that is not the shape</td></tr>
+              <tr><td>Behind body copy or a table</td><td><b>No</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The slogan that goes with the frame is <b>&ldquo;Let there be content&rdquo;</b> — which
+          is why it closes the documents and the datasheets.</p>
+      </section>
+
+      <section id="icons">
+        <p class="sec__num">07 — Icons</p>
+        <h2>PrimeIcons first, custom Nevron icons second</h2>
+        <p class="lede">No inline SVGs, no Heroicons, no Lucide. Verify a name against
+          <code>assets/primeicons-list.txt</code> — 314 verified names — before using it. An
+          unverified name renders as a blank space.</p>
+
+        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons/primeicons.css"&gt;
+&lt;i class="pi pi-check"&gt;&lt;/i&gt;</code></pre>
+
+        <h4>The custom set — 128 icons, used only where PrimeIcons has no equivalent</h4>
+        <div class="assetgrid assetgrid--tight">
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/web/AndroidTVB.svg" alt="Android TV icon"></div><figcaption>web / AndroidTVB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/web/AnalyticsSystemB.svg" alt="Analytics system icon"></div><figcaption>web / AnalyticsSystemB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/web/ConnectivityHubB.svg" alt="Connectivity hub icon"></div><figcaption>web / ConnectivityHubB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/contentware/AmenitiesB.svg" alt="Amenities icon"></div><figcaption>contentware / AmenitiesB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/contentware/ButlerCallB.svg" alt="Butler call icon"></div><figcaption>contentware / ButlerCallB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/contentware/CatalogueB.svg" alt="Catalogue icon"></div><figcaption>contentware / CatalogueB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/technical/GatewayB.svg" alt="Gateway icon"></div><figcaption>technical / GatewayB</figcaption></figure>
+          <figure class="asset"><div class="asset__box"><img src="plugins/nevron-brand/assets/icons/technical/HDMIB.svg" alt="HDMI icon"></div><figcaption>technical / HDMIB</figcaption></figure>
+        </div>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Folder</th><th>Count</th><th>What is in it</th></tr></thead>
+            <tbody>
+              <tr><td><code>icons/web/</code></td><td>46</td><td>Product and platform features</td></tr>
+              <tr><td><code>icons/contentware/</code></td><td>62</td><td>Hotel services and content</td></tr>
+              <tr><td><code>icons/technical/</code></td><td>20</td><td>Infrastructure and tech</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Naming is PascalCase with a <code>B</code> suffix for the blue variant —
+          <code>RoomControlB.svg</code>, <code>PowerfulCMSB.svg</code>.</p>
+      </section>
+
+      <section id="voice">
+        <p class="sec__num">08 — Voice</p>
+        <h2>Clear, direct, technically competent</h2>
+        <p class="lede">Never salesy, never hyperbolic. Jargon with technical audiences, plain
+          language with hotel staff.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Trait</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>Professional</td><td>Enterprise-grade reliability, trustworthy</td></tr>
+              <tr><td>Modern</td><td>Clean, contemporary design language</td></tr>
+              <tr><td>Innovative</td><td>Forward-thinking tech solutions</td></tr>
+              <tr><td>Approachable</td><td>Warm enough for hospitality, not cold corporate</td></tr>
+              <tr><td>Confident</td><td>Bold in capability claims, backed by substance</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <span class="card__num">Tagline</span>
+            <h3>Smart solutions for smart hotels</h3>
+            <p>The company line.</p>
           </div>
-          <div class="pitfall__case pitfall__case--right">
-            <span class="pitfall__tag pitfall__tag--right"><i class="pi pi-check"></i> Right</span>
-            <div class="pitfall__demo" style="padding: 0;">
-              <div class="demo-gradient-box demo-gradient-right">M3 · M4 · M5 blue gradient</div>
-            </div>
-            <p class="pitfall__note">Use <code>--nevron-gradient-blue</code> for accents. For dark contexts, use <code>--nevron-gradient-dark</code>.</p>
+          <div class="card">
+            <span class="card__num">Slogan</span>
+            <h3>Let there be content</h3>
+            <p>Goes with the frame, on cover surfaces.</p>
+          </div>
+          <div class="card">
+            <span class="card__num">Product</span>
+            <h3>NevronCore</h3>
+            <p>One word, capital N and C. Never &ldquo;Nevron Core&rdquo;. A platform, not
+              software.</p>
           </div>
         </div>
-      </div>
+
+        <p><a class="more" href="index.html">Back to the overview →</a></p>
+      </section>
+
     </div>
-  </section>
 
-  <!-- ========================================================================
-       11. Footer
-       ======================================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer__text">Generated by the <strong>nevron-brand</strong> agent.</p>
-      <a class="footer__link" href="https://github.com/kajasajn/nevron-brand-agent">github.com/kajasajn/nevron-brand-agent</a>
-    </div>
-  </footer>
+    <footer class="foot">
+      <div class="foot__inner">
+        <div>
+          <p class="foot__slogan">Let there be content.</p>
+          <p>Nevron d.o.o. — brand system for Claude Code.</p>
+        </div>
+        <div>
+          <p><a href="https://github.com/NevronNativeAI/nevron-brand-agent">github.com/NevronNativeAI/nevron-brand-agent</a></p>
+          <p>Brand Agent v2</p>
+        </div>
+      </div>
+    </footer>
 
+  </main>
+</div>
+
+<script src="assets/guide/guide.js"></script>
 </body>
 </html>

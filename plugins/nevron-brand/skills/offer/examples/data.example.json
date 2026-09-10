@@ -1,0 +1,100 @@
+{
+  "slug": "Ribno-Alpine-Resort",
+  "lang": "sl",
+
+  "hotel": {
+    "name": "Ribno Alpine Resort",
+    "units": 87,
+    "rooms": 87,
+    "beds": 224
+  },
+
+  "validUntil": "2026-10-31",
+
+  "cover": {
+    "badge": "Freemium pilotni projekt 2026",
+    "hook": "Ustvarjanje dodatne vrednosti na gosta",
+    "sub": "4-mesečni brezplačni pilot",
+    "meta": ["87 enot / 224 ležišč", "Možnost odstopa kadarkoli"],
+    "cta": "Poglej naprej"
+  },
+
+  "mainModule": {
+    "title": "Pospeševanje prodaje med bivanjem",
+    "lead": "Vodilni modul projekta zagona digitalizacije Ribno Alpine Resort: 4-mesečni brezplačni pilot",
+    "badge": "Glavni modul ponudbe",
+    "image": "screenshots/main-module.png",
+    "alt": "Prodajni paket na zaslonu z mobilno rezervacijo"
+  },
+
+  "includedTitle": "Kaj še dobite v pilotu",
+  "included": [
+    {
+      "title": "Tehnična aktivacija platforme NevronCore",
+      "subtitle": "Infrastruktura, branding portala, aktivacija modulov",
+      "desc": "Postavitev hotelske instance na NevronCore: konfiguracija okolja, prilagoditev portala vizualni identiteti, aktivacija izbranih modulov v admin konzoli in priprava za integracije.",
+      "posterSub": "Platforma"
+    },
+    {
+      "title": "Nevron AI ChatBot",
+      "subtitle": "Odgovarja gostom 24/7, v njihovem jeziku",
+      "desc": "Asistent, ki odgovarja na vprašanja gostov takoj in v njihovem jeziku, z eskalacijo na recepcijo, kadar je potrebna človeška presoja.",
+      "image": "screenshots/chatbot.png"
+    }
+  ],
+
+  "timelineTitle": "Kako poteka pilot",
+  "timeline": [
+    {
+      "period": "Mesec 1–2",
+      "title": "Izvedba projekta in postopno uvajanje",
+      "desc": "Tehnična aktivacija, konfiguracija modulov in rollout najprej v testnem krilu, nato celoten objekt. Vključeno usposabljanje recepcije in vodij oddelkov."
+    },
+    {
+      "period": "Mesec 3",
+      "title": "Razvoj po meri",
+      "desc": "AI orodja za vsakdanjo rutino, prilagojena procesom, ki jih odkrijemo v prvih dveh mesecih."
+    },
+    {
+      "period": "Mesec 4",
+      "title": "Mesečna razpoložljivost",
+      "desc": "Monitoring in optimizacija na podlagi realnih pogovorov in dejanske uporabe."
+    }
+  ],
+
+  "pricing": {
+    "_comment": "mode: 'nevroncore' derives every line from the live rate card. Switch to 'custom' and supply 'lines' to price a deal by hand.",
+    "mode": "nevroncore",
+    "lead": "Mesečno licenciranje NevronCore platforme in modulov. Med pilotom velja 100 % popust, po pilotu 50 % popust 8 mesecev, nato standardna cena.",
+    "pilotMonths": 4,
+    "discountMonths": 8,
+    "assumptions": {
+      "_comment": "Quantities only - never rates. Rates come from the rate card.",
+      "beds": 224,
+      "rooms": 87,
+      "guestTP": 40,
+      "aiGuestTP": 40
+    }
+  },
+
+  "_customPricingExample": {
+    "mode": "custom",
+    "lead": "Cenik po dogovoru za to ponudbo.",
+    "sourceLabel": "Cenik po meri, potrjen z vodstvom 10. 9. 2026",
+    "pilotMonths": 4,
+    "discountMonths": 8,
+    "lines": [
+      { "label": "NevronCore platforma", "detail": "Pavšal po dogovoru", "amount": 150 },
+      { "label": "AI ChatBot", "detail": "Vključeno v paket", "amount": 90 }
+    ],
+    "total": 240
+  },
+
+  "cta": {
+    "title": "Vas zanima?",
+    "text": "Kliknite spodaj in vas pokliče Rok Kokalj za uskladitev pilotnega projekta. Pogovor traja okoli 1 ure.",
+    "button": "Zanima me",
+    "email": "rok.kokalj@nevron.eu",
+    "subject": "Ponudba Ribno Alpine Resort - uskladitev pilota"
+  }
+}

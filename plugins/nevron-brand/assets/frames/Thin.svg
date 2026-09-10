@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46 283.46">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="V2">
+    <g>
+      <rect class="cls-1" x="188.98" width="94.49" height="15.75"/>
+      <rect class="cls-1" x="228.35" y="39.37" width="94.49" height="15.75" transform="translate(322.83 -228.35) rotate(90)"/>
+      <rect class="cls-1" y="267.72" width="94.49" height="15.75" transform="translate(94.49 551.18) rotate(180)"/>
+      <rect class="cls-1" x="-39.37" y="228.35" width="94.49" height="15.75" transform="translate(-228.35 244.09) rotate(-90)"/>
+    </g>
+  </g>
+</svg>

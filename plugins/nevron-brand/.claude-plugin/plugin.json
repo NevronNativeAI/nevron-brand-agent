@@ -1,0 +1,25 @@
+{
+  "name": "nevron-brand",
+  "description": "Keeps Nevron work on brand and produces branded deliverables. Ships the brand agent (colours, typography, logos, icon verification, format guidelines) and six skills: full house documents, short documents without a cover, product datasheets, service reports, client offers, and abstract pitch decks.",
+  "version": "2.0.0",
+  "author": {
+    "name": "NevronNativeAI",
+    "url": "https://github.com/NevronNativeAI"
+  },
+  "homepage": "https://nevronnativeai.github.io/nevron-brand-agent/",
+  "repository": "https://github.com/NevronNativeAI/nevron-brand-agent",
+  "license": "UNLICENSED",
+  "keywords": [
+    "nevron",
+    "brand",
+    "design-system",
+    "datasheet",
+    "documents",
+    "presentation",
+    "deck",
+    "offer",
+    "service-report",
+    "pdf",
+    "hospitality"
+  ]
+}

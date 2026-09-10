@@ -1,0 +1,83 @@
+{
+  "slug": "2026-07-Datasheet_TL-4KBR",
+  "product": "TL-4KBR",
+  "subtitle": "Android TV 4K Set Top Box",
+  "headerName": "TL-4KBR",
+  "date": "July 20, 2026",
+  "year": 2026,
+
+  "coverImage": "images/STB_top.png",
+
+  "overview": [
+    "The TL-4KBR is a Google-certified Android TV set-top box that turns any TV or monitor into a smart display over a single HDMI connection. Powered by Android 11 and the Amlogic S905X4 chipset, it is built for professional deployments in hotels, cruise ships, and other managed environments.",
+    "The Android TV interface is fast and familiar, with Chromecast and Google Assistant built in. Netflix, Amazon Prime Video, and YouTube come pre-installed with shortcut buttons on the remote, while the full Google Play catalogue keeps content open — without compromising operator control.",
+    "With 4K Ultra HD and HDR support and broad codec coverage up to 4Kx2K at 60fps, the device delivers crisp visuals and clear Dolby Digital Plus audio. Dual-band Wi-Fi 5, Ethernet, and Bluetooth 5.0 cover reliable deployment across wired and wireless setups.",
+    "Its compact 114 x 114 x 22 mm form factor installs discreetly behind displays or inside cabinets, and plug-and-play setup makes it easy to deploy at scale. Centralised management lets operators configure and monitor the estate remotely, streamlining support and reducing truck rolls."
+  ],
+
+  "overviewImages": [
+    { "src": "images/STB_top.png", "dimV": "114 mm", "dimH": "114 mm" },
+    { "src": "images/STB_back.png", "dimV": "22 mm" }
+  ],
+
+  "ports": [
+    { "src": "images/STB_back.png", "labels": [["17", "DC 12V"], ["30", "LAN"], ["46", "HDMI"], ["61", "AV"], ["73", "S/PDIF"], ["87", "USB-C"]] },
+    { "src": "images/STB_side1.png", "labels": [["30", "Micro SD"], ["50", "USB 2.0"], ["65", "USB 3.0"]] }
+  ],
+
+  "specs": [
+    { "section": "Hardware platform", "rows": [
+      ["Operating system", "Android 11"],
+      ["CPU chipset", "Amlogic S905X4"],
+      ["DMIPS", "24K DMIPS"],
+      ["GPU", "ARM Mali-G31 MP2"],
+      ["RAM", "2GB LPDDR4"],
+      ["Flash", "eMMC 8GB"]
+    ]},
+    { "section": "Network", "rows": [
+      ["Wi-Fi", "802.11 b/g/n/ac 2.4G/5G Wi-Fi 5"],
+      ["Ethernet", "100Mbps"],
+      ["Bluetooth", "Bluetooth 5.0"]
+    ]},
+    { "section": "DRM", "rows": [
+      ["Widevine level", "Supported, Level 1"],
+      ["PlayReady", "Supported, SL3000"]
+    ]},
+    { "section": "Audio and video", "rows": [
+      ["Video decoding", "AV1, VP9, H.265 HEVC, AVS2-P2, H.264 AVC/MVC, MPEG-1/2/4, WMV/VC-1, RealVideo 8/9/10 — up to 4Kx2K@60fps"],
+      ["Video resolution", "480i/p, 576i/p, 720p, 1080i/p and 4Kx2K"],
+      ["Video output", "HDMI 2.1, HDCP2.2"],
+      ["Audio decoding", "MP3, AAC, WMA, RM, FLAC, Ogg; 7.1/5.1 down-mixing"],
+      ["Audio mode", "Mono/Stereo/Left/Right"],
+      ["Dolby Digital Plus", "Supported"],
+      ["DTS", "Supported (optional)"]
+    ]},
+    { "section": "Interface", "rows": [
+      ["LED indicator light", "Supported"],
+      ["IR control", "Supported"],
+      ["Micro SD", "Supported"],
+      ["USB port", "1*USB 2.0, 1*USB 3.0"],
+      ["HDMI output", "Supported"],
+      ["S/PDIF", "Supported"],
+      ["AV output", "Supported"],
+      ["Reset button", "Supported"]
+    ]},
+    { "section": "RCU", "rows": [
+      ["IR support", "Supported"],
+      ["Protocol", "BLE 5.0"],
+      ["Battery type", "2*AAA 1.5V"]
+    ]},
+    { "section": "Power supply", "rows": [
+      ["DC input", "12V / 1A"],
+      ["Power consumption", "Maximum 12W"],
+      ["Lightning level", "4KV"]
+    ]},
+    { "section": "General", "rows": [
+      ["Dimensions (W x D x H)", "114 x 114 x 22 mm"],
+      ["Weight", "< 2 lbs"],
+      ["Operating temperature", "0°C - 50°C"],
+      ["Storage temperature", "-20°C - 70°C"],
+      ["Humidity", "< 95%"]
+    ]}
+  ]
+}

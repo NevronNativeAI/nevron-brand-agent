@@ -1,0 +1,478 @@
+/* ==========================================================================
+   Nevron document template — print stylesheet
+   Reproduces  J:\Produkcija\_Brand Identity\08_Documents\_Document Template\
+               2025-02-Document template.docx
+   Every value here is measured from that file's OOXML (see reference/style-notes.md).
+   ========================================================================== */
+
+:root {
+  /* --- page geometry (A4, from w:pgSz / w:pgMar) --- */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --m-top: 35mm;      /* w:top    1985tw */
+  --m-bottom: 35mm;   /* w:bottom 1985tw */
+  --m-left: 15mm;     /* w:left    851tw */
+  --m-right: 12.5mm;  /* w:right   707tw */
+  --content-h: 227mm; /* 297 − 35 − 35 */
+
+  /* --- decorative grid (frame + cover text + logos live on this, not the margins) --- */
+  --grid-l: 21.3mm;
+  --grid-r: 191.3mm;
+  --grid-w: 170mm;
+
+  /* --- colour --- */
+  --grey: #ADAFB6;        /* cover "Document type", frame, running head */
+  --grey-cover: #ACAFB6;  /* cover title / subtitle / prepared-by */
+  --grey-footer: #C0C2C5; /* footer copyright + page number */
+  --ink: #000000;
+  --link: #0054A6;        /* Link style */
+  --toc-sub: #333333;     /* TOC2 / TOC3 */
+
+  /* --- type --- */
+  --sans: 'Neue Haas Unica Pro', 'Neue Haas Unica', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --sans-med: 'Neue Haas Unica Pro Medium', 'Neue Haas Unica Pro', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --sans-light: 'Neue Haas Unica Pro Light', 'Neue Haas Unica Pro', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+@page { size: A4; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: var(--sans);
+  font-size: 10pt;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ==========================================================================
+   Page shell
+   ========================================================================== */
+
+.page {
+  position: relative;
+  width: var(--page-w);
+  height: var(--page-h);
+  overflow: hidden;
+  background: #fff;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* Full-bleed background layer — inset kills the hairline sliver some printers
+   leave at the trim edge. */
+.page__bg {
+  position: absolute;
+  inset: -3mm;
+  z-index: 0;
+}
+
+.page__content {
+  position: absolute;
+  top: var(--m-top);
+  left: var(--m-left);
+  width: calc(var(--page-w) - var(--m-left) - var(--m-right));
+  height: var(--content-h);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   Running header / footer  (header1.xml, footer1.xml)
+   ========================================================================== */
+
+.rhead__logo {
+  position: absolute;
+  left: var(--m-left);      /* wp:positionH margin +0     */
+  top: 12.5mm;              /* wp:positionV page  12.5mm  */
+  width: 23.5mm;            /* wp:extent 23.5 × 6.9mm     */
+  height: 6.9mm;
+  z-index: 3;
+}
+.rhead__logo svg { width: 100%; height: 100%; display: block; }
+
+.rhead__meta {
+  position: absolute;
+  right: calc(var(--page-w) - var(--grid-r)); /* box right edge 190mm */
+  top: 12.4mm;
+  font-size: 9pt;
+  line-height: 1;
+  color: var(--grey);
+  text-align: right;
+  z-index: 3;
+}
+
+.rfoot {
+  position: absolute;
+  left: var(--m-left);
+  right: calc(var(--page-w) - var(--grid-r));
+  bottom: 15.3mm;           /* text box top 279.2mm + baseline */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 9pt;
+  line-height: 1;
+  color: var(--grey-footer);
+  z-index: 3;
+}
+
+/* ==========================================================================
+   Cover  (page 1 of the .docx)
+   ========================================================================== */
+
+.cover__type {
+  position: absolute;
+  left: var(--grid-l);
+  top: 15.5mm;
+  font-size: 18pt;
+  line-height: 1.2;
+  color: var(--grey);
+}
+
+/* Decorative brand frame: 170mm square, 19.9mm from the page top,
+   centred in the margin box (rId9 / image2.png). */
+.cover__frame {
+  position: absolute;
+  left: var(--grid-l);
+  top: 19.9mm;
+  width: var(--grid-w);
+  height: var(--grid-w);
+}
+.cover__frame i { position: absolute; background: var(--grey); display: block; }
+.cover__frame .tr-h { top: 0; right: 0; width: 32%;   height: 10.2%; }
+.cover__frame .tr-v { top: 0; right: 0; width: 10.2%; height: 31%; }
+.cover__frame .bl-v { bottom: 0; left: 0; width: 10.2%; height: 32%; }
+.cover__frame .bl-h { bottom: 0; left: 0; width: 32%;   height: 10.2%; }
+
+/* Topic icon — page-centred, 62.5mm square (rId8 / image1.png placeholder gear).
+   Swap for any icon from the brand repo's assets/icons/. */
+.cover__icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 71mm;
+  width: 62.5mm;
+  height: 61.6mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover__icon svg { width: 100%; height: 100%; display: block; }
+.cover__icon svg * { fill: var(--grey) !important; }
+.cover__icon img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Bottom-anchored so a two-line title grows upward instead of colliding
+   with the subtitle. Single-line baseline matches the template's 200.8mm box. */
+.cover__title {
+  position: absolute;
+  left: var(--grid-l);
+  right: calc(var(--page-w) - var(--grid-r));
+  bottom: 81.4mm;
+  font-size: 40pt;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--grey-cover);
+}
+
+.cover__subtitle {
+  position: absolute;
+  left: var(--grid-l);
+  right: calc(var(--page-w) - var(--grid-r));
+  top: 219mm;
+  font-size: 24pt;
+  line-height: 1.15;
+  color: var(--grey-cover);
+}
+
+.cover__prepared {
+  position: absolute;
+  left: var(--grid-l);
+  top: 259mm;
+  font-size: 9pt;
+  line-height: 1.35;
+  color: var(--grey-cover);
+}
+
+.cover__logo {
+  position: absolute;
+  right: calc(var(--page-w) - var(--grid-r));
+  top: 263.7mm;
+  width: 46.2mm;
+  height: 13.8mm;
+}
+.cover__logo svg { width: 100%; height: 100%; display: block; }
+
+/* ==========================================================================
+   Disclaimer page — sits at the foot of the page (w:vAlign bottom)
+   ========================================================================== */
+
+.page--intro .page__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page--intro .TitleA { margin-top: 0; }
+.disclaimer {
+  font-size: 7pt;
+  line-height: 1.45;
+  text-align: justify;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Body styles — one CSS rule per Word style, same names
+   ========================================================================== */
+
+.Paragraph {
+  font-size: 10pt;
+  line-height: normal;      /* w:line 240 auto = single */
+  margin: 0 0 12pt 0;       /* w:after 240tw */
+}
+
+/* Title A — 17pt bold, 24pt before / 25pt after */
+.TitleA {
+  font-size: 17pt;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 24pt 0 25pt 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+/* Title B — Neue Haas Unica Pro Medium 12pt */
+.TitleB {
+  font-family: var(--sans-med);
+  font-size: 12pt;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 24pt 0 6pt 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+/* Title C — Medium 10pt */
+.TitleC {
+  font-family: var(--sans-med);
+  font-size: 10pt;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 24pt 0 6pt 0;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+/* Numbered variants — hanging number, indents from the NUM styles */
+.TitleANUM { padding-left: 6.2mm; text-indent: -6.2mm; }   /* w:ind left 352tw  */
+.TitleBNUM { padding-left: 7.2mm; text-indent: -7.2mm; }   /* w:ind left 409tw  */
+.TitleCNUM { padding-left: 10.0mm; text-indent: -10.0mm; } /* w:ind left 567tw  */
+.num { display: inline-block; min-width: 6.2mm; }
+.TitleBNUM .num { min-width: 7.2mm; }
+.TitleCNUM .num { min-width: 10.0mm; }
+
+/* Bullet list */
+.BulletlistLVL1,
+.BulletlistLVL2 {
+  font-size: 10pt;
+  line-height: normal;
+  margin: 0;
+  position: relative;
+}
+.BulletlistLVL1 { padding-left: 6.35mm; }   /* w:ind left 360tw */
+.BulletlistLVL2 { padding-left: 15.0mm; }   /* w:ind left 851tw, hanging 284tw */
+.BulletlistLVL1::before,
+.BulletlistLVL2::before {
+  position: absolute;
+  left: 0;
+  content: '\2022';                          /* Symbol bullet */
+}
+.BulletlistLVL2::before { left: 10.0mm; content: '\2013'; }
+/* last bullet in a run gets the paragraph gap back */
+.BulletlistLVL1.is-last,
+.BulletlistLVL2.is-last { margin-bottom: 12pt; }
+
+/* Numbered list */
+.NumberingLVL1,
+.NumberingLVL2 {
+  font-size: 10pt;
+  line-height: normal;
+  margin: 6pt 0;                             /* w:before/after 120tw */
+  position: relative;
+}
+.NumberingLVL1 { padding-left: 8.8mm; }      /* w:ind left 499tw, hanging 357tw */
+.NumberingLVL2 { padding-left: 12.3mm; }     /* w:ind left 697tw */
+.NumberingLVL1 > .num,
+.NumberingLVL2 > .num {
+  position: absolute;
+  left: 0;
+  min-width: 0;
+}
+.NumberingLVL2 > .num { left: 3.5mm; }
+
+/* Link — 8pt, brand blue */
+.Link {
+  font-size: 8pt;
+  color: var(--link);
+  line-height: normal;
+  margin: 0 0 12pt 0;
+  word-break: break-all;
+}
+.Link a { color: inherit; text-decoration: none; }
+
+/* Figures */
+.figure { margin: 0 0 6pt 0; }
+.figure img { display: block; max-width: 100%; height: auto; }
+.Imagesubtext {
+  font-size: 8pt;
+  line-height: normal;
+  margin: 0 0 12pt 0;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  line-height: 1.3;
+  margin: 0 0 12pt 0;
+}
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 2mm 3mm 2mm 0;
+  border-bottom: 0.25mm solid var(--ink);
+}
+.table th { font-weight: 700; }
+
+/* ==========================================================================
+   Table of contents
+   ========================================================================== */
+
+.TOC1, .TOC2, .TOC3 {
+  display: flex;
+  align-items: baseline;
+  margin: 0 0 5pt 0;         /* w:after 100tw */
+  padding-right: 5mm;        /* w:ind right 284tw */
+  line-height: 1.2;
+}
+.TOC1 { font-size: 10pt; font-weight: 700; }
+.TOC2 { font-size: 9pt; color: var(--toc-sub); padding-left: 7.2mm; }
+.TOC3 { font-family: var(--sans-light); font-size: 9pt; color: var(--toc-sub); padding-left: 14.4mm; }
+.toc__label { white-space: nowrap; }
+.toc__dots {
+  flex: 1;
+  margin: 0 1.5mm;
+  border-bottom: 0.2mm dotted currentColor;
+  transform: translateY(-0.6mm);
+  opacity: .55;
+}
+.toc__page { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* ==========================================================================
+   Back cover  (rId13 / image5.png, redrawn as vector)
+   ========================================================================== */
+
+.page--back .page__bg { background: var(--grey); }
+
+.back__headline {
+  position: absolute;
+  left: var(--grid-l);
+  top: 18mm;
+  font-size: 25pt;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Same 170mm square as the cover frame, drawn as open 1mm white rules */
+.back__frame {
+  position: absolute;
+  left: var(--grid-l);
+  top: 20mm;
+  width: var(--grid-w);
+  height: var(--grid-w);
+  z-index: 1;
+}
+.back__frame i { position: absolute; background: #fff; display: block; }
+.back__frame .tr-h { top: 0; right: 0; width: 36%; height: 1mm; }
+.back__frame .tr-v { top: 0; right: 0; width: 1mm; height: 36%; }
+.back__frame .bl-v { bottom: 0; left: 0; width: 1mm; height: 36%; }
+.back__frame .bl-h { bottom: 0; left: 0; width: 36%; height: 1mm; }
+
+.back__contact {
+  position: absolute;
+  left: var(--grid-l);
+  top: 258mm;
+  display: flex;
+  gap: 12mm;
+  font-size: 9pt;
+  line-height: 1.45;
+  color: #fff;
+  z-index: 2;
+}
+.back__contact strong { font-weight: 700; }
+
+.back__logo {
+  position: absolute;
+  right: calc(var(--page-w) - var(--grid-r));
+  top: 263.7mm;
+  width: 46.2mm;
+  height: 13.8mm;
+  z-index: 2;
+}
+.back__logo svg { width: 100%; height: 100%; display: block; }
+
+/* ==========================================================================
+   Paginator scratch space — never printed
+   ========================================================================== */
+
+#flow,
+#tocflow {
+  position: absolute;
+  left: -10000mm;
+  top: 0;
+  width: calc(var(--page-w) - var(--m-left) - var(--m-right));
+  visibility: hidden;
+}
+#flow.is-done,
+#tocflow.is-done { display: none; }
+
+.pagebreak { display: block; height: 0; }
+
+/* First block on a continuation page shouldn't carry its space-before */
+.page__content > .TitleA:first-child,
+.page__content > .TitleB:first-child,
+.page__content > .TitleC:first-child { margin-top: 0; }
+.is-continuation { text-indent: 0; }
+
+/* ---- captioned photo grid (service reports, evidence pages) ------------
+   Row density is chosen per row: a wide rack shot gets the full width, detail
+   shots read fine two or three up. Heights shrink as the row gets denser so a
+   page never carries more image than caption. */
+.figgrid{
+  display:flex; flex-wrap:wrap; gap:6mm 5mm;
+  margin:4mm 0 5mm;
+  page-break-inside:avoid; break-inside:avoid;
+}
+.figgrid__cell{ page-break-inside:avoid; break-inside:avoid; }
+.figgrid__cell .figure{ margin:0; }
+.figgrid__cell .figure img{ width:100%; display:block; object-fit:cover; }
+.figgrid__cell .Imagesubtext{ margin-top:1.5mm; }
+
+.figgrid--1 .figgrid__cell{ flex:1 1 100%; max-width:100%; }
+.figgrid--1 .figgrid__cell .figure img{ height:95mm; }
+
+.figgrid--2 .figgrid__cell{ flex:1 1 calc(50% - 2.5mm); max-width:calc(50% - 2.5mm); }
+.figgrid--2 .figgrid__cell .figure img{ height:58mm; }
+
+.figgrid--3 .figgrid__cell{ flex:1 1 calc(33.333% - 3.34mm); max-width:calc(33.333% - 3.34mm); }
+.figgrid--3 .figgrid__cell .figure img{ height:44mm; }
+
+.figgrid--4 .figgrid__cell{ flex:1 1 calc(25% - 3.75mm); max-width:calc(25% - 3.75mm); }
+.figgrid--4 .figgrid__cell .figure img{ height:34mm; }
+
+/* when cropping would cut the point out of the picture */
+.figgrid--contain .figgrid__cell .figure img{ object-fit:contain; background:#f4f4f5; }

@@ -1,0 +1,17 @@
+{
+  "name": "nevron-brand",
+  "owner": {
+    "name": "NevronNativeAI",
+    "url": "https://github.com/NevronNativeAI"
+  },
+  "metadata": {
+    "description": "Nevron's brand system for Claude Code: the brand agent, the house document and datasheet PDF generators, and the brand tokens, logos and icons they render with."
+  },
+  "plugins": [
+    {
+      "name": "nevron-brand",
+      "source": "./plugins/nevron-brand",
+      "description": "Nevron brand agent plus six skills that produce branded output: house documents, datasheets, service reports, client offers and abstract pitch decks."
+    }
+  ]
+}

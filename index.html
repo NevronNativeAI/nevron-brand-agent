@@ -1,1064 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nevron Brand Agent — Install & Update</title>
-
-  <link rel="stylesheet" href="tokens/nevron-tokens.css?v=addlist">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons/primeicons.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--nevron-font-family);
-      font-size: var(--nevron-font-size-body);
-      line-height: var(--nevron-line-height-body);
-      color: var(--nevron-color-s1);
-      background: var(--nevron-color-white);
-      padding-left: 260px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ================= TOC SIDEBAR ================= */
-    .toc {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 260px;
-      height: 100vh;
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-m5);
-      padding: var(--nevron-space-8) var(--nevron-space-6);
-      overflow-y: auto;
-      z-index: 100;
-      font-size: var(--nevron-font-size-body-sm);
-    }
-
-    .toc__header {
-      display: flex;
-      align-items: center;
-      gap: var(--nevron-space-3);
-      padding-bottom: var(--nevron-space-6);
-      margin-bottom: var(--nevron-space-6);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .toc__logo { height: 28px; width: auto; }
-
-    .toc__label {
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-      color: var(--nevron-color-white);
-    }
-
-    .toc__group { margin-bottom: var(--nevron-space-8); }
-
-    .toc__heading {
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--nevron-color-s4);
-      margin-bottom: var(--nevron-space-3);
-      padding-left: var(--nevron-space-3);
-    }
-
-    .toc__list { list-style: none; padding: 0; margin: 0; }
-
-    .toc__link {
-      display: block;
-      padding: var(--nevron-space-2) var(--nevron-space-3);
-      color: var(--nevron-color-m5);
-      text-decoration: none;
-      border-left: 2px solid transparent;
-      transition: background var(--nevron-transition-fast),
-                  color var(--nevron-transition-fast),
-                  border-color var(--nevron-transition-fast);
-    }
-
-    .toc__link:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--nevron-color-white);
-    }
-
-    .toc__link--active {
-      background: rgba(27, 146, 255, 0.12);
-      color: var(--nevron-color-white);
-      border-left-color: var(--nevron-color-m3);
-      font-weight: var(--nevron-font-weight-semibold);
-    }
-
-    @media (max-width: 960px) {
-      body { padding-left: 0; }
-      .toc {
-        position: static;
-        width: 100%;
-        height: auto;
-        padding: var(--nevron-space-5) var(--nevron-space-6);
-      }
-      .toc__header { padding-bottom: var(--nevron-space-4); margin-bottom: var(--nevron-space-4); }
-      .toc__group { margin-bottom: var(--nevron-space-4); }
-    }
-
-    .container {
-      width: 100%;
-      max-width: var(--nevron-max-width);
-      margin: 0 auto;
-      padding: 0 var(--nevron-space-6);
-    }
-
-    /* ================= HEADER ================= */
-    .header {
-      background: var(--nevron-gradient-dark);
-      color: var(--nevron-color-white);
-      padding: var(--nevron-space-16) 0 var(--nevron-space-12);
-      text-align: center;
-    }
-
-    .header__logo {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto var(--nevron-space-6);
-      display: block;
-    }
-
-    .header__title {
-      font-size: var(--nevron-font-size-display);
-      font-weight: var(--nevron-font-weight-bold);
-      line-height: var(--nevron-line-height-display);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-      margin: 0 0 var(--nevron-space-3) 0;
-    }
-
-    .header__subtitle {
-      font-size: var(--nevron-font-size-body-lg);
-      font-weight: var(--nevron-font-weight-regular);
-      line-height: var(--nevron-line-height-body-lg);
-      color: var(--nevron-color-m5);
-      max-width: var(--nevron-max-width-narrow);
-      margin: 0 auto;
-    }
-
-    /* ================= SECTION ================= */
-    section {
-      padding: var(--nevron-space-16) 0;
-    }
-
-    section + section {
-      border-top: 1px solid var(--nevron-color-s5);
-    }
-
-    .section__eyebrow {
-      display: block;
-      font-size: var(--nevron-font-size-caption);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--nevron-color-m3);
-      margin-bottom: var(--nevron-space-3);
-    }
-
-    .section__title {
-      font-size: var(--nevron-font-size-h1);
-      font-weight: var(--nevron-font-weight-light);
-      line-height: var(--nevron-line-height-heading);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-      margin-bottom: var(--nevron-space-4);
-      color: var(--nevron-color-m1);
-    }
-
-    .section__lead {
-      font-size: var(--nevron-font-size-body-lg);
-      color: var(--nevron-color-s2);
-      margin-bottom: var(--nevron-space-8);
-      max-width: 620px;
-    }
-
-    h3 {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      margin: var(--nevron-space-6) 0 var(--nevron-space-2);
-      color: var(--nevron-color-m1);
-    }
-
-    p { margin-bottom: var(--nevron-space-4); }
-
-    /* ================= STEPS ================= */
-    .steps {
-      list-style: none;
-      counter-reset: step;
-      margin: var(--nevron-space-8) 0;
-    }
-
-    .step {
-      counter-increment: step;
-      position: relative;
-      padding: var(--nevron-space-6) 0 var(--nevron-space-6) var(--nevron-space-12);
-      border-bottom: 1px solid var(--nevron-color-s5);
-    }
-
-    .step:last-child { border-bottom: none; }
-
-    .step::before {
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      top: var(--nevron-space-6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2rem;
-      height: 2rem;
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-      font-weight: var(--nevron-font-weight-semibold);
-      font-size: var(--nevron-font-size-body-sm);
-    }
-
-    .step__title {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      margin-bottom: var(--nevron-space-2);
-      color: var(--nevron-color-m1);
-    }
-
-    .step__body {
-      color: var(--nevron-color-s2);
-      margin-bottom: var(--nevron-space-3);
-    }
-
-    /* ================= CODE ================= */
-    pre {
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-m5);
-      padding: var(--nevron-space-5) var(--nevron-space-6);
-      overflow-x: auto;
-      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-      font-size: var(--nevron-font-size-body-sm);
-      line-height: 1.6;
-      margin: var(--nevron-space-4) 0;
-    }
-
-    code {
-      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-      font-size: 0.9em;
-      background: var(--nevron-color-s6);
-      padding: 0.15em 0.4em;
-      color: var(--nevron-color-m2);
-    }
-
-    pre code { background: transparent; padding: 0; color: inherit; }
-
-    /* ================= CALLOUT ================= */
-    .callout {
-      padding: var(--nevron-space-5) var(--nevron-space-6);
-      background: var(--nevron-color-m6);
-      border-left: 3px solid var(--nevron-color-m3);
-      margin: var(--nevron-space-6) 0;
-      color: var(--nevron-color-s1);
-    }
-
-    .callout strong { color: var(--nevron-color-m1); }
-
-    /* ================= CTA ================= */
-    .cta-block {
-      background: var(--nevron-gradient-dark);
-      color: var(--nevron-color-white);
-      padding: var(--nevron-space-10) var(--nevron-space-8);
-      text-align: center;
-      margin-top: var(--nevron-space-8);
-    }
-
-    .cta-block__title {
-      font-size: var(--nevron-font-size-h2);
-      font-weight: var(--nevron-font-weight-light);
-      margin-bottom: var(--nevron-space-3);
-      letter-spacing: var(--nevron-letter-spacing-tight);
-    }
-
-    .cta-block__text {
-      color: var(--nevron-color-m5);
-      margin-bottom: var(--nevron-space-6);
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--nevron-space-2);
-      min-height: 44px;
-      padding: 0.75rem 1.5rem;
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-      font-weight: var(--nevron-font-weight-semibold);
-      text-decoration: none;
-      font-size: var(--nevron-font-size-body);
-      transition: background var(--nevron-transition-fast),
-                  transform var(--nevron-transition-fast);
-    }
-
-    .btn:hover { background: var(--nevron-color-m2); transform: translateY(-1px); }
-    .btn .pi { transition: transform var(--nevron-transition-fast); }
-    .btn:hover .pi { transform: translateX(4px); }
-
-    /* ================= FOOTER ================= */
-    .footer {
-      padding: var(--nevron-space-10) 0;
-      text-align: center;
-      background: var(--nevron-color-s6);
-      color: var(--nevron-color-s3);
-      font-size: var(--nevron-font-size-body-sm);
-    }
-
-    .footer a {
-      color: var(--nevron-color-m3);
-      text-decoration: none;
-    }
-
-    .footer a:hover { text-decoration: underline; }
-
-    /* ================= INSTALL BAR ================= */
-    .install-bar {
-      margin-top: var(--nevron-space-8);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--nevron-space-4);
-    }
-
-    .install-bar__group {
-      display: flex;
-      gap: var(--nevron-space-2);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn-install {
-      background: var(--nevron-color-m3);
-      color: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-m3);
-      padding: var(--nevron-space-3) var(--nevron-space-6);
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-semibold);
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      transition: background var(--nevron-transition-fast),
-                  border-color var(--nevron-transition-fast),
-                  transform var(--nevron-transition-fast),
-                  box-shadow var(--nevron-transition-fast);
-      font-family: inherit;
-      min-height: 44px;
-      white-space: nowrap;
-    }
-
-    .btn-install:hover {
-      background: var(--nevron-color-m2);
-      border-color: var(--nevron-color-m2);
-      transform: translateY(-1px);
-      box-shadow: var(--nevron-shadow-md);
-    }
-
-    .btn-install:active { transform: translateY(0); }
-
-    .btn-install.success {
-      background: var(--nevron-color-green);
-      border-color: var(--nevron-color-green);
-    }
-
-    .btn-install.error {
-      background: var(--nevron-color-red);
-      border-color: var(--nevron-color-red);
-    }
-
-    .btn-preview {
-      background: transparent;
-      color: var(--nevron-color-m5);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: var(--nevron-space-3) var(--nevron-space-5);
-      font-size: var(--nevron-font-size-body-sm);
-      font-weight: var(--nevron-font-weight-medium);
-      cursor: pointer;
-      font-family: inherit;
-      transition: color var(--nevron-transition-fast),
-                  border-color var(--nevron-transition-fast),
-                  background var(--nevron-transition-fast);
-      min-height: 44px;
-    }
-
-    .btn-preview:hover {
-      color: var(--nevron-color-white);
-      border-color: var(--nevron-color-white);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    /* ================= MODAL ================= */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: color-mix(in srgb, var(--nevron-color-m1) 88%, transparent);
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 200;
-      padding: var(--nevron-space-5);
-    }
-
-    .modal-overlay.show { display: flex; }
-
-    .modal {
-      background: var(--nevron-color-white);
-      border: 1px solid var(--nevron-color-s5);
-      max-width: 820px;
-      width: 100%;
-      max-height: 85vh;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--nevron-shadow-xl);
-    }
-
-    .modal-header {
-      padding: var(--nevron-space-4) var(--nevron-space-6);
-      border-bottom: 1px solid var(--nevron-color-s5);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .modal-header h3 {
-      font-size: var(--nevron-font-size-h4);
-      font-weight: var(--nevron-font-weight-semibold);
-      margin: 0;
-      color: var(--nevron-color-m1);
-    }
-
-    .modal-close {
-      background: transparent;
-      border: none;
-      color: var(--nevron-color-s3);
-      font-size: 28px;
-      cursor: pointer;
-      padding: 0 var(--nevron-space-1);
-      font-weight: 300;
-      line-height: 1;
-      transition: color var(--nevron-transition-fast);
-    }
-
-    .modal-close:hover { color: var(--nevron-color-m1); }
-
-    .modal-body {
-      padding: var(--nevron-space-6);
-      overflow-y: auto;
-      flex: 1;
-    }
-
-    .modal-body > p {
-      color: var(--nevron-color-s2);
-      font-size: var(--nevron-font-size-body-sm);
-      margin: 0 0 var(--nevron-space-4) 0;
-    }
-
-    .modal pre {
-      background: var(--nevron-color-m1);
-      color: var(--nevron-color-m5);
-      padding: var(--nevron-space-5);
-      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-      font-size: var(--nevron-font-size-caption);
-      line-height: 1.6;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-word;
-      margin: 0;
-    }
-
-    .modal-footer {
-      padding: var(--nevron-space-4) var(--nevron-space-6);
-      border-top: 1px solid var(--nevron-color-s5);
-      display: flex;
-      justify-content: flex-end;
-      gap: var(--nevron-space-3);
-      flex-wrap: wrap;
-    }
-
-    .modal-footer .btn-preview {
-      color: var(--nevron-color-s2);
-      border-color: var(--nevron-color-s5);
-    }
-    .modal-footer .btn-preview:hover {
-      color: var(--nevron-color-m1);
-      border-color: var(--nevron-color-s3);
-      background: var(--nevron-color-s6);
-    }
-
-    /* ================= RESPONSIVE ================= */
-    @media (max-width: 640px) {
-      .header { padding: var(--nevron-space-10) 0 var(--nevron-space-8); }
-      .header__title { font-size: var(--nevron-font-size-h1); }
-      .section__title { font-size: var(--nevron-font-size-h2); }
-      .step { padding-left: var(--nevron-space-10); }
-      .install-bar { flex-direction: column; align-items: stretch; }
-      .install-bar__group { justify-content: center; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nevron Brand Agent — a Claude Code plugin</title>
+<meta name="description" content="A brand advisor for any Nevron work, plus six skills that build documents, datasheets, reports, offers and decks in the house style. Two commands to install.">
+<link rel="icon" href="plugins/nevron-brand/assets/logos/nevron-logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide/guide.css">
 </head>
 <body>
 
-  <aside class="toc" aria-label="Navigation">
-    <div class="toc__header">
-      <img class="toc__logo" src="nevron-logo-icon-white.svg" alt="">
-      <span class="toc__label">Brand Agent</span>
-    </div>
+<a class="skip" href="#main">Skip to content</a>
 
-    <nav class="toc__group" aria-label="Pages">
-      <div class="toc__heading">Pages</div>
-      <ul class="toc__list">
-        <li><a class="toc__link toc__link--active" href="index.html">Setup</a></li>
-        <li><a class="toc__link" href="brand-preview.html">Brand</a></li>
-      </ul>
+<div class="shell">
+
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <img src="plugins/nevron-brand/assets/logos/nevron-logo-icon-white.svg" alt="">
+      <b>Brand Agent<span>v2</span></b>
+    </a>
+
+    <p class="rail__label">Pages</p>
+    <nav class="rail__nav">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="outputs.html">What it makes</a>
+      <a href="brand-preview.html">Brand system</a>
     </nav>
 
-    <nav class="toc__group" aria-label="On this page">
-      <div class="toc__heading">On this page</div>
-      <ul class="toc__list">
-        <li><a class="toc__link" href="#what-is-this">What is this</a></li>
-        <li><a class="toc__link" href="#quick-start">Quick start</a></li>
-        <li><a class="toc__link" href="#auto-trigger">Auto-trigger</a></li>
-        <li><a class="toc__link" href="#updating">Updating</a></li>
-      </ul>
+    <p class="rail__label">On this page</p>
+    <nav class="rail__nav rail__toc" id="toc">
+      <a href="#advisor">The agent as advisor</a>
+      <a href="#skills">The six skills</a>
+      <a href="#run">How a build runs</a>
+      <a href="#requirements">Requirements</a>
+      <a href="#library">The asset library</a>
+      <a href="#trouble">If something breaks</a>
     </nav>
+
+    <p class="rail__meta">
+      Nevron d.o.o.<br>
+      <a href="https://github.com/NevronNativeAI/nevron-brand-agent">Source on GitHub</a>
+    </p>
   </aside>
 
-  <header class="header">
-    <div class="container">
-      <img class="header__logo" src="nevron-logo-icon-white.svg" alt="Nevron">
-      <h1 class="header__title">Nevron Brand Agent</h1>
-      <p class="header__subtitle">A Claude Code agent that enforces Nevron brand consistency.<br>Across web, presentations, documents, and print.</p>
+  <main class="main" id="main">
 
-      <div class="install-bar">
-        <div class="install-bar__group">
-          <button class="btn-install" id="install-btn" onclick="copyInstallPrompt()">Copy install prompt</button>
-          <button class="btn-preview" onclick="showInstallModal()">Preview</button>
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow"><i></i> A plugin for Claude Code</p>
+        <h1>Nevron files, built the way the house builds them.</h1>
+        <p class="hero__lede">An advisor on any Nevron work you are already building, and six
+          skills that produce the finished file — <b>no InDesign, no Word, no PowerPoint.</b></p>
+
+        <div class="hero__cta">
+          <div>
+            <p class="cta__label">Install — two commands</p>
+            <div class="cmd"><span>/plugin marketplace add NevronNativeAI/nevron-brand-agent</span><button type="button" data-copy>Copy</button></div>
+            <div class="cmd"><span>/plugin install nevron-brand</span><button type="button" data-copy>Copy</button></div>
+            <p class="cta__note">Restart Claude Code if the skills do not appear.</p>
+          </div>
+          <div>
+            <p class="cta__label">Update — one</p>
+            <div class="cmd"><span>/plugin update nevron-brand</span><button type="button" data-copy>Copy</button></div>
+            <p class="cta__note">For new bulk imagery, also run
+              <code>/plugin marketplace update nevron-brand</code>.</p>
+          </div>
         </div>
-        <div class="install-bar__group">
-          <button class="btn-install" id="update-btn" onclick="copyUpdatePrompt()">Copy update prompt</button>
-          <button class="btn-preview" onclick="showUpdateModal()">Preview</button>
+      </div>
+    </header>
+
+    <div class="wrap">
+
+      <section id="advisor">
+        <p class="sec__num">01 — The agent</p>
+        <h2>An advisor first, a file factory second</h2>
+        <p class="lede">Most of the time you are not asking for a PDF. You are part-way through
+          something — a web app, a landing page, a slide, a client document — and you want to know
+          whether it is on brand. Bring the agent into that work and it reviews what you already
+          have, in whatever you are building it in.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>It knows</th><th>So it can</th></tr></thead>
+            <tbody>
+              <tr><td>The palette and its token names</td><td>Tell you which blue, and what to call it in code</td></tr>
+              <tr><td>The type scale and the fallback chain</td><td>Catch a face that is not the house face</td></tr>
+              <tr><td>Logo variants and clear space</td><td>Pick the right lockup for the ground it sits on</td></tr>
+              <tr><td>The icon library</td><td>Verify an icon exists rather than invent a name</td></tr>
+              <tr><td>The frame rules, guidelines 2.4</td><td>Stop a frame being used as a border</td></tr>
+              <tr><td>Web, deck, document and print guidelines</td><td>Review against the guidelines, not against taste</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>It answers in your language — Slovenian if you write Slovenian — and it explains the
+          <i>why</i> behind a rule rather than citing it. Where it disagrees with you, it says so
+          and gives the reason.</p>
+
+        <h4>What it will not do</h4>
+        <ul>
+          <li><b>Invent a brand asset.</b> Missing icon or illustration? It says so.</li>
+          <li><b>Take assets from elsewhere on your disk.</b> Finding a file is not permission.</li>
+          <li><b>Generate imagery unprompted</b> — and never a real named property.</li>
+          <li><b>Round a corner.</b> Radius 0 is a hard rule.</li>
+          <li><b>Hide a gap.</b> What it cannot reproduce faithfully, it warns about.</li>
+        </ul>
+
+        <p><a class="more" href="brand-preview.html">The brand system it enforces →</a></p>
+      </section>
+
+      <section id="skills">
+        <p class="sec__num">02 — Skills</p>
+        <h2>Six skills, six kinds of file</h2>
+        <p class="lede">When you do want a finished file, these produce one. Every render below
+          came out of the skill it sits under, built from the example that ships with it. Type the
+          command, or just describe the thing you want.</p>
+
+        <!-- 1 -->
+        <div class="skill" id="presentation-abstract">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Abstract deck</h3>
+                <span class="tag tag--out">16:9 HTML + PDF</span>
+              </div>
+              <p class="skill__what">For when the point is an idea — a philosophy, a market
+                read, the case for a partnership. Dark slides, enormous light type, one thought
+                at a time.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:presentation-abstract</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>The argument — what the room should believe by the end</span></li>
+                <li><b>You get</b><span>A 16:9 HTML deck and a PDF, one idea per slide</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots">
+              <figure class="shot shot--dark">
+                <img src="assets/guide/presentation-abstract.png" width="1600" height="900" loading="lazy" alt="Dark slide with a blue glow and the huge headline Hospitality Forgets, a one-line subtitle, and a row of small labelled facts along a hairline rule.">
+                <figcaption>Opening statement</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="skill" id="nevron-document">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Full document</h3>
+                <span class="tag tag--out">A4 PDF</span>
+              </div>
+              <p class="skill__what">Reports, guides, specifications, proposals — anything that
+                wants a cover and a contents page. The house Word template, without Word.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:nevron-document</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>Content as Markdown, a title, a date, a topic icon</span></li>
+                <li><b>You get</b><span>Cover, disclaimer, auto-numbered contents, body, back cover</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots skill__shots--pair">
+              <figure class="shot">
+                <img src="assets/guide/nevron-document.png" width="1270" height="1797" loading="lazy" alt="Grey document cover: the brand frame in two corner brackets, a nine-square topic icon, and the title NevronCore Integration Guide.">
+                <figcaption>Cover</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="assets/guide/nevron-document-2.png" width="1270" height="1797" loading="lazy" alt="Table of contents page with dotted leaders, numbered sections and page numbers, under a running header.">
+                <figcaption>Contents</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="skill" id="nevron-document-nocover">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Short document</h3>
+                <span class="tag tag--out">A4 PDF</span>
+              </div>
+              <p class="skill__what">Same engine, no front matter. Letters, memos, meeting
+                notes, checklists — content from line one.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:nevron-document-nocover</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>The content, and who it is for</span></li>
+                <li><b>You get</b><span>Numbered sections under the running header, back cover</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots skill__shots--tall">
+              <figure class="shot">
+                <img src="assets/guide/nevron-document-nocover.png" width="1270" height="1797" loading="lazy" alt="Meeting notes page: numbered headings Attendees and scope and Open items, a bulleted list and a milestone table, no cover page.">
+                <figcaption>Page one</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="skill" id="datasheet">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Product datasheet</h3>
+                <span class="tag tag--out">A4 PDF</span>
+              </div>
+              <p class="skill__what">Spec sheets for set-top boxes, servers and remotes. The
+                InDesign house style, rebuilt in HTML.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:datasheet</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>Model, positioning line, specifications, product photography</span></li>
+                <li><b>You get</b><span>Hatched cover, dimensioned overview, ports band, spec tables</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots skill__shots--tall">
+              <figure class="shot">
+                <img src="assets/guide/datasheet.png" width="880" height="1244" loading="lazy" alt="Grey datasheet cover with a white line-hatch frame, the set-top box photographed centre, and the model name TL-4KBR.">
+                <figcaption>Cover</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="skill" id="service-report">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Service report</h3>
+                <span class="tag tag--out">A4 PDF</span>
+              </div>
+              <p class="skill__what">What an engineer leaves behind after a site visit — a fixed
+                skeleton, then captioned photographs.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:service-report</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>Customer, property, dates, what was done, site photographs</span></li>
+                <li><b>You get</b><span>Introduction to signature, then the attachments page</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots skill__shots--tall">
+              <figure class="shot">
+                <img src="assets/guide/service-report.png" width="1270" height="1797" loading="lazy" alt="Grey service report cover with the brand frame, a gear topic icon and the title Annual service report.">
+                <figcaption>Cover</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="skill" id="offer">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Client offer</h3>
+                <span class="tag tag--out">Web page + PDF</span>
+              </div>
+              <p class="skill__what">A priced <i>ponudba</i> as a page you send a hotel, with a
+                validity countdown and the pilot timeline.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:offer</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>The property, the modules, and which pricelist to use</span></li>
+                <li><b>You get</b><span>An upload-ready folder for <code>clients.nevron.co</code>, plus a PDF</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots">
+              <figure class="shot">
+                <img src="assets/guide/offer.png" width="1440" height="1000" loading="lazy" alt="Offer page hero on dark blue: a validity countdown bar, the pilot badge, a Slovenian headline, the property name and a blue call-to-action button.">
+                <figcaption>Hero and lead module</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <p><a class="more" href="outputs.html">What each skill takes and returns →</a></p>
+      </section>
+
+      <section id="run">
+        <p class="sec__num">03 — Workflow</p>
+        <h2>Three steps, every time</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <div>
+              <h3>You describe it, Claude writes the input</h3>
+              <p>A <code>data.json</code> lands in a working folder. Wrong number, wrong title?
+                Edit that file — rebuilding is instant.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div>
+              <h3>A plain Node script fills the house template</h3>
+              <p>Four builders serve all six skills. No dependencies, no
+                <code>npm install</code>.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div>
+              <h3>Chrome prints it</h3>
+              <p>To PDF, and to one PNG per page with <code>--png</code>. The HTML stays beside
+                the PDF, so a fix never means starting over.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="note">
+          <p class="note__title">Keep the <code>.json</code>.</p>
+          <p>Next quarter's version is a few edited values, not a new conversation.</p>
+        </div>
+      </section>
+
+      <section id="requirements">
+        <p class="sec__num">04 — Requirements</p>
+        <h2>Node and a browser. That is the list.</h2>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Needs</th><th>Why</th><th>If missing</th></tr></thead>
+            <tbody>
+              <tr><td><b>Node 18+</b></td><td>Every builder is a plain ESM script</td><td>Install Node</td></tr>
+              <tr><td><b>Chrome or Edge</b></td><td>Renders HTML to PDF and to page previews</td><td>Set <code>CHROME_PATH</code></td></tr>
+              <tr><td><b>Neue Haas Unica</b><br>optional</td><td>The house typeface</td><td>Falls back to Open Sans</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Environment variables — all optional</h4>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Variable</th><th>Does</th></tr></thead>
+            <tbody>
+              <tr><td><code>CHROME_PATH</code></td><td>Path to a specific Chrome or Edge binary</td></tr>
+              <tr><td><code>NEVRON_BRAND_LIBRARY</code></td><td>Path to the asset library clone</td></tr>
+              <tr><td><code>NEVRON_CHROME_ARGS</code></td><td>Extra Chrome flags, as a JSON array</td></tr>
+              <tr><td><code>NEVRON_FONT_DIR</code></td><td>Fonts to embed instead of the bundled ones</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="library">
+        <p class="sec__num">05 — Assets</p>
+        <h2>1.7&nbsp;MB in the plugin, the heavy material in the clone</h2>
+        <p>Claude Code caches every version of a plugin and never prunes it, so bulk imagery
+          stays in the marketplace clone — fetched once, shared by every version.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>In the plugin</th><th>In the clone</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Tokens, <code>BRAND.md</code>, 7 logo variants, 128 icons, 19 cover frames,
+                  the skills themselves</td>
+                <td>Product screenshots, illustrations, photography and the guideline PDFs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Resolved automatically. To point at a clone somewhere else:</p>
+        <pre><code>setx NEVRON_BRAND_LIBRARY "C:\path\to\nevron-brand-agent"</code></pre>
+      </section>
+
+      <section id="trouble">
+        <p class="sec__num">06 — Troubleshooting</p>
+        <h2>If something breaks</h2>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Symptom</th><th>Fix</th></tr></thead>
+            <tbody>
+              <tr><td>Skills appear twice, bare and namespaced</td><td>Left over from the old copy-install — run the migration script below</td></tr>
+              <tr><td><code>Chrome not found. Set CHROME_PATH.</code></td><td>Point <code>CHROME_PATH</code> at the binary</td></tr>
+              <tr><td>A build stops on a missing asset</td><td>Set <code>NEVRON_BRAND_LIBRARY</code></td></tr>
+              <tr><td>Type looks wider and looser than expected</td><td>Expected — Open Sans is standing in for Neue Haas Unica</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Coming from the old hand-install</h4>
+        <p>Dry run first — it lists what it would remove and touches nothing else:</p>
+        <div class="cmd"><span>powershell -ExecutionPolicy Bypass -File scripts\migrate-from-hand-install.ps1</span><button type="button" data-copy>Copy</button></div>
+        <div class="cmd"><span>powershell -ExecutionPolicy Bypass -File scripts\migrate-from-hand-install.ps1 -Apply</span><button type="button" data-copy>Copy</button></div>
+
+        <div class="note note--warn">
+          <p class="note__title">Brand items only</p>
+          <p>The nevron.co website skills (<code>nevron-copy</code>, <code>nevron-post</code>,
+            <code>nevron-publish</code>, <code>nevron-seo</code>) and the <code>nevron-site</code>
+            agent are never touched.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="foot">
+      <div class="foot__inner">
+        <div>
+          <p class="foot__slogan">Let there be content.</p>
+          <p>Nevron d.o.o. — brand system for Claude Code.</p>
+        </div>
+        <div>
+          <p><a href="https://github.com/NevronNativeAI/nevron-brand-agent">github.com/NevronNativeAI/nevron-brand-agent</a></p>
+          <p>Brand Agent v2</p>
         </div>
       </div>
-    </div>
-  </header>
+    </footer>
 
-  <!-- WHAT IS THIS -->
-  <section id="what-is-this">
-    <div class="container">
-      <span class="section__eyebrow">01 — What is this</span>
-      <h2 class="section__title">A brand specialist, on demand</h2>
-      <p class="section__lead">The nevron-brand agent plugs into Claude Code and enforces Nevron's brand system — colors, typography, logos, spacing, gradients — anywhere you're building or reviewing Nevron-branded work.</p>
+  </main>
+</div>
 
-      <p>It knows the full brand spec (colors, typography, gradients, corner radius rules, logo variants, PrimeIcons), has access to every brand asset in this repository, and applies the rules automatically instead of you having to remember them.</p>
-
-      <div class="callout">
-        <strong>Scope:</strong> Nevron-branded work only — NevronCore, company site, client pitches, internal docs. Not for non-Nevron projects or unrelated brands.
-      </div>
-    </div>
-  </section>
-
-  <!-- QUICK START -->
-  <section id="quick-start">
-    <div class="container">
-      <span class="section__eyebrow">02 — Quick start</span>
-      <h2 class="section__title">Install in under a minute</h2>
-
-      <p style="margin-bottom: var(--nevron-space-6); color: var(--nevron-color-s2);">Fastest path: use <strong>Copy install prompt</strong> at the top of this page and paste it into a fresh Claude Code session — Claude handles all of the below. Prefer to do it manually? Follow the steps.</p>
-
-      <ol class="steps">
-        <li class="step">
-          <h3 class="step__title">Clone the repo into the cache location</h3>
-          <p class="step__body">Full brand repo lives here: agent, BRAND spec, tokens, assets. Claude Code's agent Read/Grep into this folder on demand.</p>
-<pre><code>mkdir -p ~/.claude/mcp-servers
-cd ~/.claude/mcp-servers
-git clone https://github.com/kajasajn/nevron-brand-agent.git</code></pre>
-        </li>
-
-        <li class="step">
-          <h3 class="step__title">Install the agent file (symlink on Unix, copy on Windows)</h3>
-          <p class="step__body">Claude Code looks for user-installed agents in <code>~/.claude/agents/</code>. Unix supports symlinking (auto-updates on git pull). Windows without Developer Mode needs a real copy — which means re-running a copy step on every update.</p>
-<pre><code>mkdir -p ~/.claude/agents
-
-# Detect platform
-case "$(uname -s)" in
-  MINGW*|MSYS*|CYGWIN*)   PLAT=windows ;;
-  *)                      PLAT=unix ;;
-esac
-
-if [ "$PLAT" = "windows" ]; then
-  cp ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-else
-  ln -s ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-fi</code></pre>
-        </li>
-
-        <li class="step">
-          <h3 class="step__title">Set BRAND_REPO to your machine's cache path</h3>
-          <p class="step__body">The agent ships with the author's dev path hardcoded. Override it so Discovery never has to run on first use.</p>
-<pre><code>TARGET="$HOME/.claude/mcp-servers/nevron-brand-agent"
-
-if [ "$PLAT" = "windows" ]; then
-  sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/agents/nevron-brand.md
-  rm -f ~/.claude/agents/nevron-brand.md.bak
-else
-  sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md
-  rm -f ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md.bak
-  git -C ~/.claude/mcp-servers/nevron-brand-agent update-index --assume-unchanged agent/nevron-brand.md
-fi</code></pre>
-        </li>
-
-        <li class="step">
-          <h3 class="step__title">Restart Claude Code</h3>
-          <p class="step__body">Close and reopen Claude Code, or start a new session. The agent loads with the correct tool list (Read, Write, Edit, Grep, Glob).</p>
-        </li>
-
-        <li class="step">
-          <h3 class="step__title">Verify</h3>
-          <p class="step__body">Try asking Claude:</p>
-          <div class="callout">"Use the nevron-brand agent to return the M3 brand blue hex."</div>
-          <p class="step__body">Expected answer: <code>#1B92FF</code>. If the agent isn't found, double-check the symlink or copy at <code>~/.claude/agents/nevron-brand.md</code>.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- AUTO-TRIGGER -->
-  <section id="auto-trigger">
-    <div class="container">
-      <span class="section__eyebrow">03 — Auto-trigger</span>
-      <h2 class="section__title">Make it call itself</h2>
-      <p class="section__lead">By default you invoke the agent by name. To have Claude call it automatically on any Nevron-branded task, paste this prompt into Claude Code once:</p>
-
-<pre><code>Add the nevron-brand agent to my CLAUDE.md so it auto-triggers for any Nevron brand tasks.
-
-Ask me which projects I want to add it to — show me a multiple selection list of my projects that have a CLAUDE.md file. Also give me the option to add it globally to ~/.claude/CLAUDE.md.
-
-Add it to the agents table (or create one if it doesn't exist) with this row:
-| **nevron-brand** | Nevron brand colors, typography, logo usage, spacing, brand guidelines, any Nevron-branded design decisions | User asks about Nevron brand, or is building/reviewing anything Nevron-branded |
-
-Also add this to the agent decision flow (or create one): "Nevron brand question / building Nevron UI? → nevron-brand"</code></pre>
-
-      <p>Claude will ask which projects to configure, then handle the rest.</p>
-
-      <h3>What changes after auto-trigger is set up</h3>
-      <ul style="padding-left: 1.25rem; margin: var(--nevron-space-3) 0; color: var(--nevron-color-s2);">
-        <li style="margin-bottom: 0.5rem;">Ask about Nevron colors / fonts / guidelines → agent called automatically</li>
-        <li style="margin-bottom: 0.5rem;">Build any Nevron-branded component → agent called first</li>
-        <li style="margin-bottom: 0.5rem;">Review a design for brand consistency → agent consulted</li>
-        <li style="margin-bottom: 0.5rem;">Tokens, logos, typography used correctly without you specifying</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- UPDATING -->
-  <section id="updating">
-    <div class="container">
-      <span class="section__eyebrow">04 — Updating</span>
-      <h2 class="section__title">Pulling in new brand changes</h2>
-      <p class="section__lead">Fastest path: <strong>Copy update prompt</strong> at the top of this page and paste into Claude Code — it handles fetch, diff preview, backup, pull, and (on Windows) the re-copy. Prefer manual? Follow these steps.</p>
-
-<pre><code>cd ~/.claude/mcp-servers/nevron-brand-agent
-
-# Preview what's new
-git fetch origin
-git log --oneline HEAD..origin/master
-git diff HEAD..origin/master --name-status | grep -E "^(A|R|D)"   # added / renamed / deleted
-git diff HEAD..origin/master -- agent/nevron-brand.md              # agent file changes
-
-# Backup current agent file before pulling
-TS=$(date +%Y%m%d-%H%M%S)
-cp -L ~/.claude/agents/nevron-brand.md ~/.claude/agents/nevron-brand.md.bak-$TS
-
-# Pull
-git pull origin master
-
-# On Windows, re-copy + re-apply BRAND_REPO (symlink users can skip this)
-if [ ! -L ~/.claude/agents/nevron-brand.md ]; then
-  TARGET="$HOME/.claude/mcp-servers/nevron-brand-agent"
-  cp ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-  sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/agents/nevron-brand.md
-  rm -f ~/.claude/agents/nevron-brand.md.bak
-fi</code></pre>
-
-      <p>Restart Claude Code to reload the agent with the new tools list or instructions.</p>
-
-      <div class="callout">
-        <strong>Why the re-copy step:</strong> On Unix the installed agent is a symlink, so <code>git pull</code> updates it automatically. On Windows without Developer Mode it's a regular file, so you have to <code>cp</code> it again after every pull.
-      </div>
-    </div>
-  </section>
-
-  <!-- LINK TO BRAND SPEC -->
-  <section>
-    <div class="container">
-      <div class="cta-block">
-        <h2 class="cta-block__title">See the brand in action</h2>
-        <p class="cta-block__text">The brand presentation page shows every color, gradient, type style, and component example live — a visual reference for anyone touching Nevron work.</p>
-        <a href="brand-preview.html" class="btn">
-          Open brand presentation
-          <i class="pi pi-arrow-right" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>
-        <a href="https://github.com/kajasajn/nevron-brand-agent">github.com/kajasajn/nevron-brand-agent</a>
-      </p>
-    </div>
-  </footer>
-
-  <!-- INSTALL MODAL -->
-  <div class="modal-overlay" id="installModal" onclick="if(event.target===this)hideInstallModal()">
-    <div class="modal">
-      <div class="modal-header">
-        <h3>Install prompt</h3>
-        <button class="modal-close" onclick="hideInstallModal()" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Copy this into a fresh Claude Code session. Claude will clone the brand repo into <code>~/.claude/mcp-servers/nevron-brand-agent/</code>, symlink the agent file into <code>~/.claude/agents/</code>, and pause for confirmation at every step.</p>
-        <pre id="install-prompt-text"></pre>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-preview" onclick="hideInstallModal()">Close</button>
-        <button class="btn-install" onclick="copyInstallPrompt(); hideInstallModal();">Copy to clipboard</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- UPDATE MODAL -->
-  <div class="modal-overlay" id="updateModal" onclick="if(event.target===this)hideUpdateModal()">
-    <div class="modal">
-      <div class="modal-header">
-        <h3>Update prompt</h3>
-        <button class="modal-close" onclick="hideUpdateModal()" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Paste into a Claude Code session on a machine that already has the agent installed. Claude will git-pull the cached clone, show you the diff for the agent file, back up your current version, and confirm before updating.</p>
-        <pre id="update-prompt-text"></pre>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-preview" onclick="hideUpdateModal()">Close</button>
-        <button class="btn-install" onclick="copyUpdatePrompt(); hideUpdateModal();">Copy to clipboard</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const INSTALL_PROMPT = `I want to install the Nevron Brand Agent on this machine.
-
-The Nevron Brand Agent is a Claude Code agent that enforces Nevron brand consistency across web, presentations, documents, and print. The source repo is at https://github.com/kajasajn/nevron-brand-agent (public).
-
-Follow these steps. CONFIRM WITH ME at every key decision point. Do not guess paths or proceed silently.
-
-== STEP 1: PRE-FLIGHT CHECKS ==
-
-Verify this machine is ready. For each, report ok or not found:
-  - Claude Code is installed (~/.claude/ exists)
-  - git is on PATH
-  - Target parent directory ~/.claude/mcp-servers/ exists or can be created
-  - ~/.claude/agents/ exists or can be created
-
-If any prerequisite is missing, stop and tell me how to fix it, then wait.
-
-== STEP 2: CLONE the brand repo to the cache location ==
-
-Ask me: "Ready to clone the Nevron Brand Agent repo to ~/.claude/mcp-servers/nevron-brand-agent/?" Wait for confirmation.
-
-Then:
-    mkdir -p ~/.claude/mcp-servers
-    cd ~/.claude/mcp-servers
-
-Check if it already exists:
-    if [ -d nevron-brand-agent ]; then
-      echo "ERROR: ~/.claude/mcp-servers/nevron-brand-agent already exists."
-      echo "To update, run the UPDATE prompt. To reinstall, first: rm -rf ~/.claude/mcp-servers/nevron-brand-agent"
-      exit 1
-    fi
-
-Then clone:
-    git clone https://github.com/kajasajn/nevron-brand-agent.git
-
-Show me what was cloned:
-    ls ~/.claude/mcp-servers/nevron-brand-agent/
-
-Expect: agent/, BRAND.md, README.md, tokens/, assets/, examples/, index.html, brand-preview.html.
-
-== STEP 3: INSTALL the agent file (symlink on Unix, copy on Windows) ==
-
-Detect the shell environment. On real symlink support (macOS, Linux, WSL) we'll use ln -s so future git-pull updates flow through automatically. On Windows without Developer Mode (Git Bash / MSYS / Cygwin) ln -s silently creates a copy anyway, so we'll skip it and do an explicit cp that the user has to re-run on update.
-
-Run and report the detected platform:
-    case "$(uname -s)" in
-      MINGW*|MSYS*|CYGWIN*)   PLAT=windows ;;
-      Linux*|Darwin*|*BSD*)   PLAT=unix ;;
-      *)                      PLAT=unknown ;;
-    esac
-    echo "Detected platform: $PLAT"
-
-Ask me: "Ready to install the agent file into ~/.claude/agents/nevron-brand.md? ($PLAT detected)" Wait for confirmation.
-
-Guard against overwriting an existing install:
-    if [ -e ~/.claude/agents/nevron-brand.md ]; then
-      echo "ERROR: ~/.claude/agents/nevron-brand.md already exists."
-      echo "Either delete it first: rm ~/.claude/agents/nevron-brand.md"
-      echo "Or run the UPDATE prompt instead."
-      exit 1
-    fi
-    mkdir -p ~/.claude/agents
-
-Then install based on platform:
-    if [ "$PLAT" = "windows" ]; then
-      cp ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-      echo "[Windows] Copied agent file. Future updates: use the UPDATE prompt to re-copy after git pull."
-    else
-      ln -s ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-      echo "[Unix] Symlinked agent file. Future updates flow through automatically on git pull."
-    fi
-
-Verify:
-    ls -la ~/.claude/agents/nevron-brand.md
-
-If the output starts with "l" it's a symlink (Unix). If it starts with "-" it's a regular file copy (Windows).
-
-== STEP 4: SET BRAND_REPO (silent, no prompt) ==
-
-The agent file's source ships with a hardcoded BRAND_REPO pointing at the author's dev machine. It needs to be overridden to point at THIS machine's cache. Do this silently — do NOT ask the user to choose. The default behavior below is always correct.
-
-Compute the target path:
-    TARGET="$HOME/.claude/mcp-servers/nevron-brand-agent"
-
-Then apply based on install type:
-
-    if [ "$PLAT" = "windows" ]; then
-      # Copy install — edit only the installed file, cache stays clean.
-      # Every UPDATE re-runs this step, which is fine.
-      sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/agents/nevron-brand.md
-      rm -f ~/.claude/agents/nevron-brand.md.bak
-    else
-      # Symlink install — the installed file IS the cache file.
-      # Edit the cache, mark assume-unchanged so git pull doesn't freak out about the local edit.
-      sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md
-      rm -f ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md.bak
-      git -C ~/.claude/mcp-servers/nevron-brand-agent update-index --assume-unchanged agent/nevron-brand.md
-    fi
-
-Verify silently:
-    grep "^BRAND_REPO:" ~/.claude/agents/nevron-brand.md
-
-Expected output: BRAND_REPO: /Users/<name>/.claude/mcp-servers/nevron-brand-agent (or Windows equivalent).
-
-Do NOT summarize this step back to the user or ask them anything about BRAND_REPO. Treat it like setting a file permission — just a mechanical post-install step.
-
-== STEP 5: RESTART and VERIFY ==
-
-Tell me: "Restart Claude Code now so the agent is loaded with the correct tools list."
-
-After restart, in a fresh session, ask me to test:
-  "Use the nevron-brand agent to return the M3 brand blue hex."
-
-Expected answer: #1B92FF.
-
-If the agent is not found, check ~/.claude/agents/nevron-brand.md exists and the symlink resolves.
-
-== STEP 6: HANDOVER ==
-
-Print:
-    "Install complete.
-
-     Installed:
-       - Cache repo:  ~/.claude/mcp-servers/nevron-brand-agent/
-       - Agent file:  ~/.claude/agents/nevron-brand.md (symlink -> cache)
-
-     Usage:
-       Invoke via Claude Code: 'Use the nevron-brand agent to ...'
-       The agent reads BRAND.md, tokens, and assets from the cache on demand.
-
-     Updating:
-       Use the 'Copy update prompt' button at https://kajasajn.github.io/nevron-brand-agent/
-
-     Brand reference page:
-       https://kajasajn.github.io/nevron-brand-agent/brand-preview.html"
-
-Start with step 1.`;
-
-    const UPDATE_PROMPT = `I want to update the Nevron Brand Agent on this machine.
-
-This machine already has the agent installed. The cached repo is at ~/.claude/mcp-servers/nevron-brand-agent/. The agent file at ~/.claude/agents/nevron-brand.md is a symlink into that cache.
-
-Follow these steps. CONFIRM before each git or filesystem action.
-
-== STEP 1: VERIFY INSTALL + DETECT INSTALL TYPE ==
-
-Check the expected layout exists:
-    ls -la ~/.claude/agents/nevron-brand.md           (should exist — symlink on Unix, regular file on Windows)
-    ls ~/.claude/mcp-servers/nevron-brand-agent/      (should contain agent/, BRAND.md, tokens/, etc.)
-
-If either is missing, STOP. Tell me: "No install detected. Run the INSTALL prompt first."
-
-Detect install type for use in Step 5:
-    if [ -L ~/.claude/agents/nevron-brand.md ]; then
-      INSTALL_TYPE=symlink
-    elif [ -f ~/.claude/agents/nevron-brand.md ]; then
-      INSTALL_TYPE=copy
-    fi
-    echo "Install type: $INSTALL_TYPE"
-
-== STEP 2: FETCH REMOTE CHANGES ==
-
-Fetch without merging so we can preview the diff first:
-    cd ~/.claude/mcp-servers/nevron-brand-agent
-    git fetch origin
-
-Show incoming commits:
-    git log --oneline HEAD..origin/master
-
-If the output is empty ("no new commits"), STOP. Tell me: "Already up to date with remote."
-
-== STEP 3: PREVIEW THE DIFF ==
-
-Show me exactly what will change in the agent file:
-    git diff HEAD..origin/master -- agent/nevron-brand.md
-
-List added / renamed / deleted files explicitly (easy to miss in a long stat):
-    git diff HEAD..origin/master --name-status | grep -E "^(A|R|D)" || echo "(no added/renamed/deleted files — existing files only)"
-
-Also the overall change summary across the whole repo:
-    git diff HEAD..origin/master --stat
-
-Ask me: "Review the changes. Proceed with the update?" Wait for my explicit confirmation.
-
-== STEP 4: BACK UP THE CURRENT AGENT FILE ==
-
-Before pulling, create a timestamped backup of the current agent file content (follow symlink with -L so we copy the target file, not the symlink):
-    TS=$(date +%Y%m%d-%H%M%S)
-    cp -L ~/.claude/agents/nevron-brand.md ~/.claude/agents/nevron-brand.md.bak-$TS
-
-Confirm backup exists:
-    ls -la ~/.claude/agents/nevron-brand.md.bak-$TS
-
-Tell me the backup path.
-
-== STEP 5: PULL ==
-
-Ask me once more: "Backup created. Proceed with git pull origin master?" Wait for confirmation.
-
-Then:
-    cd ~/.claude/mcp-servers/nevron-brand-agent
-    git pull origin master
-
-If the pull fails with a merge conflict on agent/nevron-brand.md, likely the agent self-updated the BRAND_REPO line during Discovery on a previous session. Resolve by:
-    git checkout -- agent/nevron-brand.md
-    git pull origin master
-
-== STEP 5b: REFRESH INSTALLED AGENT + RE-APPLY BRAND_REPO ==
-
-If INSTALL_TYPE=symlink (Unix), the updated content is already live. The assume-unchanged flag from install keeps git happy with our local BRAND_REPO edit. Nothing more to do.
-
-If INSTALL_TYPE=copy (Windows), re-copy and re-apply BRAND_REPO silently:
-
-    TARGET="$HOME/.claude/mcp-servers/nevron-brand-agent"
-    if [ "$INSTALL_TYPE" = "copy" ]; then
-      cp ~/.claude/mcp-servers/nevron-brand-agent/agent/nevron-brand.md ~/.claude/agents/nevron-brand.md
-      sed -i.bak "s|^BRAND_REPO:.*|BRAND_REPO: $TARGET|" ~/.claude/agents/nevron-brand.md
-      rm -f ~/.claude/agents/nevron-brand.md.bak
-    fi
-
-Verify silently:
-    grep "^BRAND_REPO:" ~/.claude/agents/nevron-brand.md
-
-Do NOT ask the user about BRAND_REPO. This is a mechanical refresh step.
-
-== STEP 6: HANDOVER ==
-
-Print:
-    "Update complete.
-
-     Backup: ~/.claude/agents/nevron-brand.md.bak-$TS
-     (Delete this once you've confirmed the new version works:
-        rm ~/.claude/agents/nevron-brand.md.bak-$TS)
-
-     Restart Claude Code to reload the agent with the latest instructions.
-
-     To inspect recent changes to brand files:
-       cd ~/.claude/mcp-servers/nevron-brand-agent
-       git log --oneline HEAD~10..HEAD"
-
-Start with step 1.`;
-
-    async function copyToClipboard(text, btnId) {
-      const btn = document.getElementById(btnId);
-      const original = btn.textContent;
-      try {
-        await navigator.clipboard.writeText(text);
-        btn.textContent = 'Copied';
-        btn.classList.add('success');
-      } catch {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        try {
-          document.execCommand('copy');
-          btn.textContent = 'Copied';
-          btn.classList.add('success');
-        } catch {
-          btn.textContent = 'Copy failed';
-          btn.classList.add('error');
-        }
-        document.body.removeChild(ta);
-      }
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('success', 'error');
-      }, 2500);
-    }
-
-    function copyInstallPrompt() { copyToClipboard(INSTALL_PROMPT, 'install-btn'); }
-    function copyUpdatePrompt()  { copyToClipboard(UPDATE_PROMPT,  'update-btn');  }
-
-    function showInstallModal() {
-      document.getElementById('install-prompt-text').textContent = INSTALL_PROMPT;
-      document.getElementById('installModal').classList.add('show');
-    }
-    function hideInstallModal() {
-      document.getElementById('installModal').classList.remove('show');
-    }
-
-    function showUpdateModal() {
-      document.getElementById('update-prompt-text').textContent = UPDATE_PROMPT;
-      document.getElementById('updateModal').classList.add('show');
-    }
-    function hideUpdateModal() {
-      document.getElementById('updateModal').classList.remove('show');
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      const im = document.getElementById('installModal');
-      const um = document.getElementById('updateModal');
-      if (im.classList.contains('show')) hideInstallModal();
-      if (um.classList.contains('show')) hideUpdateModal();
-    });
-  </script>
-
+<script src="assets/guide/guide.js"></script>
 </body>
 </html>

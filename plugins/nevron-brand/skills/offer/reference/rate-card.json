@@ -1,0 +1,137 @@
+{
+  "_comment": "Vendored snapshot of the NevronCore rate card. The LIVE source is the SaaS site pricing page - read that when it is reachable and use this only as a dated fallback. Never quote from this file without telling the reader how old it is.",
+  "source": "J:/Produkcija/HišnaProdukcija-TrzenjskiMateriali/2026-SaaS-Website/pricing.html",
+  "sourceCommit": "Rebuild pricing on the five-tier card, with a working estimator",
+  "capturedFrom": "2026-09-10",
+  "currency": "EUR",
+
+  "definitions": {
+    "TP": "A guest touchpoint: one unique guest device per day.",
+    "hostDevice": "A screen you own - an in-room TV, a tablet, a kiosk, a signage display.",
+    "worked": "A room with a TV costs EUR 1.00 infrastructure plus EUR 0.10 x 30 for the screen, which is the EUR 4.00 per room per month an IPTV setup starts from."
+  },
+
+  "monthly": {
+    "minimum": {
+      "amount": 120,
+      "note": "The EUR 120 monthly minimum applies to the whole bill, not to any single line. Below it you pay EUR 120; above it you pay what you use."
+    },
+    "groups": [
+      {
+        "name": "Infrastructure",
+        "billing": "monthly",
+        "items": [
+          {
+            "key": "capacity",
+            "label": "Capacity",
+            "detail": "Whichever of the two is higher. This is the fixed part, and it is what reserves capacity for your property.",
+            "rate": 0.50,
+            "unit": "mo/bed",
+            "alternate": { "rate": 1.00, "unit": "mo/room" },
+            "rule": "higherOf"
+          }
+        ]
+      },
+      {
+        "name": "Guest Experience",
+        "billing": "daily",
+        "items": [
+          { "key": "guestDevices",   "label": "Guest devices",   "rate": 0.10, "unit": "day/TP" },
+          { "key": "hostDevices",    "label": "Host devices",    "detail": "In-room TVs, tablets, kiosks", "rate": 0.10, "unit": "day/device" },
+          { "key": "digitalSignage", "label": "Digital Signage", "rate": 0.10, "unit": "day/device" }
+        ]
+      },
+      {
+        "name": "AI Intelligence",
+        "billing": "daily",
+        "footnote": "AI Intelligence is a premium layer on top of Guest Experience, not a replacement for it. At launch it carries the AI ChatBot. Guest-device AI is billed on guests who opened the app at least once, estimated up front and trued up month to month.",
+        "items": [
+          { "key": "aiGuest", "label": "AI on guest devices", "rate": 0.06, "unit": "day/TP" },
+          { "key": "aiHost",  "label": "AI on host devices",  "rate": 0.06, "unit": "day/device" }
+        ]
+      },
+      {
+        "name": "Staff Operations",
+        "billing": "daily",
+        "items": [
+          { "key": "staffBasic",   "label": "Staff Basic",   "rate": 2.00, "unit": "day/staff" },
+          { "key": "staffPremium", "label": "Staff Premium", "rate": 3.00, "unit": "day/staff" }
+        ]
+      },
+      {
+        "name": "Upsell",
+        "items": [
+          { "key": "ordersReservations", "label": "Orders & Reservations", "rate": 0.03, "unit": "percentOfSales", "display": "3% of sales" }
+        ]
+      },
+      {
+        "name": "Extras",
+        "billing": "priced separately",
+        "items": [
+          { "key": "pmsIntegration", "label": "PMS integration", "display": "quoted per system",   "quoted": true },
+          { "key": "entertainment",  "label": "Entertainment", "detail": "Mobile and TV", "display": "quoted per property", "quoted": true },
+          { "key": "premiumSupport", "label": "Premium Tech Support", "display": "EUR 80 base + EUR 0.30/TP", "base": 80, "rate": 0.30, "unit": "TP" }
+        ]
+      }
+    ]
+  },
+
+  "oneTime": {
+    "note": "Modules are activated individually, so you only pay for the ones you switch on. Hours are indicative and the exact scope is confirmed in writing before work starts. Hotel hours are your team's time, not a charge.",
+    "groups": [
+      {
+        "name": "Implementation modules",
+        "items": [
+          { "key": "platformActivation",   "label": "NevronCore platform activation", "cost": 1250, "hoursNevron": 15 },
+          { "key": "platformPms",          "label": "Platform activation + PMS integration", "detail": "Clock, Opera or equivalent", "cost": 1740, "hoursNevron": 20, "hoursHotel": 5 },
+          { "key": "aiMemory",             "label": "Nevron AI Memory: central AI context", "detail": "Audit and extraction of existing content, brand voice, escalation rules, API exposure", "cost": 3400, "hoursNevron": 40, "hoursHotel": 20 },
+          { "key": "aiChatbot",            "label": "Nevron AI ChatBot: context and analytics", "cost": 1030, "hoursNevron": 12, "hoursHotel": 10 },
+          { "key": "aiChatbotEmbedded",    "label": "AI ChatBot embedded in your existing web app", "cost": 1330, "hoursNevron": 16, "hoursHotel": 6 },
+          { "key": "digitalCheckin",       "label": "Digital Check-in + PMS integration", "cost": 2540, "hoursNevron": 30, "hoursHotel": 18 },
+          { "key": "catalogues",           "label": "Digital catalogues, three of them", "cost": 1150, "hoursNevron": 15, "hoursHotel": 6 },
+          { "key": "roomCare",             "label": "Room Care", "cost": 580, "hoursNevron": 8, "hoursHotel": 5 },
+          { "key": "myMood",               "label": "My Mood", "cost": 580, "hoursNevron": 8, "hoursHotel": 4 },
+          { "key": "salesBundle",          "label": "Sales acceleration bundle", "detail": "Catalogues with orders & reservations, Room Care, My Room, AI SellBot, cross-channel QR engine", "cost": 5440, "hoursNevron": 68, "hoursHotel": 37 },
+          { "key": "signageSetup",         "label": "Digital Signage setup", "cost": 1200, "hoursNevron": 15, "hoursHotel": 5 },
+          { "key": "customAiTooling",      "label": "Custom AI tooling", "detail": "Inbox triage, reply drafting, OTA review handling, reporting", "display": "quoted per scope", "quoted": true, "hoursNevron": 10 }
+        ]
+      },
+      {
+        "name": "Services",
+        "items": [
+          { "key": "deviceSetup",  "label": "Device Setup (on-site)", "cost": 15,  "unit": "device" },
+          { "key": "workshop",     "label": "Workshop (staff training)", "cost": 250 },
+          { "key": "nevronTokens", "label": "Nevron Tokens", "cost": 10, "unit": "1,000 tokens" }
+        ]
+      },
+      {
+        "name": "Hardware",
+        "items": [
+          { "key": "fastboxCast",    "label": "FaSTBox Android Cast", "cost": 125, "unit": "device" },
+          { "key": "fastboxS905X",   "label": "FaSTBox S905X", "cost": 125, "unit": "device" },
+          { "key": "fastboxLuxury",  "label": "FaSTBox Luxury S905", "cost": 125, "unit": "device" },
+          { "key": "chromecast",     "label": "Chromecast Device", "cost": 125, "unit": "device" },
+          { "key": "stb",            "label": "STB Device", "cost": 125, "unit": "device" }
+        ]
+      },
+      {
+        "name": "Remotes",
+        "items": [
+          { "key": "remoteDeluxe",  "label": "FaSTBox Deluxe Remote", "cost": 15 },
+          { "key": "remoteSlim",    "label": "Bluetooth + IR Slim Remote", "cost": 12 },
+          { "key": "remoteRuwido",  "label": "Ruwido Remote Control", "cost": 50 },
+          { "key": "remoteLogo",    "label": "Custom Logo on Remote", "cost": 5, "unit": "device" }
+        ]
+      }
+    ]
+  },
+
+  "pilotLadder": {
+    "_comment": "The discount shape used in every offer to date. Month counts vary per deal; the shape does not.",
+    "phases": [
+      { "label": "Pilot",          "discount": 1.00, "note": "Vse licence brezplacno" },
+      { "label": "Next 8 months",  "discount": 0.50, "note": "50 % popust naslednjih 8 mesecev" },
+      { "label": "Thereafter",     "discount": 0.00, "note": "Standardna cena" }
+    ]
+  }
+}

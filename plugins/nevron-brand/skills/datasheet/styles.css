@@ -1,0 +1,257 @@
+/* ==========================================================================
+   Nevron Datasheet — print stylesheet (A4 portrait, 5+ pages)
+   Rebuilds the InDesign datasheet look for headless-Chrome PDF export.
+   Palette sampled from the source .indd PDFs (ICCBased RGB).
+   ========================================================================== */
+
+:root {
+  --grey-cover:  #ADAFB6;   /* cover + back-cover background (0.678 0.686 0.714) */
+  --grey-page:   #EFF0F0;   /* inner-page background behind white cards */
+  --navy:        #00052E;   /* section headings: PRODUCT OVERVIEW etc. */
+  --ink:         #1A1D22;   /* body + spec value text */
+  --label:       #000000;   /* bold spec labels + section bars */
+  --value:       #3A3D43;   /* spec values (slightly lighter than labels) */
+  --hairline:    #D2D4D8;   /* thin divider between label and value */
+  --dim:         #6E7278;   /* dimension leader lines + measurement text */
+  --header-grey: #9BA0A6;   /* running header "Datasheet | Product" text */
+  --white:       #FFFFFF;
+
+  --font: 'Neue Haas Unica', 'Helvetica Neue', Arial, sans-serif;
+
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --margin-x: 16mm;   /* left/right content margin */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@page { size: A4; margin: 0; }
+
+html, body {
+  font-family: var(--font);
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Each .page is a full-bleed A4 sheet; force a page break after each. */
+.page {
+  position: relative;
+  width: var(--page-w);
+  height: var(--page-h);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* ---------- Full-bleed background layer ------------------------------------ */
+/* Overscans the trim by 3mm and is clipped back by .page overflow:hidden, so
+   the colour reaches every edge with no sub-pixel white sliver at print time. */
+.page__bg { position: absolute; inset: -3mm; z-index: 0; }
+.cover .page__bg, .back .page__bg { background: var(--grey-cover); }
+.specs .page__bg { background: var(--grey-page); }
+
+/* ---------- Decorative frame (official brand asset) ----------------------- */
+/* A white-on-transparent brand "frame" overlay (SVG or PNG), object-fit:cover
+   so corner decorations reach the page corners with angles kept crisp. */
+/* A single brand frame (square, hatched L-brackets in two opposite corners),
+   placed inset from the top-right so the decoration lands top-right + left-
+   middle (like the reference). Used as-is from the Frames folder. */
+.cover__frame {
+  position: absolute; top: 16mm; right: 16mm;
+  width: 178mm; height: 178mm;
+  z-index: 1; pointer-events: none;
+}
+
+/* ==========================================================================
+   PAGE 1 — COVER
+   ========================================================================== */
+.cover { background: var(--grey-cover); color: var(--white); }
+/* keep cover content above the frame (z:1) and bleed layer (z:0) */
+.cover__label, .cover__product, .cover__title, .cover__prepared, .cover__logo { z-index: 2; }
+
+.cover__label {
+  position: absolute;
+  top: 22mm; left: var(--margin-x);
+  font-size: 15pt; font-weight: 400; color: var(--white);
+}
+
+/* top-right motif (viewBox 120x175 -> height = width * 175/120) */
+.cover__motif-tr { top: 18mm; right: 16mm; width: 46mm; height: 67.1mm; }
+/* left-middle motif (viewBox 120x160 -> height = width * 160/120) */
+.cover__motif-l  { top: 120mm; left: 0;   width: 46mm; height: 61.3mm; }
+
+.cover__product {
+  position: absolute;
+  /* centred on the brand frame (178mm square inset 16mm from top-right -> centre 105mm,
+     matching the page centre horizontally), so any product height self-centres */
+  top: var(--cover-centre-y, 105mm); left: 50%; transform: translate(-50%, -50%);
+  width: 96mm; height: auto; max-height: var(--cover-max-h, 145mm);
+  object-fit: contain;
+  filter: drop-shadow(0 11mm 17mm rgba(8, 10, 16, 0.45));
+}
+
+.cover__title {
+  position: absolute;
+  left: var(--margin-x); bottom: 50mm;
+}
+.cover__title h1 {
+  font-size: 42pt; font-weight: 700; line-height: 1.02;
+  letter-spacing: -0.01em; color: var(--white);
+}
+.cover__title p {
+  margin-top: 3mm; font-size: 20pt; font-weight: 400; color: var(--white);
+}
+
+.cover__prepared {
+  position: absolute; left: var(--margin-x); bottom: 18mm;
+  font-size: 9pt; line-height: 1.5; color: rgba(255,255,255,0.72);
+}
+.cover__logo {
+  position: absolute; right: var(--margin-x); bottom: 16mm;
+  width: 52mm; height: auto;
+}
+
+/* ==========================================================================
+   RUNNING HEADER (inner pages 2..n-1)
+   ========================================================================== */
+.rhead {
+  position: absolute; top: 0; left: 0; right: 0; height: 26mm;
+  background: var(--white);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--margin-x);
+}
+.rhead__logo { height: 6.5mm; }
+.rhead__meta { font-size: 9pt; color: var(--header-grey); }
+
+/* ==========================================================================
+   PAGE 2 — PRODUCT OVERVIEW
+   ========================================================================== */
+/* Flex column so the PORTS band fills down to the page bottom; the main
+   content grows above it. (Plain height:auto port images render fine here now
+   that the max-height/object-fit that collapsed them has been removed.) */
+.overview { background: var(--white); display: flex; flex-direction: column; }
+.overview__flow { flex: 1 0 auto; padding: 40mm var(--margin-x) 6mm; }
+
+.section-title {
+  font-size: 19pt; font-weight: 700; color: var(--navy);
+  letter-spacing: 0.005em; text-transform: uppercase;
+}
+
+.overview__grid {
+  margin-top: 9mm;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14mm;
+  align-items: start;
+}
+.overview__copy p {
+  font-size: 9.5pt; line-height: 1.62; color: var(--ink);
+  text-align: justify; margin-bottom: 3.2mm;
+}
+.overview__media { display: flex; flex-direction: column; gap: 13mm; padding-right: 9mm; align-items: center; }
+
+/* product shot + technical dimension lines (leader lines with end ticks) */
+.shot { position: relative; display: flex; flex-direction: column; max-width: 100%; }
+.shot__box { position: relative; display: block; }
+/* tall products (remotes) are capped by height so they never overflow the page;
+   wide/square products still fill the column width as before */
+.shot__box img {
+  width: auto; height: auto; max-width: 100%; max-height: var(--shot-max-h, 180mm); display: block; margin: 0 auto;
+  filter: drop-shadow(0 4mm 5.5mm rgba(20, 22, 28, 0.22));
+}
+/* vertical dimension — right of the image; number rotated, left of the line */
+.dimv { position: absolute; top: 0; bottom: 0; right: -11mm; width: 10mm; }
+.dimv::before { content: ""; position: absolute; right: 2mm; top: 2mm; bottom: 2mm; border-right: 0.2mm solid var(--dim); }
+.dimv::after  { content: ""; position: absolute; right: 1mm; width: 2mm; top: 2mm; bottom: 2mm; border-top: 0.2mm solid var(--dim); border-bottom: 0.2mm solid var(--dim); }
+.dimv span {
+  position: absolute; top: 50%; right: 5mm; transform: translate(50%, -50%) rotate(-90deg);
+  font-size: 7pt; color: var(--dim); white-space: nowrap;
+}
+/* horizontal dimension — under the image; number centered above the line */
+.dimh { position: relative; height: 8mm; margin-top: 2mm; text-align: center; }
+.dimh::before { content: ""; position: absolute; top: 6mm; left: 2mm; right: 2mm; border-top: 0.2mm solid var(--dim); }
+.dimh::after  { content: ""; position: absolute; top: 5mm; height: 2mm; left: 2mm; right: 2mm; border-left: 0.2mm solid var(--dim); border-right: 0.2mm solid var(--dim); }
+.dimh span { display: inline-block; font-size: 7pt; color: var(--dim); line-height: 4mm; }
+
+/* PORTS band — pinned to the page bottom by the flex column, bled to the sides */
+.ports { flex: 0 0 auto; margin: 0 -3mm; background: var(--grey-page); padding: 11mm calc(var(--margin-x) + 3mm) 12mm; }
+.ports__row {
+  margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 14mm;
+  align-items: start;
+}
+.port { position: relative; }
+.port > img {
+  width: 100%; height: auto; display: block;
+  filter: drop-shadow(0 3mm 4.5mm rgba(20, 22, 28, 0.20));
+}
+/* connector leader-line captions under each port image */
+.port__labels { position: relative; height: 11mm; margin-top: 1mm; }
+.port__label {
+  position: absolute; top: 4.5mm; transform: translateX(-50%);
+  width: 24mm; text-align: center; font-size: 6.5pt; line-height: 1.12; color: var(--ink);
+}
+.port__label::before {
+  content: ""; position: absolute; top: -4mm; left: 50%;
+  height: 3.5mm; border-left: 0.2mm solid var(--dim);
+}
+
+/* ==========================================================================
+   PAGES 3..n — TECHNICAL SPECIFICATIONS
+   ========================================================================== */
+.specs { background: var(--grey-page); }
+.specs__body { position: absolute; top: 40mm; left: var(--margin-x); right: var(--margin-x); bottom: 18mm; }
+.specs .section-title { color: var(--navy); margin-bottom: 10mm; }
+
+.spec-group { margin-bottom: 12mm; }
+.spec-group__bar {
+  background: var(--label); color: var(--white);
+  font-size: 11pt; font-weight: 700;
+  padding: 4.5mm 7mm;
+  width: 62mm;
+}
+.spec-group__rows {
+  position: relative;
+  background: var(--white);
+  padding: 7mm 0 7mm 7mm;
+}
+/* one continuous thin divider spanning the whole group (not per row) */
+.spec-group__rows::before {
+  content: ""; position: absolute; top: 6mm; bottom: 6mm; left: 53mm;
+  width: 0.25mm; background: var(--label);
+}
+.spec-row {
+  display: grid; grid-template-columns: 46mm 1fr;
+  align-items: baseline;
+  padding: 1.4mm 0;
+}
+.spec-row__k { font-size: 9pt; font-weight: 700; color: var(--label); }
+.spec-row__v {
+  font-size: 9pt; color: var(--value);
+  padding-left: 7mm;
+}
+
+/* ==========================================================================
+   LAST PAGE — BACK COVER
+   ========================================================================== */
+.back { background: var(--grey-cover); color: var(--white); }
+.back__headline {
+  position: absolute; top: 24mm; left: var(--margin-x);
+  font-size: 30pt; font-weight: 700; line-height: 1.08; color: var(--white);
+}
+/* open bracket motif (thin white rules forming two facing corners) */
+.back__bracket-tr {
+  position: absolute; top: 22mm; right: 24mm; width: 66mm; height: 66mm;
+  border-top: 1mm solid var(--white); border-right: 1mm solid var(--white);
+}
+.back__bracket-bl {
+  position: absolute; top: 120mm; left: var(--margin-x); width: 60mm; height: 66mm;
+  border-bottom: 1mm solid var(--white); border-left: 1mm solid var(--white);
+}
+.back__footer {
+  position: absolute; left: var(--margin-x); right: var(--margin-x); bottom: 16mm;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.back__addr { font-size: 9pt; line-height: 1.55; color: rgba(255,255,255,0.82); display: flex; gap: 14mm; }
+.back__addr strong { display: block; font-weight: 700; color: var(--white); margin-bottom: 1mm; }
+.back__logo { width: 52mm; height: auto; }

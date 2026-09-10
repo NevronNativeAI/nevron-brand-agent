@@ -1,0 +1,86 @@
+{
+  "_comment": "A service report is a nevron-document with a fixed skeleton. This runs on the nevron-document engine - there is no separate builder.",
+
+  "slug": "2026-04-ServiceReport_Arethusa",
+  "variant": "full",
+
+  "docType": "Service report",
+  "title": "Annual service report",
+  "subtitle": "Arethusa",
+  "runningHead": "Service report  I  Arethusa",
+  "date": "April 17, 2026",
+  "year": 2026,
+  "coverIcon": "technical/ServiceB.svg",
+  "coverNote": "This service was provided on the 17th of April 2026",
+
+  "introTitle": "Introduction",
+  "intro": [
+    "This annual service report summarizes the general inspection and condition assessment of the Nevron IPTV system on board, together with the work carried out during the visit.",
+    "Find a detailed service report on the next page."
+  ],
+
+  "toc": false,
+  "numbered": false,
+
+  "body": [
+    { "h2": "Service details" },
+    {
+      "table": {
+        "rows": [
+          ["Customer:", "GCCL (Grand Circle Cruise Line)"],
+          ["", "198 Old Bakery Street 1455, Valletta, MALTA"],
+          ["", "+385 20 341 753"],
+          ["Address of service:", "Arethusa"],
+          ["Date of service:", "17 April 2026"]
+        ]
+      }
+    },
+
+    { "h2": "Scope of work" },
+    { "ul": "General inspection of the Nevron IPTV system" },
+    { "ul": "Physical inspection of the server, including corrosion and environmental conditions" },
+    { "ul": "Verification of MikroTik router and IPMI remote access functionality" },
+    { "ul": "Configuration and testing of newly installed equipment" },
+    { "ul": "Testing of STBs and system functionality" },
+
+    { "h2": "Service delivery" },
+    { "ul": "Conducted a general inspection of the server and surrounding infrastructure. The condition of the server appears unchanged since the previous visit." },
+    { "ul": "Despite previous improvements, it was noted that water still enters the server room under certain conditions." },
+    { "ul": "Verified that the MikroTik router and IPMI remote access are fully operational, with stable connectivity." },
+    { "ul": "A USB hub with an HDMI extension cable was installed and routed from the rear of the server rack to improve access." },
+    { "ul": "An HDMI splitter was installed to enable streaming of DVD player content to the STBs. The setup was tested and confirmed working." },
+
+    { "h2": "Testing and verification" },
+    { "ul": "Confirmed overall system stability with no active faults reported." },
+    { "ul": "Verified proper operation of newly installed components and streaming functionality." },
+    { "ul": "Confirmed stable IPMI connectivity and network operation." },
+    { "ul": "Tested STB playback, including DVD streaming and channel display, with no issues detected." },
+    { "ul": "No complaints were reported by the crew during the visit." },
+
+    { "h2": "Conclusion and suggestions" },
+    { "p": "The Nevron IPTV system aboard Arethusa remains stable and fully operational, with no immediate functional issues identified during this visit." },
+    { "p": "However, environmental exposure continues to pose a long-term risk. While the deterioration of the server has not visibly progressed since the last inspection, the conditions in the server room remain a concern." },
+    { "p": "It is therefore recommended to plan for server replacement in the coming years to ensure long-term reliability." },
+    { "p": "Additionally, if desired, we can assist with reviewing and expanding the current channel lineup." },
+
+    { "p": "Service provided by Nevron representative: **Anže Tavčar**" },
+
+    { "pagebreak": true },
+    { "h2": "Attachments" },
+    { "p": "Kindly examine the images provided to assess the current status." },
+    {
+      "figures": [
+        { "img": "images/hdmi-splitter.jpeg", "caption": "HDMI splitter" },
+        { "img": "images/server-rack.jpeg", "caption": "Server, HDMI splitter and USB hub" }
+      ]
+    },
+    {
+      "figures": [
+        { "img": "images/usb-hub.jpeg", "caption": "USB hub" },
+        { "img": "images/cable-management.jpeg", "caption": "Cable management" }
+      ]
+    }
+  ],
+
+  "backHeadline": "Let there\nbe content!"
+}

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What it makes — Nevron Brand Agent</title>
+<meta name="description" content="Every file the Nevron brand plugin produces: what you hand each skill, and what comes back.">
+<link rel="icon" href="plugins/nevron-brand/assets/logos/nevron-logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/guide/guide.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="shell">
+
+  <aside class="rail">
+    <a class="rail__brand" href="index.html">
+      <img src="plugins/nevron-brand/assets/logos/nevron-logo-icon-white.svg" alt="">
+      <b>Brand Agent<span>v2</span></b>
+    </a>
+
+    <p class="rail__label">Pages</p>
+    <nav class="rail__nav">
+      <a href="index.html">Overview</a>
+      <a href="outputs.html" aria-current="page">What it makes</a>
+      <a href="brand-preview.html">Brand system</a>
+    </nav>
+
+    <p class="rail__label">On this page</p>
+    <nav class="rail__nav rail__toc" id="toc">
+      <a href="#choose">Which one to use</a>
+      <a href="#presentation-abstract">Abstract deck</a>
+      <a href="#nevron-document">Full document</a>
+      <a href="#nevron-document-nocover">Short document</a>
+      <a href="#datasheet">Product datasheet</a>
+      <a href="#service-report">Service report</a>
+      <a href="#offer">Client offer</a>
+      <a href="#limits">What it will not do</a>
+    </nav>
+
+    <p class="rail__meta">
+      Nevron d.o.o.<br>
+      <a href="https://github.com/NevronNativeAI/nevron-brand-agent">Source on GitHub</a>
+    </p>
+  </aside>
+
+  <main class="main" id="main">
+
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow"><i></i> Outputs</p>
+        <h1>What each skill takes, and what comes back.</h1>
+        <p class="hero__lede">Six skills, four builders, one house style. Every render on this
+          page came out of the example that ships with the skill.</p>
+      </div>
+    </header>
+
+    <div class="wrap">
+
+      <section id="choose">
+        <p class="sec__num">01 — Choosing</p>
+        <h2>Which one to use</h2>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>If you need</th><th>Use</th><th>You get</th></tr></thead>
+            <tbody>
+              <tr><td>A deck about an idea, a philosophy or a partnership</td><td><a href="#presentation-abstract">presentation-abstract</a></td><td>16:9 HTML, PDF</td></tr>
+              <tr><td>Anything with a cover and a contents page</td><td><a href="#nevron-document">nevron-document</a></td><td>A4 PDF</td></tr>
+              <tr><td>A letter, memo, legal document or meeting notes</td><td><a href="#nevron-document-nocover">nevron-document-nocover</a></td><td>A4 PDF</td></tr>
+              <tr><td>A spec sheet for a device</td><td><a href="#datasheet">datasheet</a></td><td>A4 PDF</td></tr>
+              <tr><td>A report after a site visit</td><td><a href="#service-report">service-report</a></td><td>A4 PDF</td></tr>
+              <tr><td>A priced offer to send a hotel</td><td><a href="#offer">offer</a></td><td>Web page, PDF</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>You do not have to name the skill. &ldquo;Make a datasheet for the TL-4KBR&rdquo;
+          reaches <code>datasheet</code> on its own.</p>
+      </section>
+
+      <section id="presentation-abstract">
+        <p class="sec__num">02 — Abstract deck</p>
+        <h2>The deck you give when the point is an idea</h2>
+        <div class="cmd"><span>/nevron-brand:presentation-abstract</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">How Nevron sees the world, why a market is moving, what a partnership
+          could be. Dark, spare, enormous type, one thought per slide.</p>
+
+        <figure class="shot shot--dark" style="max-width:760px">
+          <img src="assets/guide/presentation-abstract.png" width="1600" height="900" loading="lazy" alt="Dark slide with a blue glow and the huge headline Hospitality Forgets, a one-line subtitle, and a row of small labelled facts along a hairline rule.">
+          <figcaption>Opening statement</figcaption>
+        </figure>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>The argument — what the room should believe by the end</li>
+          <li>Hero imagery, or a decision to generate it</li>
+        </ul>
+
+        <div class="note">
+          <p>Not for feature, product or technical presentations. This deck has no template
+            grid and no stat rows — it is one statement at a time.</p>
+        </div>
+      </section>
+
+      <section id="nevron-document">
+        <p class="sec__num">03 — Full document</p>
+        <h2>Cover, contents, numbered body</h2>
+        <div class="cmd"><span>/nevron-brand:nevron-document</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">Reports, guides, specifications, proposals, manuals — anything needing a
+          cover and a contents page. Matches the house Word template: grey cover with the brand
+          frame and a topic icon, an introduction page carrying the legal disclaimer, an
+          auto-numbered table of contents, then the body.</p>
+
+        <div class="skill__shots skill__shots--pair" style="max-width:620px">
+          <figure class="shot">
+            <img src="assets/guide/nevron-document.png" width="1270" height="1797" loading="lazy" alt="Grey document cover: the brand frame in two corner brackets, a nine-square topic icon, and the title NevronCore Integration Guide.">
+            <figcaption>Cover</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/guide/nevron-document-2.png" width="1270" height="1797" loading="lazy" alt="Table of contents page with dotted leaders, numbered sections and page numbers, under a running header.">
+            <figcaption>Contents</figcaption>
+          </figure>
+        </div>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>Content, as Markdown or structured blocks</li>
+          <li>Title, date, topic icon</li>
+          <li>Images, tables, figures</li>
+        </ul>
+
+        <div class="note">
+          <p><code>--png</code> also writes one PNG per page — the fastest way to check a layout
+            without opening the PDF.</p>
+        </div>
+      </section>
+
+      <section id="nevron-document-nocover">
+        <p class="sec__num">04 — Short document</p>
+        <h2>Same engine, no front matter</h2>
+        <div class="cmd"><span>/nevron-brand:nevron-document-nocover</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">Letters, legal documents, memos, meeting notes, checklists. Content
+          starts on page one under the running header, and the back cover closes it. A contract
+          does not want a cover page.</p>
+
+        <figure class="shot" style="max-width:400px">
+          <img src="assets/guide/nevron-document-nocover.png" width="1270" height="1797" loading="lazy" alt="Meeting notes page: numbered headings Attendees and scope and Open items, a bulleted list and a milestone table, no cover page.">
+          <figcaption>Page one</figcaption>
+        </figure>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>The content, and who it is for</li>
+          <li>A running-header line — customer and subject</li>
+        </ul>
+
+        <div class="note">
+          <p>It has no builder of its own: it runs the <code>nevron-document</code> builder with
+            the front matter switched off. So does <a href="#service-report">service-report</a>.</p>
+        </div>
+      </section>
+
+      <section id="datasheet">
+        <p class="sec__num">05 — Product datasheet</p>
+        <h2>The InDesign house style, without InDesign</h2>
+        <div class="cmd"><span>/nevron-brand:datasheet</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">Spec sheets for set-top boxes, servers and remotes: grey cover with a
+          diagonal brand frame, a product overview with dimension lines, a ports band, and
+          black-barred specification tables.</p>
+
+        <figure class="shot" style="max-width:400px">
+          <img src="assets/guide/datasheet.png" width="880" height="1244" loading="lazy" alt="Grey datasheet cover with a white line-hatch frame, the set-top box photographed centre, and the model name TL-4KBR.">
+          <figcaption>Cover</figcaption>
+        </figure>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>Product name, model, positioning line</li>
+          <li>Specifications, as groups of rows</li>
+          <li>Product photography and a ports diagram</li>
+        </ul>
+
+        <div class="note">
+          <p>The cover frame is picked at random from the 19 approved patterns, and the build
+            prints which one it used. Pin it with
+            <code>"frame": "FramesHorizontal.png"</code>.</p>
+        </div>
+      </section>
+
+      <section id="service-report">
+        <p class="sec__num">06 — Service report</p>
+        <h2>What an engineer leaves behind</h2>
+        <div class="cmd"><span>/nevron-brand:service-report</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">A fixed skeleton — introduction, service details, scope of work, service
+          delivery, testing and verification, conclusion and suggestions, signature — followed by
+          a captioned photo attachments page.</p>
+
+        <figure class="shot" style="max-width:400px">
+          <img src="assets/guide/service-report.png" width="1270" height="1797" loading="lazy" alt="Grey service report cover with the brand frame, a gear topic icon and the title Annual service report.">
+          <figcaption>Cover</figcaption>
+        </figure>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>Customer, vessel or property, dates, engineer</li>
+          <li>What was done, section by section</li>
+          <li>Site photographs with captions</li>
+        </ul>
+
+        <div class="note">
+          <p>Read the previous report for that customer before writing a new one — the wording
+            carries over, and the skill says so.</p>
+        </div>
+      </section>
+
+      <section id="offer">
+        <p class="sec__num">07 — Client offer</p>
+        <h2>A priced <i>ponudba</i> as a page you send</h2>
+        <div class="cmd"><span>/nevron-brand:offer</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">The page served at <code>clients.nevron.co/&lt;Hotel-Name&gt;/ponudba</code>:
+          dark hero with a validity countdown, the lead module, what else the pilot includes, the
+          timeline, and the licensing section. Plus a PDF of the same offer for email.</p>
+
+        <figure class="shot" style="max-width:700px">
+          <img src="assets/guide/offer.png" width="1440" height="1000" loading="lazy" alt="Offer page hero on dark blue: a validity countdown bar, the pilot badge, a Slovenian headline, the property name and a blue call-to-action button.">
+          <figcaption>Hero and lead module</figcaption>
+        </figure>
+
+        <h4>Two pricing modes</h4>
+        <ul>
+          <li><b>NevronCore pricelist</b> — from the live rate card. Monthly is the daily rate ×
+            quantity × 30; capacity is the higher of beds or rooms; the bill has a floor.</li>
+          <li><b>Custom pricelist</b> — you supply the lines and the totals.</li>
+        </ul>
+
+        <div class="note">
+          <p>The rate card is read live when the share is reachable, and from a vendored copy
+            when it is not. The offer states which, and how fresh it is.</p>
+        </div>
+      </section>
+
+      <section id="limits">
+        <p class="sec__num">08 — Limits</p>
+        <h2>What it will not do</h2>
+
+        <ul>
+          <li><b>Invent a brand asset.</b> Missing icon or illustration? It says so.</li>
+          <li><b>Take assets from elsewhere on your disk.</b> Finding a file is not permission.</li>
+          <li><b>Generate imagery unprompted</b> — and never a photograph of a real named property.</li>
+          <li><b>Round a corner.</b> Radius 0 is a hard rule.</li>
+          <li><b>Hide a gap.</b> What it cannot reproduce faithfully, it warns about.</li>
+        </ul>
+
+        <p><a class="more" href="brand-preview.html">The rules it enforces →</a></p>
+      </section>
+
+    </div>
+
+    <footer class="foot">
+      <div class="foot__inner">
+        <div>
+          <p class="foot__slogan">Let there be content.</p>
+          <p>Nevron d.o.o. — brand system for Claude Code.</p>
+        </div>
+        <div>
+          <p><a href="https://github.com/NevronNativeAI/nevron-brand-agent">github.com/NevronNativeAI/nevron-brand-agent</a></p>
+          <p>Brand Agent v2</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<script src="assets/guide/guide.js"></script>
+</body>
+</html>

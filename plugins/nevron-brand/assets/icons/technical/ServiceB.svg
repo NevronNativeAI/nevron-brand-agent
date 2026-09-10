@@ -1,0 +1,6 @@
+<svg viewBox="0 0 265 265" xmlns="http://www.w3.org/2000/svg">
+  <!-- Service / maintenance gear. House spec: 265 canvas, solid silhouette,
+       inside the 110px safe area. One path with fill-rule evenodd so the hub
+       stays open even when a template force-tints every shape. -->
+  <path fill-rule="evenodd" fill="currentColor" d="M202.71 103.42 L242.83 113.24 L242.83 151.76 L202.71 161.58 L202.71 161.58 L224.13 196.9 L196.9 224.13 L161.58 202.71 L161.58 202.71 L151.76 242.83 L113.24 242.83 L103.42 202.71 L103.42 202.71 L68.1 224.13 L40.87 196.9 L62.29 161.58 L62.29 161.58 L22.17 151.76 L22.17 113.24 L62.29 103.42 L62.29 103.42 L40.87 68.1 L68.1 40.87 L103.42 62.29 L103.42 62.29 L113.24 22.17 L151.76 22.17 L161.58 62.29 L161.58 62.29 L196.9 40.87 L224.13 68.1 L202.71 103.42 Z M170.5 132.5 A38 38 0 1 0 94.5 132.5 A38 38 0 1 0 170.5 132.5 Z"/>
+</svg>

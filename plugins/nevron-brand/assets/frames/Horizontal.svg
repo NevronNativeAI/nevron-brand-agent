@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.46 285.96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2.5px;
+      }
+    </style>
+  </defs>
+  <g id="V-_horizont_3" data-name="V- horizont 3">
+    <g>
+      <line class="cls-1" x1="283.46" y1="95.74" x2="251.97" y2="95.74"/>
+      <line class="cls-1" x1="283.46" y1="1.25" x2="188.98" y2="1.25"/>
+      <line class="cls-1" x1="283.46" y1="32.75" x2="188.98" y2="32.75"/>
+      <line class="cls-1" x1="283.46" y1="22.25" x2="188.98" y2="22.25"/>
+      <line class="cls-1" x1="283.46" y1="11.75" x2="188.98" y2="11.75"/>
+      <line class="cls-1" x1="283.46" y1="43.24" x2="251.97" y2="43.24"/>
+      <line class="cls-1" x1="283.46" y1="53.74" x2="251.97" y2="53.74"/>
+      <line class="cls-1" x1="283.46" y1="64.24" x2="251.97" y2="64.24"/>
+      <line class="cls-1" x1="283.46" y1="74.74" x2="251.97" y2="74.74"/>
+      <line class="cls-1" x1="283.46" y1="85.24" x2="251.97" y2="85.24"/>
+      <line class="cls-1" y1="190.23" x2="31.5" y2="190.23"/>
+      <line class="cls-1" y1="284.71" x2="94.49" y2="284.71"/>
+      <line class="cls-1" y1="253.22" x2="94.49" y2="253.22"/>
+      <line class="cls-1" y1="263.72" x2="94.49" y2="263.72"/>
+      <line class="cls-1" y1="274.22" x2="94.49" y2="274.22"/>
+      <line class="cls-1" y1="242.72" x2="31.5" y2="242.72"/>
+      <line class="cls-1" y1="232.22" x2="31.5" y2="232.22"/>
+      <line class="cls-1" y1="221.72" x2="31.5" y2="221.72"/>
+      <line class="cls-1" y1="211.22" x2="31.5" y2="211.22"/>
+      <line class="cls-1" y1="200.73" x2="31.5" y2="200.73"/>
+    </g>
+  </g>
+</svg>
