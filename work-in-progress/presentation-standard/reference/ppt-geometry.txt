@@ -1,0 +1,541 @@
+
+===== slide 01 =====
+  sp           x=  20.7% y= 41.25% w=  58.6% h= 21.54% bold  [TextBox 5]  "This is a  Nevron  presentation PPT, which inc"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 02 =====
+  pic          x= 43.35% y=     0% w= 56.65% h=   100%  [Picture 4]
+  sp           x= 43.35% y=     0% w= 56.65% h=   100%  [Rectangle 5]
+  pic          x= 48.98% y=  9.06% w= 45.73% h= 82.17%  [Picture 9]
+  sp           x=  4.43% y=  8.22% w= 37.96% h= 62.02%  44/34pt  [Title 1]  "Presentation template L orem   ipsum"
+  pic          x=  5.61% y= 81.85% w= 17.65% h=  9.37%  [Graphic 15]
+  sp           x= 78.52% y=  85.7% w= 17.34% h=  7.18%  26pt bold  [TextBox 2]  "Be content!"
+
+===== slide 03 =====
+  pic          x= 41.89% y= -0.41% w= 56.25% h=   100%  [Grafika 12]
+  sp           x=  4.43% y=  8.22% w= 37.96% h= 62.02%  44/34pt  [Title 1]  "Presentation template L orem   ipsum"
+  pic          x=  5.61% y= 81.85% w= 17.65% h=  9.37%  [Graphic 15]
+  pic          x= 48.85% y=  9.06% w= 46.06% h= 81.88%  [Picture 3]
+  sp           x= 78.52% y=  85.7% w= 17.34% h=  7.18%  26pt bold  [TextBox 5]  "Be content!"
+
+===== slide 04 =====
+  sp           x=  4.43% y=  8.22% w= 37.96% h= 62.02%  44/34pt  [Title 1]  "Presentation template L orem   ipsum"
+  pic          x=  5.61% y= 81.85% w= 17.65% h=  9.37%  [Graphic 15]
+  pic          x= 40.21% y=  0.18% w= 56.25% h=   100%  [Grafika 12]
+  pic          x= 48.62% y=  9.07% w= 47.02% h= 82.23%  [Grafika 5]
+  sp           x= 78.52% y=  85.7% w= 17.34% h=  7.18%  26pt bold  [TextBox 4]  "Be content!"
+
+===== slide 05 =====
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 3]
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 4]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 6]  "75 % of accommodations believe that digital in"
+
+===== slide 06 =====
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 2]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 3]  "75 % of accommodations believe that digital in"
+  sp           x= 24.79% y= 23.71% w= 14.87% h= 14.59%  19/13pt bold  [TextBox 4]  "only  25 % of accommodations work on applicati"
+
+===== slide 07 =====
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 2]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 3]  "75 % of accommodations believe that digital in"
+  sp           x= 24.79% y= 23.71% w= 14.87% h= 14.59%  19/13pt bold  [TextBox 4]  "only  25 % of accommodations work on applicati"
+  sp           x=   4.6% y= 22.77% w= 18.77% h= 21.09%  22pt  [TextBox 5]  "Digital interaction tailored to the hotel's ne"
+
+===== slide 08 =====
+  graphicFrame x= 60.22% y= 36.33% w= 29.98% h= 55.56%  [Chart 11]
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 2]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 5]  "75 % of accommodations believe that digital in"
+  sp           x= 24.79% y= 23.71% w= 14.87% h= 14.59%  19/13pt bold  [TextBox 6]  "only  25 % of accommodations work on applicati"
+  sp           x=   4.6% y= 22.77% w= 18.77% h= 21.09%  22pt  [TextBox 7]  "Digital interaction tailored to the hotel's ne"
+
+===== slide 09 =====
+  graphicFrame x= 60.22% y= 36.33% w= 29.98% h= 55.56%  [Chart 11]
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 2]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 4]  "75 % of accommodations believe that digital in"
+  sp           x= 24.79% y= 23.71% w= 14.87% h= 14.59%  19/13pt bold  [TextBox 5]  "only  25 % of accommodations work on applicati"
+  sp           x=   4.6% y= 22.77% w= 18.77% h= 21.09%  22pt  [TextBox 6]  "Digital interaction tailored to the hotel's ne"
+  sp           x= 76.59% y= 23.71% w=  15.7% h= 11.44%  19/13pt bold  [TextBox 8]  "only  19 % of guests download the app"
+  sp           x= 68.06% y= 52.82% w= 15.88% h= 20.42%  19/13pt bold  [TextBox 9]  "94 % of guests are interested in using mobile "
+
+===== slide 10 =====
+  graphicFrame x= 60.22% y= 36.33% w= 29.98% h= 55.56%  [Chart 11]
+  sp           x= 76.59% y= 23.71% w=  15.7% h= 11.44%  19/13pt bold  [TextBox 7]  "only  19 % of guests download the app"
+  graphicFrame x=  8.83% y= 36.38% w= 29.98% h= 55.56%  [Chart 10]
+  sp           x= 16.55% y= 52.82% w= 14.68% h=  17.5%  19/13pt bold  [TextBox 12]  "75 % of accommodations believe that digital in"
+  sp           x= 24.79% y= 23.71% w= 14.87% h= 14.59%  19/13pt bold  [TextBox 13]  "only  25 % of accommodations work on applicati"
+  sp           x=   4.6% y= 22.77% w= 18.77% h= 21.09%  22pt  [TextBox 39]  "Digital interaction tailored to the hotel's ne"
+  sp           x= 113.3% y= 79.52% w=  1.52% h=  5.39%  [TextBox 1]
+  sp           x= 54.29% y= 22.61% w= 14.87% h= 26.03%  22pt  [TextBox 15]  "Digital interaction tailored to the guest's ne"
+  sp           x=  4.27% y= 92.14% w= 36.21% h=  3.37%  9pt  [TextBox 14]  "Sources :  SiteMinder . Hotel  Mobile   Techno"
+  sp           x= 68.06% y= 52.82% w= 15.88% h= 20.42%  19/13pt bold  [TextBox 16]  "94 % of guests are interested in using mobile "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+
+===== slide 11 =====
+  sp           x= 74.92% y=     0% w= 25.08% h=   100%  [Rectangle 9]
+  sp           x= 49.97% y=     0% w= 24.97% h=   100%  [Rectangle 13]
+  sp           x= 25.07% y=     0% w= 24.97% h=   100%  [Rectangle 14]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.27% y= 23.52% w= 19.35% h= 16.16%  22pt bold  [TextBox 2]  "Why digitalize the relations with guests?"
+
+===== slide 12 =====
+  sp           x= 27.37% y= 29.83% w= 19.63% h=  5.83%  20/14pt bold  [TextBox 13]  "POGOSTE TEŽAVE"
+  sp           x= 27.37% y= 75.45% w= 22.36% h= 10.77%  14pt bold  [TextBox 9]  "Informiranost gostov ( Pre )hiter dotok novih "
+  sp           x= 27.48% y= 61.31% w= 23.66% h= 10.77%  14pt bold  [TextBox 10]  "Implementacija Kompleksnost in visoki stroški "
+  sp           x= 27.37% y= 48.44% w= 23.66% h= 10.77%  14pt bold  [TextBox 34]  "Osebje Pomanjkanje, obremenjenost, usposobljen"
+  sp           x= 74.92% y=     0% w= 25.08% h=   100%  [Rectangle 9]
+  sp           x= 49.97% y=     0% w= 24.97% h=   100%  [Rectangle 13]
+  sp           x= 25.07% y=     0% w= 24.97% h=   100%  [Rectangle 14]
+  sp           x= 26.64% y= 23.58% w= 22.33% h=  6.28%  21pt bold  [TextBox 16]  "Frequent problems"
+  sp           x= 26.66% y= 48.44% w= 22.45% h= 39.49%  17/13/14pt bold  [TextBox 34]  "Personnel shortage, workload, skills, lack of "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x=  4.27% y= 23.52% w= 19.35% h= 16.16%  22pt bold  [TextBox 4]  "Why digitalize the relations with guests?"
+
+===== slide 13 =====
+  sp           x= 27.37% y= 29.83% w= 19.63% h=  5.83%  20/14pt bold  [TextBox 13]  "POGOSTE TEŽAVE"
+  sp           x= 27.37% y= 75.45% w= 22.36% h= 10.77%  14pt bold  [TextBox 9]  "Informiranost gostov ( Pre )hiter dotok novih "
+  sp           x= 27.48% y= 61.31% w= 23.66% h= 10.77%  14pt bold  [TextBox 10]  "Implementacija Kompleksnost in visoki stroški "
+  sp           x= 27.37% y= 48.44% w= 23.66% h= 10.77%  14pt bold  [TextBox 34]  "Osebje Pomanjkanje, obremenjenost, usposobljen"
+  sp           x= 74.92% y=  0.16% w= 25.08% h=   100%  [Rectangle 9]
+  sp           x= 49.97% y=     0% w= 24.97% h=   100%  [Rectangle 13]
+  sp           x= 25.07% y=     0% w= 24.97% h=   100%  [Rectangle 14]
+  sp           x= 51.36% y= 23.52% w= 23.04% h=  6.06%  21pt bold  [TextBox 19]  "Poo r service quality"
+  sp           x= 37.15% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 23]
+  sp           x=  39.8% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 24]
+  sp           x= 42.45% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 25]
+  sp           x= 45.11% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 26]
+  sp           x= 47.76% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 27]
+  sp           x= 49.67% y= 10.13% w=  4.21% h=  6.45%  [Triangle 4]
+  sp           x=  51.9% y= 48.47% w= 21.09% h= 35.23%  17/14/13pt bold  [TextBox 31]  "G uest  d issatisfaction lack of  information "
+  sp           x= 26.64% y= 23.58% w= 22.33% h=  6.28%  21pt bold  [TextBox 2]  "Frequent problems"
+  sp           x= 26.66% y= 48.44% w= 22.45% h= 39.49%  17/13/14pt bold  [TextBox 34]  "Personnel shortage, workload, skills, lack of "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 5]
+  sp           x=  4.27% y= 23.52% w= 19.35% h= 16.16%  22pt bold  [TextBox 7]  "Why digitalize the relations with guests?"
+
+===== slide 14 =====
+  sp           x= 27.37% y= 29.83% w= 19.63% h=  5.83%  20/14pt bold  [TextBox 13]  "POGOSTE TEŽAVE"
+  sp           x= 27.37% y= 75.45% w= 22.36% h= 10.77%  14pt bold  [TextBox 9]  "Informiranost gostov ( Pre )hiter dotok novih "
+  sp           x= 27.48% y= 61.31% w= 23.66% h= 10.77%  14pt bold  [TextBox 10]  "Implementacija Kompleksnost in visoki stroški "
+  sp           x= 27.37% y= 48.44% w= 23.66% h= 10.77%  14pt bold  [TextBox 34]  "Osebje Pomanjkanje, obremenjenost, usposobljen"
+  sp           x= 74.92% y=     0% w= 25.08% h=   100%  [Rectangle 9]
+  sp           x= 49.97% y=     0% w= 24.97% h=   100%  [Rectangle 13]
+  sp           x= 25.07% y=     0% w= 24.97% h=   100%  [Rectangle 14]
+  sp           x= 76.35% y= 23.52% w= 21.18% h= 10.77%  21pt bold  [TextBox 20]  "Lower business success"
+  sp           x= 37.15% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 23]
+  sp           x=  39.8% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 24]
+  sp           x= 42.45% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 25]
+  sp           x= 45.11% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 26]
+  sp           x= 47.76% y=  36.2% w=  1.99% h=  3.54%  [5-point Star 27]
+  sp           x= 78.87% y= 50.78% w= 18.66% h= 20.42%  17pt bold  [TextBox 35]  "Reputation decline Occupancy   decline Revenue"
+  sp           x= 49.67% y= 10.13% w=  4.21% h=  6.45%  [Triangle 4]
+  sp           x= 74.51% y=  10.1% w=  4.21% h=  6.45%  [Triangle 37]
+  sp           x= 77.11% y= 52.23% w=  1.33% h=  2.63%  [Down Arrow 2]
+  sp           x= 77.11% y= 60.75% w=  1.33% h=  2.63%  [Down Arrow 29]
+  sp           x= 77.24% y=  68.7% w=  1.33% h=  2.63%  [Down Arrow 30]
+  sp           x=  4.27% y= 23.52% w= 19.35% h= 16.16%  22pt bold  [TextBox 1]  "Why digitalize the relations with guests?"
+  sp           x= 51.36% y= 23.52% w= 23.04% h=  6.06%  21pt bold  [TextBox 6]  "Poo r service quality"
+  sp           x=  51.9% y= 48.47% w= 21.09% h= 35.23%  17/14/13pt bold  [TextBox 7]  "G uest  d issatisfaction lack of  information "
+  sp           x= 26.64% y= 23.58% w= 22.33% h=  6.28%  21pt bold  [TextBox 17]  "Frequent problems"
+  sp           x= 26.66% y= 48.44% w= 22.45% h= 39.49%  17/13/14pt bold  [TextBox 34]  "Personnel shortage, workload, skills, lack of "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 19]
+
+===== slide 15 =====
+  sp           x=  4.41% y= 29.81% w= 34.33% h= 18.85%  26pt bold  [TextBox 6]  "Digitalization according to accommodation and "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 16 =====
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 3]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 8]
+  sp           x=  4.21% y= 29.18% w= 38.73% h=  17.5%  46/26pt bold  [TextBox 6]  "Lorem ipsum Digital guest experience"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 17 =====
+  pic          x= 72.49% y= 21.11% w= 14.63% h= 57.78%  [Picture 10]
+  pic          x=    50% y= 36.79% w= 17.39% h= 19.15%  [Picture 8]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 12]
+  sp           x=  4.35% y= 29.79% w= 39.36% h= 41.29%  26/16/28pt bold  [TextBox 5]  "No interference with IT on site Full cloud-bas"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 18 =====
+  sp           x= 60.41% y=  4.16% w= 23.33% h= 89.55%  [Rounded Rectangle 7]
+  sp           x=  4.35% y= 29.69% w= 50.32% h= 42.63%  26/16/28pt bold  [TextBox 11]  "Near to ZERO investments required Extremely lo"
+  sp           x= 61.52% y=  5.34% w=  0.72% h=  1.28%  [Oval 3]
+  sp           x= 62.58% y=  5.34% w=  0.72% h=  1.28%  [Oval 9]
+  sp           x= 63.64% y=  5.34% w=  0.72% h=  1.28%  [Oval 10]
+  pic          x= 61.51% y=  8.39% w= 21.09% h= 83.31%  [Picture 15]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 19 =====
+  pic          x= 61.52% y=  7.91% w= 21.09% h= 83.31%  [Picture 6]
+  sp           x=  4.35% y= 29.69% w= 38.73% h= 37.25%  26/16pt bold  [TextBox 11]  "User friendly Simple and friendly GUI Intuitiv"
+  pic          x= 55.99% y=  6.12% w= 46.14% h=110.85%  [Picture 4]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 20 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  pic          x=  5.17% y= 23.01% w= 26.25% h= 26.25%  [Picture 2]
+  pic          x= 36.88% y= 23.01% w= 26.25% h= 26.25%  [Picture 3]
+  sp           x=  4.65% y= 50.71% w=  25.6% h=  4.04%  12pt bold #000000  [TextBox 4]  "Welcome  message"
+  sp           x= 36.44% y= 50.71% w= 25.67% h=  4.04%  12pt bold #000000  [TextBox 6]  "Dashboard"
+  sp           x=  68.2% y= 50.71% w= 25.74% h=  4.04%  12pt bold #000000  [TextBox 7]  "Live TV  channel navigator"
+  sp           x=  4.65% y=  87.6% w= 25.74% h=  4.04%  12pt bold #000000  [TextBox 9]  "EPG Bill"
+  sp           x= 36.24% y=  87.6% w= 25.74% h=  4.04%  12pt bold #000000  [TextBox 11]  "Video  on demand"
+  sp           x=  68.2% y=  87.6% w= 25.74% h=  4.04%  12pt bold #000000  [TextBox 13]  "Casting – from mobile devices"
+  pic          x= 68.59% y= 23.01% w= 26.25% h= 26.25%  [Picture 14]
+  pic          x=  5.21% y= 60.12% w= 26.01% h= 26.25%  [Picture 15]
+  pic          x= 36.44% y= 60.05% w= 26.47% h= 26.25%  [Picture 16]
+  pic          x= 68.59% y= 59.98% w= 26.25% h= 26.25%  [Slika 18]
+
+===== slide 21 =====
+  sp           x=  4.35% y= 29.69% w=  43.4% h= 37.25%  26/16/28pt bold  [TextBox 11]  "Simple integration possibilities 15-year exper"
+  sp           x= 28.09% y= 11.88% w= 43.83% h= 76.25% #FFFFFF  [AutoShape 2]
+  pic          x= 65.55% y= 37.59% w= 13.28% h=  23.6%  [Graphic 4]
+  pic          x= 51.65% y= 13.41% w=  9.16% h= 16.28%  [Graphic 8]
+  pic          x= 83.48% y= 13.41% w=  9.16% h= 16.28%  [Graphic 7]
+  pic          x= 51.72% y= 70.31% w=  9.16% h= 16.28%  [Graphic 9]
+  pic          x= 83.61% y= 70.31% w=  9.16% h= 16.28%  [Graphic 10]
+  pic          x= 61.96% y= 31.26% w=  9.16% h= 16.28%  [Graphic 19]
+  pic          x= 73.33% y= 31.01% w=  9.16% h= 16.28%  [Graphic 20]
+  pic          x= 61.96% y= 51.43% w=  9.16% h= 16.28%  [Graphic 21]
+  pic          x= 73.33% y= 51.18% w=  9.16% h= 16.28%  [Graphic 22]
+  pic          x= 65.57% y= 25.11% w= 13.24% h= 49.79%  [Picture 5]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+
+===== slide 22 =====
+  pic          x= 73.48% y= 22.72% w=  4.91% h= 17.91%  [Picture 18]
+  pic          x= 72.65% y= 58.46% w=  6.57% h= 16.83%  [Picture 20]
+  sp           x= 56.48% y=     8% w=  14.6% h=  5.39%  [TextBox 22]  "Advanced"
+  sp           x= 56.48% y= 86.62% w=  14.6% h=  5.39%  [TextBox 23]  "Standard"
+  sp           x= 86.91% y= 47.27% w= 13.09% h=  5.39%  [TextBox 24]  "Simple"
+  sp           x= 26.08% y= 47.27% w=  14.6% h=  5.39%  [TextBox 25]  "Complex"
+  pic          x= 46.76% y= 60.76% w=  11.4% h= 13.51%  [Picture 14]
+  pic          x=    50% y= 22.72% w=  4.91% h= 17.91%  [Picture 1]
+  sp           x=  4.35% y= 29.69% w= 22.25% h= 30.97%  26/28pt bold  [PoljeZBesedilom 12]  "Great RATIO / costs / added value / simplicity"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 3]
+
+===== slide 23 =====
+  pic          x= 73.48% y= 22.72% w=  4.91% h= 17.91%  [Picture 18]
+  pic          x= 72.65% y= 58.46% w=  6.57% h= 16.83%  [Picture 20]
+  sp           x= 56.48% y= 86.62% w=  14.6% h=  4.94%  16pt  [TextBox 23]  "Standard"
+  sp           x= 86.91% y= 47.27% w= 13.09% h=  4.94%  16pt  [TextBox 24]  "Simple"
+  sp           x= 26.08% y= 47.27% w=  14.6% h=  4.94%  16pt  [TextBox 25]  "Complex"
+  pic          x= 46.76% y= 60.76% w=  11.4% h= 13.51%  [Picture 14]
+  pic          x=    50% y= 22.72% w=  4.91% h= 17.91%  [Picture 1]
+  sp           x= 32.45% y=    53% w= 30.25% h= 30.16%  [Rectangle 13]
+  sp           x= 34.31% y= 55.65% w= 27.01% h= 26.93%  14/16pt  [TextBox 28]  "Added value upon high costs Simplicity upon lo"
+  sp           x= 64.93% y=    53% w= 30.25% h= 30.16%  [Rectangle 16]
+  sp           x= 67.74% y= 55.65% w= 24.79% h= 23.34%  14pt  [TextBox 28]  "Granted added value Granted simplicity Light t"
+  sp           x= 49.72% y= 46.59% w=   5.5% h=  8.43%  [Triangle 26]
+  sp           x= 73.35% y= 46.59% w=   5.5% h=  8.43%  [Triangle 28]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 3]
+  sp           x=  4.35% y= 29.69% w= 22.25% h= 30.97%  26/28pt bold  [PoljeZBesedilom 12]  "Great RATIO / costs / added value / simplicity"
+  sp           x= 56.48% y=     8% w=  14.6% h=  5.39%  [TextBox 5]  "Advanced"
+
+===== slide 24 =====
+  sp           x=  4.33% y= 41.01% w= 29.96% h= 13.01%  26pt bold  [TextBox 6]  "Lorem ipsum  Main  f unctionalities"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 25 =====
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 45.33%  26/28/16pt bold #FFFFFF  [TextBox 8]  "Recommendation system tailored to the guest ne"
+  pic          x= 49.48% y= 50.93% w=    25% h= 49.07%  [Picture 9]
+  pic          x=    75% y=     0% w=    25% h= 50.04%  [Picture 14]
+  pic          x=    75% y= 50.93% w=    25% h= 49.07%  [Picture 17]
+  pic          x= 49.48% y= -0.04% w=    25% h= 50.04%  [Picture 23]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 26 =====
+  sp           x=    50% y=     0% w=    50% h=   100%  [Rectangle 11]
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 31.41%  26/28/16pt bold  [TextBox 7]  "Digitization of orders Immediate order Time-de"
+  pic          x=  61.2% y= 13.45% w= 27.56% h=  73.1%  [Slika 2]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 27 =====
+  sp           x=    50% y=     0% w=    50% h=   100%  [Rectangle 11]
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 28.27%  26/28/16pt bold  [TextBox 6]  "Digitalization of reservations Optimization of"
+  pic          x= 61.24% y=  6.31% w= 27.52% h= 87.38%  [Slika 7]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 28 =====
+  sp           x=    50% y=     0% w=    50% h=   100%  [Rectangle 14]
+  pic          x= 61.24% y= 16.97% w= 27.52% h= 65.53%  [Slika 3]
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 35.45%  26/28/16pt bold  [TextBox 10]  "Digitalization of promotions  Current content "
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 29 =====
+  sp           x=    50% y=     0% w=    50% h=   100%  [Rectangle 9]
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 35.45%  26/28/16pt bold #FFFFFF  [TextBox 9]  "Guest relationship nurturing Up-to-date inform"
+  pic          x= 53.52% y=   2.7% w=  3.62% h=  6.43%  [Picture 66]
+  pic          x= 69.26% y=   2.7% w=  3.62% h=  6.43%  [Picture 67]
+  pic          x= 77.13% y=   2.7% w=  3.62% h=  6.43%  [Picture 69]
+  pic          x= 84.99% y=   2.7% w=  3.62% h=  6.43%  [Picture 70]
+  pic          x= 92.86% y=   2.7% w=  3.62% h=  6.43%  [Picture 71]
+  pic          x= 53.52% y= 32.06% w=  3.62% h=  6.43%  [Picture 72]
+  pic          x= 69.26% y= 32.06% w=  3.62% h=  6.43%  [Picture 73]
+  pic          x= 61.39% y= 32.06% w=  3.62% h=  6.43%  [Picture 74]
+  pic          x= 77.13% y= 32.06% w=  3.62% h=  6.43%  [Picture 75]
+  pic          x= 84.99% y= 32.06% w=  3.62% h=  6.43%  [Picture 76]
+  pic          x= 92.86% y= 32.06% w=  3.62% h=  6.43%  [Picture 77]
+  pic          x= 69.26% y= 61.42% w=  3.62% h=  6.43%  [Picture 79]
+  pic          x= 61.39% y= 61.42% w=  3.62% h=  6.43%  [Picture 80]
+  pic          x= 77.13% y= 61.42% w=  3.62% h=  6.43%  [Picture 81]
+  pic          x= 84.99% y= 61.42% w=  3.62% h=  6.43%  [Picture 82]
+  pic          x= 53.52% y= 17.38% w=  3.62% h=  6.43%  [Picture 99]
+  pic          x= 77.13% y= 17.38% w=  3.62% h=  6.43%  [Picture 102]
+  pic          x= 92.86% y= 17.38% w=  3.62% h=  6.43%  [Picture 104]
+  pic          x= 53.52% y= 46.74% w=  3.62% h=  6.43%  [Picture 105]
+  pic          x= 69.26% y= 46.74% w=  3.62% h=  6.43%  [Picture 106]
+  pic          x= 61.39% y= 46.74% w=  3.62% h=  6.43%  [Picture 107]
+  pic          x= 77.13% y= 46.74% w=  3.62% h=  6.43%  [Picture 108]
+  pic          x= 84.99% y= 46.74% w=  3.62% h=  6.43%  [Picture 109]
+  pic          x= 92.86% y= 46.74% w=  3.62% h=  6.43%  [Picture 110]
+  pic          x= 69.26% y=  76.1% w=  3.62% h=  6.43%  [Picture 112]
+  pic          x= 61.39% y=  76.1% w=  3.62% h=  6.43%  [Picture 113]
+  pic          x= 92.86% y=  76.1% w=  3.62% h=  6.43%  [Picture 116]
+  pic          x= 53.52% y= 90.78% w=  3.62% h=  6.43%  [Picture 117]
+  pic          x= 69.26% y= 90.78% w=  3.62% h=  6.43%  [Picture 118]
+  pic          x= 61.39% y= 90.78% w=  3.62% h=  6.43%  [Picture 119]
+  pic          x= 77.13% y= 90.78% w=  3.62% h=  6.43%  [Picture 120]
+  pic          x= 84.99% y= 90.78% w=  3.62% h=  6.43%  [Picture 121]
+  pic          x= 92.86% y= 90.78% w=  3.62% h=  6.43%  [Picture 122]
+  pic          x= 53.49% y= 61.42% w=  3.62% h=  6.43%  [Picture 96]
+  pic          x= 61.29% y= 17.38% w=  3.62% h=  6.43%  [Picture 97]
+  pic          x= 61.37% y= 32.06% w=   3.6% h=  6.39%  [Picture 98]
+  pic          x= 84.95% y=  76.1% w=  3.62% h=  6.43%  [Picture 130]
+  pic          x= 77.05% y= 76.14% w=   3.6% h=  6.39%  [Picture 131]
+  pic          x= 92.85% y=  61.3% w=   3.6% h=  6.39%  [Picture 132]
+  pic          x= 69.22% y= 17.38% w=   3.6% h=  6.39%  [Picture 133]
+  pic          x= 61.47% y=  2.66% w=   3.6% h=  6.39%  [Picture 134]
+  pic          x= 53.47% y= 76.08% w=  3.62% h=  6.43%  [Picture 136]
+  pic          x= 85.03% y= 17.34% w=  3.62% h=  6.43%  [Picture 137]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 30 =====
+  sp           x=  4.33% y= 41.01% w= 29.96% h= 13.01%  26pt bold  [TextBox 6]  "Lorem ipsum  User Modules"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 31 =====
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 39.49%  26/28/16pt bold  [TextBox 9]  "Fast check-in Easy and fast check-in Prior reg"
+  pic          x=  61.3% y=  8.51% w= 21.16% h= 81.65%  [Slika 3]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 6]
+
+===== slide 32 =====
+  pic          x=  62.1% y=  8.45% w= 19.76% h= 81.96%  [Slika 3]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 6]
+  sp           x=  4.35% y= 28.91% w= 44.05% h= 46.22%  26/28/16pt bold  [TextBox 9]  "Lorem ipsum Tailored guest experience Improved"
+
+===== slide 33 =====
+  pic          x= 48.33% y=  8.45% w=  21.1% h= 83.36%  [Slika 3]
+  sp           x=  4.35% y= 29.69% w= 38.85% h= 46.67%  26/28/16pt bold  [TextBox 9]  "Catalogues / shops Room services Wellness Dini"
+  pic          x=  74.7% y=  8.45% w=  21.1% h= 83.36%  [Slika 3]
+  pic          x= 73.59% y=  6.12% w= 23.33% h= 87.75%  [Picture 9]
+  pic          x= 47.21% y=  6.12% w= 23.33% h= 87.75%  [Picture 9]
+
+===== slide 34 =====
+  sp           x=  4.41% y= 29.68% w= 29.96% h= 13.01%  26pt bold  [TextBox 6]  "An invitation to join the pilot project"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 35 =====
+  pic          x=     0% y=     0% w=   100% h=   100%  [Picture 4]
+  sp           x=   0.1% y= -0.08% w=  99.8% h=100.08%  [Rectangle 11]
+  sp           x=  4.42% y= 29.69% w= 14.88% h= 13.01%  26pt bold  [TextBox 7]  "Why  p ilot  p roject ?"
+  sp           x= 33.82% y= 37.52% w= 23.03% h= 21.09%  22pt bold  [TextBox 13]  "To further improve and tailor services accordi"
+  sp           x= 59.15% y= 59.26% w=  1.52% h=  2.71%  [Oval 21]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 36 =====
+  pic          x=     0% y=     0% w=   100% h=   100%  [Picture 4]
+  sp           x=     0% y=  0.11% w=  99.8% h=100.08%  [Rectangle 11]
+  sp           x= 33.82% y= 15.93% w= 23.03% h= 21.09%  22pt  [TextBox 16]  "To demonstrate and prove the outmost potential"
+  sp           x= 59.15% y= 37.48% w=  1.52% h=  2.71%  [Oval 20]
+  sp           x= 59.15% y=  64.2% w=  1.52% h=  2.71%  [Oval 21]
+  sp           x= 33.82% y= 42.44% w= 23.03% h= 21.09%  22pt bold  [TextBox 14]  "To further improve and tailor services accordi"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+  sp           x=  4.42% y= 29.69% w= 14.88% h= 13.01%  26pt bold  [TextBox 5]  "Why  p ilot  p roject ?"
+
+===== slide 37 =====
+  sp           x= 36.41% y= 28.55% w= 12.05% h= 26.77%  [Rectangle 23]
+  sp           x=  55.7% y= 28.55% w= 12.05% h= 26.77%  [Rectangle 22]
+  sp           x= 74.99% y= 28.58% w= 12.05% h= 26.77%  [Rectangle 21]
+  sp           x= 36.41% y= 34.03% w= 12.05% h= 21.42%  [Rectangle 1]
+  sp           x=  55.7% y= 33.94% w= 12.05% h= 21.42%  [Rectangle 13]
+  sp           x= 74.99% y= 33.94% w= 12.05% h= 21.42%  [Rectangle 14]
+  sp           x= 36.09% y= 61.53% w=  15.7% h= 13.91%  20/16pt bold  [TextBox 17]  "1.  step GuestFlow  set-up."
+  sp           x=  55.3% y= 61.53% w=  15.7% h= 21.09%  20/16pt bold  [TextBox 26]  "2.  step Implementation of a first few digital"
+  sp           x= 74.51% y= 61.53% w= 17.37% h=  17.5%  20/16pt bold  [TextBox 30]  "3.  step Guests start using  GuestFlow ."
+  sp           x=   4.6% y= 29.69% w= 23.03% h= 13.01%  26pt bold  [TextBox 9]  "On-boarding in a few days"
+  sp           x= 36.64% y= 33.24% w= 11.21% h= 22.89%  96pt bold  [TextBox 10]  "1"
+  sp           x= 55.92% y= 33.24% w= 11.82% h= 22.89%  96pt bold  [TextBox 11]  "2"
+  sp           x= 75.21% y= 33.24% w= 11.82% h= 22.89%  96pt bold  [TextBox 12]  "3"
+  sp           x= 36.41% y= 28.36% w= 12.05% h=  5.36%  [Rectangle 15]
+  sp           x=  55.7% y= 28.36% w= 12.05% h=  5.36%  [Rectangle 16]
+  sp           x= 74.99% y= 28.38% w= 12.05% h=  5.36%  [Rectangle 18]
+
+===== slide 38 =====
+  sp           x= 36.09% y= 58.34% w= 15.57% h= 24.68%  16pt bold  [TextBox 17]  "Confirmation Confirmation by the IT officer or"
+  sp           x=  55.3% y= 58.34% w=  17.7% h= 21.09%  16pt bold  [TextBox 26]  "Content Preparation of the necessary content ."
+  sp           x= 74.51% y= 58.34% w= 19.41% h= 31.41%  16pt bold  [TextBox 30]  "A ctive  Use Active use of at least three (3) "
+  sp           x=  4.53% y= 32.63% w= 19.97% h= 26.48%  28pt  [TextBox 7]  "Conditions for participation in the pilot proj"
+  sp           x=  74.1% y=    34% w=  12.5% h= 22.22%  [Oval 28]
+  pic          x=  74.1% y=    34% w=  12.5% h= 24.63%  [Picture 29]
+  sp           x=  55.1% y=    34% w=  12.5% h= 22.22%  [Oval 32]
+  pic          x= 56.56% y= 36.59% w=  9.58% h= 17.04%  [Picture 33]
+  sp           x= 36.09% y=    34% w=  12.5% h= 22.22%  [Oval 35]
+  pic          x= 38.23% y=  37.8% w=  8.23% h= 14.63%  [Picture 36]
+
+===== slide 39 =====
+  sp           x= 48.86% y= 63.56% w= 15.36% h= 27.31%  [L-shape 12]
+  sp           x= 79.58% y=  9.08% w= 15.36% h= 27.31%  [L-shape 13]
+  sp           x=   4.9% y= 42.25% w= 28.41% h= 50.51%  [Oval 22]
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 24]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 25]
+  sp           x=  4.47% y= 23.45% w= 23.18% h= 13.01%  26pt bold  [TextBox 26]  "Implementation proposal"
+  sp           x= 21.32% y= 37.86% w= 60.17% h=106.96%  [Arc 1]
+  sp           x= 29.77% y= 47.91% w=  3.74% h=  5.73%  [Triangle 4]
+  sp           x= 57.33% y= 24.75% w= 28.41% h= 50.51%  [Oval 14]
+  pic          x= 66.83% y= 41.88% w=  9.14% h= 16.24%  [Picture 5]
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 3]
+
+===== slide 40 =====
+  sp           x= 48.86% y= 63.56% w= 15.36% h= 27.31%  [L-shape 12]
+  sp           x= 79.58% y=  9.08% w= 15.36% h= 27.31%  [L-shape 13]
+  sp           x=   4.9% y= 42.25% w= 28.41% h= 50.51%  [Oval 22]
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 24]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 25]
+  pic          x= 46.66% y=  1.45% w= 64.23% h=107.48%  [Picture 42]
+  sp           x=  4.47% y= 23.45% w= 22.19% h= 13.01%  26pt bold  [TextBox 10]  "Implementation proposal"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 41 =====
+  sp           x= 48.86% y= 63.56% w= 15.36% h= 27.31%  [L-shape 12]
+  sp           x= 79.58% y=  9.08% w= 15.36% h= 27.31%  [L-shape 13]
+  sp           x=   4.9% y= 42.25% w= 28.41% h= 50.51%  [Oval 22]
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 24]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 25]
+  pic          x= 56.63% y= 16.35% w= 35.51% h= 75.53%  [Picture 5]
+  sp           x=  4.47% y= 23.45% w= 23.13% h= 13.01%  26pt bold  [TextBox 10]  "Implementation proposal"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 42 =====
+  sp           x=   4.9% y= 42.25% w= 28.41% h= 50.51%  [Oval 22]
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 24]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 25]
+  pic          x= 39.46% y=-41.56% w= 68.71% h=155.89%  [Picture 35]
+  sp           x= 48.86% y= 63.56% w= 15.36% h= 27.31%  [L-shape 12]
+  sp           x= 79.58% y=  9.08% w= 15.36% h= 27.31%  [L-shape 13]
+  sp           x=  4.47% y= 23.45% w= 23.06% h= 13.01%  26pt bold  [TextBox 10]  "Implementation proposal"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 43 =====
+  pic          x=     0% y=     0% w=   100% h=   100%  [Picture 1]
+  pic          x= 63.81% y= 42.84% w= 31.11% h= 39.22%  [Picture 5]
+  sp           x= 52.02% y= 44.66% w= 25.69% h= 15.91%  [Rectangle 22]
+  pic          x= 52.08% y= 10.16% w= 24.47% h= 44.87%  [Picture 7]
+  sp           x=   4.9% y= 42.25% w= 28.41% h= 50.51%  [Oval 15]
+  pic          x= 61.45% y=  8.39% w= 21.09% h= 83.31%  [Picture 18]
+  pic          x=  60.4% y=  6.12% w= 23.33% h= 87.75%  [Picture 19]
+  sp           x=  4.47% y= 23.45% w= 25.67% h= 13.01%  26pt bold  [TextBox 20]  "Implementation proposal"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+
+===== slide 44 =====
+  sp           x=  4.41% y= 29.68% w= 29.96% h= 13.01%  26pt bold  [TextBox 6]  "Corpo   Lorem ipsum"
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 1]
+
+===== slide 45 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  pic          x=   8.5% y= 35.09% w= 19.57% h= 20.19% #FFFFFF  [Picture 4]
+  sp           x=  5.54% y= 59.75% w= 25.48% h= 13.46%  54/12pt #010232  [Rectangle 2]  "23"
+  sp           x=  6.38% y= 74.37% w= 23.81% h=  5.39% #FFFFFF  [PoljeZBesedilom 7]  "countries   we   operate  in"
+  pic          x= 41.62% y=  36.3% w= 17.19% h= 17.78% #FFFFFF  [Picture 3]
+  sp           x= 37.47% y= 59.75% w= 25.48% h= 13.46%  54/16pt #FFFFFF  [PoljeZBesedilom 5]  "50.000 +"
+  sp           x= 37.71% y= 74.37% w=    25% h=  5.39%  18/10pt #FFFFFF  [PoljeZBesedilom 9]  "hotel  guests   every   month"
+  pic          x= 71.43% y= 34.45% w= 20.67% h= 21.48% #FFFFFF  [Picture 14]
+  sp           x= 69.02% y= 59.75% w= 25.48% h= 13.46%  54/16pt #FFFFFF  [PoljeZBesedilom 3]  "20%"
+  sp           x= 69.26% y= 74.37% w=    25% h=  5.39%  18/24pt #FFFFFF  [PoljeZBesedilom 11]  "share   within   luxury   cruises"
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron in numbers"
+
+===== slide 46 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 67.72% y=  7.73% w=  27.1% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Industries and market segments"
+  pic          x=   4.8% y=  25.3% w= 92.66% h= 62.05%  [Slika 5]
+
+===== slide 47 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 67.72% y=  7.73% w=  27.1% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Our successful stories"
+  pic          x=  4.58% y= 34.19% w= 90.96% h= 52.84%  [Slika 2]
+  sp           x= 26.21% y= 26.22% w= 45.99% h= 12.34%  22pt #FFFFFF  [PoljeZBesedilom 6]  "In the past 15 years we have contributed to ma"
+
+===== slide 48 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+  sp           x=  4.89% y= 23.35% w= 44.25% h= 13.01%  26pt bold  [PoljeZBesedilom 9]  "Content platform  Tailored  solution to fit an"
+  sp           x=  4.89% y= 40.35% w= 36.08% h=  19.3%  16pt #FFFFFF  [PoljeZBesedilom 3]  "The  Nevron  Content Platform, powered by  Nev"
+  pic          x=    50% y=  10.4% w= 47.33% h= 85.03%  [Slika 4]
+
+===== slide 49 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  pic          x= 49.36% y= 15.98% w= 45.25% h= 78.13%  [Picture 3]
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+  sp           x=  4.33% y= 22.11% w= 29.96% h= 41.74%  26/17pt bold  [TextBox 6]  "Devices Hospitality SmartTV Android TV STB + T"
+
+===== slide 50 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  pic          x=  5.26% y= 41.42% w=  7.58% h=  8.98%  [Picture 11]
+  pic          x= 37.76% y= 41.41% w=  6.26% h=  8.98%  [Picture 11]
+  pic          x= 69.37% y= 39.48% w=  6.26% h= 10.57%  [Picture 11]
+  sp           x=  5.26% y= 54.54% w= 26.57% h= 26.03%  14pt bold #FFFFFF  [PoljeZBesedilom 9]  "Multi screen display network Simple to use fun"
+  sp           x= 37.26% y= 53.93% w= 26.57% h= 25.13%  14pt bold #FFFFFF  [PoljeZBesedilom 11]  "Customized playlists and auto scheduling Creat"
+  sp           x= 69.37% y= 54.54% w= 26.57% h= 25.13%  16/14pt bold #FFFFFF  [PoljeZBesedilom 13]  "Centralized control Manage and operate the ent"
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+
+===== slide 51 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+  sp           x=  9.33% y= 36.58% w= 17.52% h=  18.4%  14/12pt bold  [TextBox 16]  "Solution composer Simple creation of your user"
+  sp           x=  30.6% y= 36.58% w= 17.52% h= 18.85%  14/12pt bold  [TextBox 16]  "Content management system Insert, publish, and"
+  sp           x= 51.88% y= 36.58% w= 17.52% h= 18.85%  14/12pt bold  [TextBox 16]  "Dynamic access manager Grant access to specifi"
+  sp           x=  9.31% y=  73.5% w= 17.52% h=  18.4%  14/12pt bold  [TextBox 16]  "Digital service library Create and deploy in n"
+  sp           x= 73.15% y= 36.58% w= 17.52% h= 15.71%  14/12pt bold  [TextBox 16]  "Analytics system With tracking any user‘s acti"
+  sp           x=  30.6% y=  73.5% w= 17.52% h=  18.4%  14/12pt bold  [TextBox 16]  "Connectivity hub Create and deploy in no time "
+  sp           x= 51.86% y=  73.5% w= 18.67% h= 18.85%  14/12pt bold  [TextBox 16]  "Recommendation engine With tracking any user‘s"
+  sp           x= 73.15% y=  73.5% w= 18.67% h=  18.4%  14/12pt bold  [TextBox 16]  "More core components Device manager, user mana"
+  pic          x= 10.16% y=  27.7% w=  4.13% h=  5.39%  [Slika 12]
+  pic          x= 31.35% y= 27.35% w=  4.35% h=  5.74%  [Slika 14]
+  pic          x= 52.75% y= 25.93% w=  4.71% h=  8.58%  [Slika 16]
+  pic          x= 73.78% y= 27.35% w=  4.35% h=  5.83%  [Slika 18]
+  pic          x= 10.02% y= 64.75% w=  4.13% h=  5.53%  [Slika 20]
+  pic          x= 31.35% y= 63.84% w=  4.13% h=  7.34%  [Slika 22]
+  pic          x= 52.67% y= 63.47% w=  4.35% h=  7.71%  [Slika 24]
+  pic          x= 73.78% y= 63.84% w=  4.13% h=  7.34%  [Slika 26]
+
+===== slide 52 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+  pic          x= 22.64% y=   0.4% w= 77.36% h=  99.6%  [Picture 1]
+  sp           x=  4.67% y= 23.35% w= 36.75% h= 25.13%  28/26pt bold  [PoljeZBesedilom 9]  "Streamron IPTV headend DVB-IP Gateway &amp; En"
+  sp           x= 67.72% y=  7.73% w=  27.1% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+
+===== slide 53 =====
+  pic          x=  5.28% y=   9.2% w=  12.4% h=  6.58%  [Graphic 2]
+  sp           x= 72.84% y=  7.73% w= 21.98% h=  4.94%  16pt  [PoljeZBesedilom 9]  "Nevron products"
+  sp           x=  4.67% y= 23.35% w= 36.75% h=  19.3%  28/26pt bold  [PoljeZBesedilom 9]  "Content platform Tailored solution to fit any "
+  pic          x= 20.25% y= 36.06% w= 76.67% h= 81.19%  [Slika 10]
+
+===== slide 54 =====
+  sp           x=  4.23% y=  7.48% w=  28.8% h= 16.39%  28pt bold  [Title 1]  "Thank you"
+  sp           x= 47.23% y=  7.48% w= 18.87% h= 13.98% #010132  [Rectangle 2]
+  pic          x= 48.85% y=  9.06% w= 46.06% h= 81.88%  [Picture 3]
+
+===== slide 55 =====
+  sp           x=  4.23% y=  7.48% w=  28.8% h= 16.39%  28pt bold  [Title 1]  "Thank you"
+  pic          x=  5.61% y= 81.85% w= 17.65% h=  9.37%  [Graphic 2]
+  pic          x= 48.85% y=  9.06% w= 46.06% h= 81.88%  [Picture 3]
+
+slide size: 12192000 x 6858000 EMU  (13.33" x 7.50")

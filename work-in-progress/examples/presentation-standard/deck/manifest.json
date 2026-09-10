@@ -1,0 +1,3746 @@
+{
+  "source": "2a9209e6ff90c88609a936ae392d56202e682740b3f9c38ff397feebaf1d4bb2",
+  "slides": [
+    {
+      "houseSlide": 3,
+      "label": "NevronCore guest experience",
+      "shapes": [
+        {
+          "id": "5",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5107666,
+            "y": -28273,
+            "w": 6858000,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 540237,
+            "y": 563433,
+            "w": 4628112,
+            "h": 4253664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 684063,
+            "y": 5613480,
+            "w": 2152301,
+            "h": 642821,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5955327,
+            "y": 621325,
+            "w": 5615350,
+            "h": 5615350,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 9572969,
+            "y": 5877441,
+            "w": 2114038,
+            "h": 492443,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 2,
+      "label": "Hospitality in context",
+      "shapes": [
+        {
+          "id": "5",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 5284898,
+            "y": 0,
+            "w": 6907102,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 5284897,
+            "y": 0,
+            "w": 6907103,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 5971367,
+            "y": 621325,
+            "w": 5575868,
+            "h": 5634976,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 540237,
+            "y": 563433,
+            "w": 4628112,
+            "h": 4253664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 684063,
+            "y": 5613480,
+            "w": 2152301,
+            "h": 642821,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 9572969,
+            "y": 5877441,
+            "w": 2114038,
+            "h": 492443,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 37,
+      "label": "Our discussion",
+      "shapes": [
+        {
+          "id": "24",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 4438654,
+            "y": 1958273,
+            "w": 1468660,
+            "h": 1836188,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "23",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 6790452,
+            "y": 1958273,
+            "w": 1468660,
+            "h": 1836188,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 9142252,
+            "y": 1960340,
+            "w": 1468660,
+            "h": 1836188,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 4438654,
+            "y": 2334084,
+            "w": 1468660,
+            "h": 1468660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 6790454,
+            "y": 2327868,
+            "w": 1468660,
+            "h": 1468660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 9142254,
+            "y": 2327868,
+            "w": 1468660,
+            "h": 1468660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 4400415,
+            "y": 4219413,
+            "w": 1914013,
+            "h": 954107,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "27",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 6742306,
+            "y": 4219413,
+            "w": 1914014,
+            "h": 1446550,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "31",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 9084198,
+            "y": 4219413,
+            "w": 2117202,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 561396,
+            "y": 2036009,
+            "w": 2808021,
+            "h": 892552,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 4466555,
+            "y": 2279742,
+            "w": 1366733,
+            "h": 1569660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 6818356,
+            "y": 2279742,
+            "w": 1440757,
+            "h": 1569660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 9170155,
+            "y": 2279742,
+            "w": 1440757,
+            "h": 1569660,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 4438654,
+            "y": 1945100,
+            "w": 1468660,
+            "h": 367528,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 6790454,
+            "y": 1945100,
+            "w": 1468660,
+            "h": 367528,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "19",
+          "source": "ppt/slides/slide37.xml",
+          "box": {
+            "x": 9142254,
+            "y": 1946573,
+            "w": 1468660,
+            "h": 367528,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 15,
+      "label": "The guest journey",
+      "shapes": [
+        {
+          "id": "7",
+          "source": "ppt/slides/slide15.xml",
+          "box": {
+            "x": 537131,
+            "y": 2044701,
+            "w": 4184994,
+            "h": 1292662,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide15.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 19,
+      "label": "Easy access",
+      "shapes": [
+        {
+          "id": "7",
+          "source": "ppt/slides/slide19.xml",
+          "box": {
+            "x": 7500931,
+            "y": 542697,
+            "w": 2571014,
+            "h": 5713365,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide19.xml",
+          "box": {
+            "x": 530019,
+            "y": 2036009,
+            "w": 4721805,
+            "h": 2554545,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide19.xml",
+          "box": {
+            "x": 6826097,
+            "y": 419885,
+            "w": 5625879,
+            "h": 7602306,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide19.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 25,
+      "label": "Discover relevant services",
+      "shapes": [
+        {
+          "id": "9",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 530017,
+            "y": 2036009,
+            "w": 4736795,
+            "h": 3108543,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 6032499,
+            "y": 3492498,
+            "w": 3047999,
+            "h": 3365502,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 9143990,
+            "y": -2,
+            "w": 3048001,
+            "h": 3431535,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 9143997,
+            "y": 3492498,
+            "w": 3047999,
+            "h": 3365502,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "24",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 6032489,
+            "y": -2916,
+            "w": 3047999,
+            "h": 3431535,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide25.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 50,
+      "label": "Content across the property",
+      "shapes": [
+        {
+          "id": "3",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 532166,
+            "y": 2330503,
+            "w": 11056372,
+            "h": 2818201,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 641350,
+            "y": 2840384,
+            "w": 923827,
+            "h": 615656,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 4603985,
+            "y": 2840142,
+            "w": 763571,
+            "h": 615898,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 8457722,
+            "y": 2707377,
+            "w": 763571,
+            "h": 724851,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 641350,
+            "y": 3740474,
+            "w": 3240000,
+            "h": 1785104,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 4542712,
+            "y": 3698660,
+            "w": 3240000,
+            "h": 1723549,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "19",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 8457722,
+            "y": 3740474,
+            "w": 3240000,
+            "h": 1723549,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "20",
+          "source": "ppt/slides/slide50.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 51,
+      "label": "Platform capabilities",
+      "shapes": [
+        {
+          "id": "3",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "20",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 1137097,
+            "y": 2508432,
+            "w": 2135910,
+            "h": 1261884,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 3731058,
+            "y": 2508432,
+            "w": 2135910,
+            "h": 1292662,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 6325019,
+            "y": 2508432,
+            "w": 2135910,
+            "h": 1292662,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 1134730,
+            "y": 5040833,
+            "w": 2135910,
+            "h": 1261884,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8918980,
+            "y": 2508432,
+            "w": 2135910,
+            "h": 1077218,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 3731058,
+            "y": 5040833,
+            "w": 2135910,
+            "h": 1261884,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "9",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 6322652,
+            "y": 5040833,
+            "w": 2275786,
+            "h": 1292662,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8918980,
+            "y": 5040833,
+            "w": 2275786,
+            "h": 1261884,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 1238955,
+            "y": 1899565,
+            "w": 503392,
+            "h": 369633,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 3821594,
+            "y": 1875754,
+            "w": 530379,
+            "h": 393444,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "21",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 6431220,
+            "y": 1778181,
+            "w": 574103,
+            "h": 588590,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8995095,
+            "y": 1875754,
+            "w": 530378,
+            "h": 400095,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "23",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 1221256,
+            "y": 4440303,
+            "w": 503392,
+            "h": 379543,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "24",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 3821594,
+            "y": 4378378,
+            "w": 503392,
+            "h": 503392,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "25",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 6421932,
+            "y": 4352974,
+            "w": 530379,
+            "h": 528796,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "26",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8995095,
+            "y": 4378379,
+            "w": 503392,
+            "h": 503392,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 15,
+      "label": "A measured pilot",
+      "shapes": [
+        {
+          "id": "7",
+          "source": "ppt/slides/slide15.xml",
+          "box": {
+            "x": 537131,
+            "y": 2044701,
+            "w": 4184994,
+            "h": 1292662,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide15.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 5,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "11",
+          "source": "ppt/slides/slide5.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide5.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide5.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide5.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 6,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "11",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 2907125,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 3022671,
+            "y": 1626059,
+            "w": 1813065,
+            "h": 1000274,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 7,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "11",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 2907125,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 3022671,
+            "y": 1626059,
+            "w": 1813065,
+            "h": 1000274,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide7.xml",
+          "box": {
+            "x": 560457,
+            "y": 1561471,
+            "w": 2288895,
+            "h": 1446550,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 8,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "12",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 7341940,
+            "y": 2491246,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 2907125,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 3022671,
+            "y": 1626059,
+            "w": 1813065,
+            "h": 1000274,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide8.xml",
+          "box": {
+            "x": 560457,
+            "y": 1561471,
+            "w": 2288895,
+            "h": 1446550,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 9,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "12",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 7341940,
+            "y": 2491246,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 2907125,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "34",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 9166094,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 3022671,
+            "y": 1626059,
+            "w": 1813065,
+            "h": 1000274,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 560457,
+            "y": 1561471,
+            "w": 2288895,
+            "h": 1446550,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "9",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 9337936,
+            "y": 1626059,
+            "w": 1913860,
+            "h": 784830,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide9.xml",
+          "box": {
+            "x": 8298383,
+            "y": 3622679,
+            "w": 1935946,
+            "h": 1400383,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 10,
+      "label": "Illustrative pilot progress",
+      "shapes": [
+        {
+          "id": "12",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 7341940,
+            "y": 2491246,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 9337936,
+            "y": 1626059,
+            "w": 1913860,
+            "h": 784830,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 1077018,
+            "y": 2495107,
+            "w": 3654777,
+            "h": 3810000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 2017586,
+            "y": 3622679,
+            "w": 1789666,
+            "h": 1200329,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 3022671,
+            "y": 1626059,
+            "w": 1813065,
+            "h": 1000274,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 2907125,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "34",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 9166094,
+            "y": 1649507,
+            "w": 0,
+            "h": 1393588,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "40",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 560457,
+            "y": 1561471,
+            "w": 2288895,
+            "h": 1446550,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 13813971,
+            "y": 5453743,
+            "w": 184731,
+            "h": 369332,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 6618860,
+            "y": 1550295,
+            "w": 1813066,
+            "h": 1785104,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 8298383,
+            "y": 3622679,
+            "w": 1935946,
+            "h": 1400383,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide10.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 11,
+      "label": "Why the guest experience matters",
+      "shapes": [
+        {
+          "id": "10",
+          "source": "ppt/slides/slide11.xml",
+          "box": {
+            "x": 9133808,
+            "y": 0,
+            "w": 3058192,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide11.xml",
+          "box": {
+            "x": 6091767,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide11.xml",
+          "box": {
+            "x": 3056109,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide11.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide11.xml",
+          "box": {
+            "x": 520968,
+            "y": 1612944,
+            "w": 2358710,
+            "h": 1107996,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 12,
+      "label": "Why the guest experience matters",
+      "shapes": [
+        {
+          "id": "9",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3337429,
+            "y": 2046055,
+            "w": 2393569,
+            "h": 400110,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3337429,
+            "y": 5174352,
+            "w": 2725752,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3350356,
+            "y": 4204554,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3337429,
+            "y": 3322130,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 9133808,
+            "y": 0,
+            "w": 3058192,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 6091767,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3056109,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3247545,
+            "y": 1617361,
+            "w": 2721935,
+            "h": 430887,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 3250018,
+            "y": 3322130,
+            "w": 2736786,
+            "h": 2708434,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide12.xml",
+          "box": {
+            "x": 520968,
+            "y": 1612944,
+            "w": 2358710,
+            "h": 1107996,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 13,
+      "label": "Why the guest experience matters",
+      "shapes": [
+        {
+          "id": "9",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3337429,
+            "y": 2046055,
+            "w": 2393569,
+            "h": 400110,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3337429,
+            "y": 5174352,
+            "w": 2725752,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3350356,
+            "y": 4204554,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3337429,
+            "y": 3322130,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 9133808,
+            "y": 10886,
+            "w": 3058192,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 6091767,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3056109,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "20",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 6261529,
+            "y": 1612944,
+            "w": 2809046,
+            "h": 415498,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "23",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 6461003,
+            "y": 2654856,
+            "w": 1332500,
+            "h": 210697,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "24",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 4528748,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "25",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 4852287,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "26",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 5175826,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "27",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 5499365,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "28",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 5822904,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 6056044,
+            "y": 694700,
+            "w": 513465,
+            "h": 442642,
+            "rotation": 90,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "32",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 6327483,
+            "y": 3324323,
+            "w": 2571247,
+            "h": 2416046,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3247545,
+            "y": 1617361,
+            "w": 2721935,
+            "h": 430887,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 3250018,
+            "y": 3322130,
+            "w": 2736786,
+            "h": 2708434,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide13.xml",
+          "box": {
+            "x": 520968,
+            "y": 1612944,
+            "w": 2358710,
+            "h": 1107996,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 14,
+      "label": "Why the guest experience matters",
+      "shapes": [
+        {
+          "id": "9",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 2046055,
+            "w": 2393569,
+            "h": 400110,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 5174352,
+            "w": 2725752,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3350356,
+            "y": 4204554,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 3322130,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9133808,
+            "y": 0,
+            "w": 3058192,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6091767,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3056109,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "21",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9308553,
+            "y": 1612944,
+            "w": 2581676,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "23",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6461003,
+            "y": 2654856,
+            "w": 1332500,
+            "h": 210697,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "24",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 4528748,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "25",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 4852287,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "26",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5175826,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "27",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5499365,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "28",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5822904,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "36",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9615488,
+            "y": 3482657,
+            "w": 2274741,
+            "h": 1400383,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6056044,
+            "y": 694700,
+            "w": 513465,
+            "h": 442642,
+            "rotation": 90,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "38",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9084329,
+            "y": 692589,
+            "w": 513465,
+            "h": 442642,
+            "rotation": 90,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9400827,
+            "y": 3582131,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "30",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9400827,
+            "y": 4166120,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "31",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9416699,
+            "y": 4711453,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 520968,
+            "y": 1612944,
+            "w": 2358710,
+            "h": 1107996,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6261529,
+            "y": 1612944,
+            "w": 2809046,
+            "h": 415498,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6327483,
+            "y": 3324323,
+            "w": 2571247,
+            "h": 2416046,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3247545,
+            "y": 1617361,
+            "w": 2721935,
+            "h": 430887,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "19",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3250018,
+            "y": 3322130,
+            "w": 2736786,
+            "h": 2708434,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "20",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 14,
+      "label": "Operational impact",
+      "shapes": [
+        {
+          "id": "9",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 2046055,
+            "w": 2393569,
+            "h": 400110,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 5174352,
+            "w": 2725752,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3350356,
+            "y": 4204554,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3337429,
+            "y": 3322130,
+            "w": 2885091,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9133808,
+            "y": 0,
+            "w": 3058192,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6091767,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3056109,
+            "y": 0,
+            "w": 3044124,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "21",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9308553,
+            "y": 1612944,
+            "w": 2581676,
+            "h": 738664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "23",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6461003,
+            "y": 2654856,
+            "w": 1332500,
+            "h": 210697,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "24",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 4528748,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "25",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 4852287,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "26",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5175826,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "27",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5499365,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "28",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 5822904,
+            "y": 2482329,
+            "w": 243069,
+            "h": 243069,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "36",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9615488,
+            "y": 3482657,
+            "w": 2274741,
+            "h": 1400383,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6056044,
+            "y": 694700,
+            "w": 513465,
+            "h": 442642,
+            "rotation": 90,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "38",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9084329,
+            "y": 692589,
+            "w": 513465,
+            "h": 442642,
+            "rotation": 90,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9400827,
+            "y": 3582131,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "30",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9400827,
+            "y": 4166120,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "31",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 9416699,
+            "y": 4711453,
+            "w": 161556,
+            "h": 180025,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 520968,
+            "y": 1612944,
+            "w": 2358710,
+            "h": 1107996,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6261529,
+            "y": 1612944,
+            "w": 2809046,
+            "h": 415498,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 6327483,
+            "y": 3324323,
+            "w": 2571247,
+            "h": 2416046,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3247545,
+            "y": 1617361,
+            "w": 2721935,
+            "h": 430887,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "19",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 3250018,
+            "y": 3322130,
+            "w": 2736786,
+            "h": 2708434,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "20",
+          "source": "ppt/slides/slide14.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 45,
+      "label": "Illustrative pilot scope",
+      "shapes": [
+        {
+          "id": "3",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 675762,
+            "y": 2176692,
+            "w": 3106923,
+            "h": 3063415,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 1036196,
+            "y": 2406483,
+            "w": 2386055,
+            "h": 1384635,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 675762,
+            "y": 4097818,
+            "w": 3106923,
+            "h": 923330,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "9",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 777795,
+            "y": 5100566,
+            "w": 2902857,
+            "h": 369332,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 4545381,
+            "y": 2259409,
+            "w": 3106924,
+            "h": 2980698,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "11",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 5073947,
+            "y": 2489200,
+            "w": 2095501,
+            "h": 1219200,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 4568235,
+            "y": 4097818,
+            "w": 3106924,
+            "h": 923330,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "13",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 4597697,
+            "y": 5100566,
+            "w": 3048000,
+            "h": 369332,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 8415002,
+            "y": 2132628,
+            "w": 3106923,
+            "h": 3107479,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 8708561,
+            "y": 2362419,
+            "w": 2519805,
+            "h": 1472762,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 8415002,
+            "y": 4097818,
+            "w": 3106923,
+            "h": 923330,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "22",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 8444463,
+            "y": 5100566,
+            "w": 3048000,
+            "h": 369332,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "44",
+          "source": "ppt/slides/slide45.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-source",
+          "source": "ppt/slides/slide6.xml",
+          "box": {
+            "x": 520019,
+            "y": 6319013,
+            "w": 4415219,
+            "h": 230832,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 20,
+      "label": "The in-room experience",
+      "shapes": [
+        {
+          "id": "2",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 629869,
+            "y": 1578364,
+            "w": 3199999,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4495999,
+            "y": 1578364,
+            "w": 3200000,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 566527,
+            "y": 3477828,
+            "w": 3120978,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4443082,
+            "y": 3477828,
+            "w": 3129381,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8314415,
+            "y": 3477828,
+            "w": 3138525,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 566527,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4418606,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8315156,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8362131,
+            "y": 1578364,
+            "w": 3200000,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 634768,
+            "y": 4123124,
+            "w": 3171429,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4443082,
+            "y": 4117923,
+            "w": 3227737,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8362131,
+            "y": 4113613,
+            "w": 3199999,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 20,
+      "label": "A closer look at the interface",
+      "shapes": [
+        {
+          "id": "2",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 643517,
+            "y": 630649,
+            "w": 1511565,
+            "h": 451454,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 629869,
+            "y": 1578364,
+            "w": 3199999,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4495999,
+            "y": 1578364,
+            "w": 3200000,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "5",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 566527,
+            "y": 3477828,
+            "w": 3120978,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "7",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4443082,
+            "y": 3477828,
+            "w": 3129381,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "8",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8314415,
+            "y": 3477828,
+            "w": 3138525,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "10",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 566527,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "12",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4418606,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "14",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8315156,
+            "y": 6007469,
+            "w": 3137784,
+            "h": 276999,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "15",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8362131,
+            "y": 1578364,
+            "w": 3200000,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 634768,
+            "y": 4123124,
+            "w": 3171429,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "17",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 4443082,
+            "y": 4117923,
+            "w": 3227737,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "18",
+          "source": "ppt/slides/slide20.xml",
+          "box": {
+            "x": 8362131,
+            "y": 4113613,
+            "w": 3199999,
+            "h": 1800000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 38,
+      "label": "Pilot responsibilities",
+      "shapes": [
+        {
+          "id": "8",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 552343,
+            "y": 2237866,
+            "w": 2435301,
+            "h": 1815882,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "chrome-section",
+          "source": "ppt/slides/slide51.xml",
+          "box": {
+            "x": 8881108,
+            "y": 530019,
+            "w": 2679605,
+            "h": 338554,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-0-0",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 4400415,
+            "y": 2082872,
+            "w": 1898785,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-0-1",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 6742306,
+            "y": 2082872,
+            "w": 2157854,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-0-2",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 9084198,
+            "y": 2082872,
+            "w": 2366122,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-1-0",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 4400415,
+            "y": 3101024.25,
+            "w": 1898785,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-1-1",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 6742306,
+            "y": 3101024.25,
+            "w": 2157854,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-1-2",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 9084198,
+            "y": 3101024.25,
+            "w": 2366122,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-2-0",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 4400415,
+            "y": 4119176.5,
+            "w": 1898785,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-2-1",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 6742306,
+            "y": 4119176.5,
+            "w": 2157854,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-2-2",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 9084198,
+            "y": 4119176.5,
+            "w": 2366122,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-3-0",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 4400415,
+            "y": 5137328.75,
+            "w": 1898785,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-3-1",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 6742306,
+            "y": 5137328.75,
+            "w": 2157854,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "table-3-2",
+          "source": "ppt/slides/slide38.xml",
+          "box": {
+            "x": 9084198,
+            "y": 5137328.75,
+            "w": 2366122,
+            "h": 1018152.25,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 2,
+      "label": "Content in context",
+      "shapes": [
+        {
+          "id": "5",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 5284898,
+            "y": 0,
+            "w": 6907102,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 5284897,
+            "y": 0,
+            "w": 6907103,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 540237,
+            "y": 563433,
+            "w": 4628112,
+            "h": 4253664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 684063,
+            "y": 5613480,
+            "w": 2152301,
+            "h": 642821,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "3",
+          "source": "ppt/slides/slide2.xml",
+          "box": {
+            "x": 9572969,
+            "y": 5877441,
+            "w": 2114038,
+            "h": 492443,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    },
+    {
+      "houseSlide": 3,
+      "label": "Thank you",
+      "shapes": [
+        {
+          "id": "5",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5107666,
+            "y": -28273,
+            "w": 6858000,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 540237,
+            "y": 563433,
+            "w": 4628112,
+            "h": 4253664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 684063,
+            "y": 5613480,
+            "w": 2152301,
+            "h": 642821,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5955327,
+            "y": 621325,
+            "w": 5615350,
+            "h": 5615350,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 9572969,
+            "y": 5877441,
+            "w": 2114038,
+            "h": 492443,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    }
+  ],
+  "fontMode": "open-sans",
+  "warnings": [
+    "House 5: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds.",
+    "House 6: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds.",
+    "House 7: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds.",
+    "House 8: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds.",
+    "House 9: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds.",
+    "House 10: chart plot area uses automatic-layout fallback; OOXML has no manual plot bounds."
+  ],
+  "assets": 34
+}

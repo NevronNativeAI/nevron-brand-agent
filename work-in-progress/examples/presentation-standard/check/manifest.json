@@ -1,0 +1,78 @@
+{
+  "source": "2a9209e6ff90c88609a936ae392d56202e682740b3f9c38ff397feebaf1d4bb2",
+  "slides": [
+    {
+      "houseSlide": 3,
+      "shapes": [
+        {
+          "id": "5",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5107666,
+            "y": -28273,
+            "w": 6858000,
+            "h": 6858000,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "2",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 540237,
+            "y": 563433,
+            "w": 4628112,
+            "h": 4253664,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "16",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 684063,
+            "y": 5613480,
+            "w": 2152301,
+            "h": 642821,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "4",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 5955327,
+            "y": 621325,
+            "w": 5615350,
+            "h": 5615350,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        },
+        {
+          "id": "6",
+          "source": "ppt/slides/slide3.xml",
+          "box": {
+            "x": 9572969,
+            "y": 5877441,
+            "w": 2114038,
+            "h": 492443,
+            "rotation": 0,
+            "flipH": false,
+            "flipV": false
+          }
+        }
+      ]
+    }
+  ],
+  "fontMode": "open-sans",
+  "warnings": [],
+  "assets": 8
+}
