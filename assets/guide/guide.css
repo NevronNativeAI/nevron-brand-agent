@@ -331,8 +331,8 @@ pre code { background: none; padding: 0; }
   padding: 16px 22px; margin: 0 0 22px; max-width: var(--measure);
   font-size: var(--t-small); line-height: 1.6;
 }
-.note--warn { border-left-color: var(--amber); background: #FFF8E6; }
-.note--stop { border-left-color: var(--red);   background: #FDECEE; }
+.note--warn { border-left-color: var(--amber); background: color-mix(in srgb, var(--amber) 12%, #fff); }
+.note--stop { border-left-color: var(--red);   background: color-mix(in srgb, var(--red) 9%, #fff); }
 .note__title { font-weight: 700; margin: 0 0 5px; }
 .note p { max-width: none; }
 .note p:last-child { margin-bottom: 0; }
