@@ -203,6 +203,19 @@ body {
   max-width: none;
 }
 .cta__note { margin: 12px 0 0; font-size: 13px; color: rgba(255,255,255,.55); max-width: none; }
+
+/* An optional companion, not a requirement — kept visually subordinate. */
+.cta__dep {
+  margin: 20px 0 0; padding: 13px 15px; max-width: none;
+  border: 1px solid rgba(255,255,255,.14);
+  border-left: 3px solid var(--blue-2);
+  font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.68);
+}
+.cta__dep b {
+  display: block; font-family: var(--mono);
+  font-size: 10.5px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--blue-2); margin-bottom: 6px;
+}
 .hero code, .foot code {
   background: rgba(255,255,255,.1); color: #fff;
   overflow-wrap: anywhere;
