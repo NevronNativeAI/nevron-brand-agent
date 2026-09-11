@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>House slide 12</title><style>
+﻿/* Stage mechanics only. Layout geometry and type sizes are extracted data. */
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; background: #111; }
+body { overflow: hidden; }
+.stage { position: absolute; left: 50%; top: 50%; transform-origin: center; }
+/* `contain` matters for the PDF, not the screen. Shapes may hang off the slide
+   edge — legal in PowerPoint, which clips at the slide boundary. overflow:hidden
+   clips the paint, but Chrome's print fitter reads raw descendant layout and
+   shrinks every page to make the widest one fit, which is why slides printed at
+   ~67% inside correct pages. Size containment stops that; it is safe because the
+   renderer always writes an explicit width and height on the slide. */
+.slide { position: relative; display: none; overflow: hidden; isolation: isolate;
+         contain: size layout paint; }
+.slide.active { display: block; }
+.shape, .group, .geometry, .text, .picture { position: absolute; }
+.shape { transform-origin: center; }
+.group { transform-origin: 0 0; }
+.geometry, .picture { left: 0; top: 0; }
+.text { inset: 0; display: flex; flex-direction: column; overflow: visible; }
+.text p { padding: 0; margin: 0; overflow-wrap: normal; }
+.text-content { flex: none; width: 100%; }
+.bullet { display: inline-block; padding-right: .4em; }
+.picture { width: 100%; height: 100%; overflow: hidden; }
+.picture img { position: absolute; max-width: none; }
+.missing { width: 100%; height: 100%; background: #ffb81c; color: #010232; padding: 12px; font: 12px sans-serif; }
+table { border-collapse: collapse; table-layout: fixed; }
+td { position: relative; padding: 0; }
+@media print {
+  html, body { width: auto; height: auto; overflow: visible; background: transparent; }
+  .stage { position: static; transform: none !important; margin: 0; }
+  .slide, .slide.active { display: block; break-after: page; break-inside: avoid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .slide:last-child { break-after: auto; }
+}
+.text { font-family: 'Open Sans', sans-serif; }
+@media print { .stage { zoom: 1.3333333333333333; } }
+
+/* ==========================================================================
+   Deck navigation chrome. Never printed, never part of a slide.
+   Radius 0 throughout — hard brand rule. One accent: Nevron blue.
+   ========================================================================== */
+
+:root {
+  --ui-navy: #000126;
+  --ui-blue: #1B92FF;
+  --ui-blue-2: #73C7FF;
+  --ui-line: rgba(255,255,255,.18);
+}
+
+.deck-ui, .deck-progress, .deck-grid, .deck-help { font-family: 'Open Sans', system-ui, sans-serif; }
+
+/* ---- bottom control bar -------------------------------------------------- */
+
+.deck-ui {
+  position: fixed; z-index: 40; left: 50%; bottom: 18px;
+  transform: translateX(-50%);
+  display: flex; align-items: stretch; gap: 1px;
+  background: var(--ui-line);
+  border: 1px solid var(--ui-line);
+  opacity: 0; pointer-events: none;
+  transition: opacity .18s ease;
+}
+.deck-ui.is-visible { opacity: 1; pointer-events: auto; }
+body.overview .deck-ui { opacity: 1; pointer-events: auto; }
+
+.ui-btn {
+  appearance: none; border: 0; cursor: pointer;
+  background: var(--ui-navy); color: #fff;
+  font: 600 14px/1 'Open Sans', system-ui, sans-serif;
+  min-width: 40px; padding: 0 12px;
+  display: grid; place-items: center;
+  transition: background-color .15s ease, color .15s ease;
+}
+.ui-btn:hover { background: var(--ui-blue); }
+.ui-btn:disabled { opacity: .35; cursor: default; }
+.ui-btn:disabled:hover { background: var(--ui-navy); }
+.ui-btn[aria-pressed="true"] { background: var(--ui-blue); }
+.ui-btn:focus-visible { outline: 2px solid var(--ui-blue-2); outline-offset: -2px; }
+
+.ui-count {
+  background: var(--ui-navy); color: rgba(255,255,255,.62);
+  font: 600 12px/1 'Open Sans', system-ui, sans-serif;
+  letter-spacing: .06em; padding: 0 14px; min-width: 78px; white-space: nowrap;
+  /* flex, not grid: a grid container turns the <b> and the "/27" text node
+     into separate grid items and stacks them on two rows */
+  display: flex; align-items: center; justify-content: center; gap: 3px;
+}
+.ui-count b { color: #fff; font-weight: 700; }
+
+/* ---- progress ------------------------------------------------------------ */
+
+.deck-progress {
+  position: fixed; z-index: 41; left: 0; right: 0; bottom: 0; height: 3px;
+  background: rgba(0,1,38,.18);
+}
+.deck-progress i { display: block; height: 100%; width: 0; background: var(--ui-blue); transition: width .2s ease; }
+body.overview .deck-progress { display: none; }
+
+/* ---- overview grid ------------------------------------------------------- */
+
+.deck-grid {
+  position: fixed; inset: 0; z-index: 30; overflow-y: auto;
+  background: var(--ui-navy);
+  display: grid; align-content: start;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: 14px; padding: 18px 18px 84px;
+}
+.deck-grid[hidden] { display: none; }
+
+.cell {
+  appearance: none; padding: 0; cursor: pointer; text-align: left;
+  background: none; border: 1px solid var(--ui-line);
+  display: block; position: relative; overflow: hidden;
+  transition: border-color .15s ease;
+}
+.cell:hover, .cell:focus-visible { border-color: var(--ui-blue); outline: none; }
+.cell.is-current { border-color: var(--ui-blue-2); box-shadow: inset 0 0 0 2px var(--ui-blue-2); }
+/* zoom (not transform) so the thumbnail occupies real layout space */
+.cell .slide { display: block !important; }
+.cell__num {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  background: var(--ui-navy); color: #fff;
+  font: 600 11px/1 'Open Sans', system-ui, sans-serif;
+  letter-spacing: .08em; padding: 5px 8px;
+}
+.cell__label {
+  position: absolute; right: 0; bottom: 0; z-index: 2;
+  background: rgba(0,1,38,.82); color: rgba(255,255,255,.72);
+  font: 400 10px/1.2 'Open Sans', system-ui, sans-serif;
+  padding: 5px 8px; max-width: 70%;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---- keyboard help ------------------------------------------------------- */
+
+.deck-help {
+  position: fixed; inset: 0; z-index: 50; display: grid; place-items: center;
+  background: rgba(0,1,38,.86);
+}
+.deck-help[hidden] { display: none; }
+.deck-help dl {
+  background: var(--ui-navy); border: 1px solid var(--ui-line);
+  color: #fff; margin: 0; padding: 26px 30px;
+  display: grid; grid-template-columns: auto 1fr; gap: 10px 22px;
+  font-size: 13px; min-width: 300px;
+}
+.deck-help dt {
+  font: 600 11px/1.6 ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  background: rgba(255,255,255,.1); padding: 2px 8px; justify-self: start;
+}
+.deck-help dd { margin: 0; color: rgba(255,255,255,.76); align-self: center; }
+.deck-help h2 {
+  grid-column: 1 / -1; margin: 0 0 6px;
+  font-size: 15px; font-weight: 700; letter-spacing: -.01em;
+}
+
+@media (max-width: 640px) {
+  .deck-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .deck-ui { bottom: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deck-ui, .deck-progress i, .ui-btn, .cell { transition: none; }
+}
+
+/* Chrome is never part of the printed deck. */
+@media print {
+  .deck-ui, .deck-progress, .deck-grid, .deck-help { display: none !important; }
+}
+
+@page{size:960pt 540pt;margin:0}</style><body><main class="stage" style="width:960px;height:540px"><section class="slide" data-house-slide="12" style="width:960px;height:540px;background:linear-gradient(#ffffff,#ffffff),#fff" aria-label="Presentation slide"><div class="shape" data-shape="9" data-source="ppt/slides/slide12.xml" style="left:262.789685px;top:161.106693px;width:188.47px;height:31.504724px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="188.47" height="31.504724" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="188.47" height="31.504724"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:20px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:20px;font-weight:700;font-style:normal;color:#000000;letter-spacing:0px;">POGOSTE TEŽAVE</span></p></div></div></div><div class="shape" data-shape="11" data-source="ppt/slides/slide12.xml" style="left:262.789685px;top:407.429291px;width:214.626142px;height:58.16252px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="214.626142" height="58.16252" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="214.626142" height="58.16252"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;font-style:normal;color:#000000;letter-spacing:0px;">Informiranost gostov</span></p><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;">(</span><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;">Pre</span><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;">)hiter dotok novih vsebin, neobveščenost</span></p></div></div></div><div class="shape" data-shape="12" data-source="ppt/slides/slide12.xml" style="left:263.807559px;top:331.067244px;width:227.17252px;height:58.16252px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="227.17252" height="58.16252" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="227.17252" height="58.16252"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;font-style:normal;color:#000000;letter-spacing:0px;">Implementacija</span></p><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;">Kompleksnost in visoki stroški implementacije novih tehnologij</span></p></div></div></div><div class="shape" data-shape="13" data-source="ppt/slides/slide12.xml" style="left:262.789685px;top:261.585039px;width:227.17252px;height:58.16252px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="227.17252" height="58.16252" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="227.17252" height="58.16252"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:700;font-style:normal;color:#000000;letter-spacing:0px;">Osebje</span></p><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Inter',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;">Pomanjkanje, obremenjenost, usposobljenost, motiviranost osebja</span></p></div></div></div><div class="shape" data-shape="10" data-source="ppt/slides/slide12.xml" style="left:719.19748px;top:0px;width:240.80252px;height:540px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="240.80252" height="540" overflow="visible"><defs></defs><g fill="#262626" stroke="none" stroke-width="1" ><rect width="240.80252" height="540"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:center;white-space:pre-wrap"><div class="text-content"><p style="font-size:18px;line-height:1.2;text-align:center;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Arial',sans-serif;font-size:18px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;"> </span></p></div></div></div><div class="shape" data-shape="14" data-source="ppt/slides/slide12.xml" style="left:479.666693px;top:0px;width:239.694803px;height:540px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="239.694803" height="540" overflow="visible"><defs></defs><g fill="#262626" stroke="none" stroke-width="1" ><rect width="239.694803" height="540"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:center;white-space:pre-wrap"><div class="text-content"><p style="font-size:18px;line-height:1.2;text-align:center;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Arial',sans-serif;font-size:18px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;"> </span></p></div></div></div><div class="shape" data-shape="15" data-source="ppt/slides/slide12.xml" style="left:240.638504px;top:0px;width:239.694803px;height:540px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="239.694803" height="540" overflow="visible"><defs></defs><g fill="#a6a6a6" stroke="none" stroke-width="1" ><rect width="239.694803" height="540"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:center;white-space:pre-wrap"><div class="text-content"><p style="font-size:18px;line-height:1.2;text-align:center;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Arial',sans-serif;font-size:18px;font-weight:400;font-style:normal;color:#000000;letter-spacing:0px;"> </span></p></div></div></div><div class="shape" data-shape="17" data-source="ppt/slides/slide12.xml" style="left:255.712205px;top:127.35126px;width:214.325591px;height:33.92811px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="214.325591" height="33.92811" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="214.325591" height="33.92811"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:21px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:21px;font-weight:700;font-style:normal;color:#ffffff;letter-spacing:0px;">Frequent problems</span></p></div></div></div><div class="shape" data-shape="18" data-source="ppt/slides/slide12.xml" style="left:255.906929px;top:261.585039px;width:215.494961px;height:213.26252px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="215.494961" height="213.26252" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="215.494961" height="213.26252"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:17px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:17px;font-weight:700;font-style:normal;color:#ffffff;letter-spacing:0px;">Personnel</span></p><p style="font-size:13px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:13px;font-weight:400;font-style:normal;color:#ffffff;letter-spacing:0px;">shortage, workload, skills, lack of motivation</span></p><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:14px;font-weight:400;font-style:normal;color:#ffffff;letter-spacing:0px;"> </span></p><p style="font-size:17px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:17px;font-weight:700;font-style:normal;color:#ffffff;letter-spacing:0px;">Demanding guests </span><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:13px;font-weight:400;font-style:normal;color:#ffffff;letter-spacing:0px;">insufficient information flow, unfulfilled expectations, new habits</span></p><p style="font-size:14px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:14px;font-weight:700;font-style:normal;color:#ffffff;letter-spacing:0px;"> </span></p><p style="font-size:17px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:17px;font-weight:700;font-style:normal;color:#ffffff;letter-spacing:0px;">Technology</span></p><p style="font-size:13px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:13px;font-weight:400;font-style:normal;color:#ffffff;letter-spacing:0px;">availability, added value, simplicity of implementation and usage</span></p></div></div></div><div class="shape" data-shape="3" data-source="ppt/slides/slide12.xml" style="left:50.67063px;top:49.657402px;width:119.020866px;height:35.547559px;transform:rotate(0deg) scale(1,1);"><div class="picture"><img alt="Graphic 2" src="media/86e4f9b6cf1c7dbe.png" style="width:100%;height:100%;left:0%;top:0%"></div></div><div class="shape" data-shape="5" data-source="ppt/slides/slide12.xml" style="left:41.021102px;top:127.003465px;width:185.725197px;height:87.24378px;transform:rotate(0deg) scale(1,1);"><svg class="geometry" width="185.725197" height="87.24378" overflow="visible"><defs></defs><g fill="none" stroke="none" stroke-width="1" ><rect width="185.725197" height="87.24378"/></g></svg><div class="text" style="padding:3.6px 7.2px 3.6px 7.2px;justify-content:flex-start;white-space:pre-wrap"><div class="text-content"><p style="font-size:22px;line-height:1.2;text-align:left;margin:0px 0 0px 0px;text-indent:0px"><span style="font-family:'Neue Haas Unica Pro',sans-serif;font-size:22px;font-weight:700;font-style:normal;color:#000000;letter-spacing:0px;">Why digitalize the relations with guests?</span></p></div></div></div></section></main><script>const slides=[...document.querySelectorAll('.slide')],stage=document.querySelector('.stage');let current=0;
+function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>s.classList.toggle('active',j===current));location.hash=String(current+1);}
+function resize(){stage.style.transform='translate(-50%,-50%) scale('+Math.min(innerWidth/960,innerHeight/540)+')';}addEventListener('resize',resize);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1);}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1);}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);});
+addEventListener('hashchange',()=>{const n=Number(location.hash.slice(1));if(Number.isInteger(n)&&n>0&&n<=slides.length)show(n-1);});show(Number(location.hash.slice(1)||1)-1);resize();
+window.deckReady=document.fonts.ready.then(async()=>{await Promise.all([...document.images].map(im=>im.decode().catch(()=>{})));document.documentElement.dataset.ready='true';return true;});window.deckReady.then(()=>{
+    const errors=[];for(const t of document.querySelectorAll('.text')){const s=t.closest('.shape'),b=s.getBoundingClientRect(),c=t.querySelector('.text-content').getBoundingClientRect();if(!t.textContent.trim()||b.right<0||b.bottom<0||b.left>innerWidth||b.top>innerHeight)continue;
+    const p=getComputedStyle(t);if(c.bottom>b.bottom-parseFloat(p.paddingBottom)*innerWidth/960+2)errors.push({shape:s.dataset.shape,kind:'vertical-text-overflow'});}
+    for(const im of document.images)if(!im.complete||!im.naturalWidth)errors.push({kind:'missing-image',src:im.getAttribute('src')});
+    const report=document.createElement('script');report.type='application/json';report.id='diagnostics';report.textContent=JSON.stringify(errors);document.body.append(report);
+  });</script></body></html>

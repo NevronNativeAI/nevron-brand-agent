@@ -11,7 +11,7 @@
     {
       "name": "nevron-brand",
       "source": "./plugins/nevron-brand",
-      "description": "Nevron brand agent plus six skills that produce branded output: house documents, datasheets, service reports, client offers and abstract pitch decks."
+      "description": "Nevron brand agent plus seven skills that produce branded output: house documents, datasheets, service reports, client offers, abstract pitch decks, and presentation decks rebuilt from the house PowerPoint."
     }
   ]
 }

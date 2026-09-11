@@ -1,0 +1,35 @@
+﻿/* Stage mechanics only. Layout geometry and type sizes are extracted data. */
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; background: #111; }
+body { overflow: hidden; }
+.stage { position: absolute; left: 50%; top: 50%; transform-origin: center; }
+/* `contain` matters for the PDF, not the screen. Shapes may hang off the slide
+   edge — legal in PowerPoint, which clips at the slide boundary. overflow:hidden
+   clips the paint, but Chrome's print fitter reads raw descendant layout and
+   shrinks every page to make the widest one fit, which is why slides printed at
+   ~67% inside correct pages. Size containment stops that; it is safe because the
+   renderer always writes an explicit width and height on the slide. */
+.slide { position: relative; display: none; overflow: hidden; isolation: isolate;
+         contain: size layout paint; }
+.slide.active { display: block; }
+.shape, .group, .geometry, .text, .picture { position: absolute; }
+.shape { transform-origin: center; }
+.group { transform-origin: 0 0; }
+.geometry, .picture { left: 0; top: 0; }
+.text { inset: 0; display: flex; flex-direction: column; overflow: visible; }
+.text p { padding: 0; margin: 0; overflow-wrap: normal; }
+.text-content { flex: none; width: 100%; }
+.bullet { display: inline-block; padding-right: .4em; }
+.picture { width: 100%; height: 100%; overflow: hidden; }
+.picture img { position: absolute; max-width: none; }
+.missing { width: 100%; height: 100%; background: #ffb81c; color: #010232; padding: 12px; font: 12px sans-serif; }
+table { border-collapse: collapse; table-layout: fixed; }
+td { position: relative; padding: 0; }
+@media print {
+  html, body { width: auto; height: auto; overflow: visible; background: transparent; }
+  .stage { position: static; transform: none !important; margin: 0; }
+  .slide, .slide.active { display: block; break-after: page; break-inside: avoid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .slide:last-child { break-after: auto; }
+}
+.text { font-family: 'Open Sans', sans-serif; }
+@media print { .stage { zoom: 1.3333333333333333; } }

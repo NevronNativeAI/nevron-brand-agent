@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nevron Brand Agent — a Claude Code plugin</title>
-<meta name="description" content="A brand advisor for any Nevron work, plus six skills that build documents, datasheets, reports, offers and decks in the house style. Two commands to install.">
+<meta name="description" content="A brand advisor for any Nevron work, plus seven skills that build documents, datasheets, reports, offers and decks in the house style. Two commands to install.">
 <link rel="icon" href="plugins/nevron-brand/assets/logos/nevron-logo-icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
     <p class="rail__label">On this page</p>
     <nav class="rail__nav rail__toc" id="toc">
       <a href="#advisor">The agent as advisor</a>
-      <a href="#skills">The six skills</a>
+      <a href="#skills">The seven skills</a>
       <a href="#run">How a build runs</a>
       <a href="#requirements">Requirements</a>
       <a href="#library">The asset library</a>
@@ -52,7 +52,7 @@
       <div class="hero__inner">
         <p class="hero__eyebrow"><i></i> A plugin for Claude Code</p>
         <h1>Nevron files, built the way the house builds them.</h1>
-        <p class="hero__lede">An advisor on any Nevron work you are already building, and six
+        <p class="hero__lede">An advisor on any Nevron work you are already building, and seven
           skills that produce the finished file — <b>no InDesign, no Word, no PowerPoint.</b></p>
 
         <div class="hero__cta">
@@ -119,12 +119,46 @@
 
       <section id="skills">
         <p class="sec__num">02 — Skills</p>
-        <h2>Six skills, six kinds of file</h2>
+        <h2>Seven skills, seven kinds of file</h2>
         <p class="lede">When you do want a finished file, these produce one. Every render below
           came out of the skill it sits under, built from the example that ships with it. Type the
           command, or just describe the thing you want.</p>
 
         <!-- 1 -->
+        <div class="skill" id="presentation-standard">
+          <div class="skill__grid">
+            <div class="skill__text">
+              <div class="skill__head">
+                <h3>Presentation deck</h3>
+                <span class="tag tag--out">16:9 HTML + PDF</span>
+              </div>
+              <p class="skill__what">The business deck, built from the layouts the house
+                PowerPoint actually uses. Every one of its 55 slides has a name; nothing is drawn
+                by hand.</p>
+              <div class="cmd cmd--sm"><span>/nevron-brand:presentation-standard</span><button type="button" data-copy>Copy</button></div>
+              <ul class="skill__meta">
+                <li><b>You give</b><span>A <code>deck.json</code> naming layouts, plus your copy and images</span></li>
+                <li><b>You get</b><span>A 16:9 HTML deck with slide navigation, and a PDF</span></li>
+              </ul>
+            </div>
+            <div class="skill__shots">
+              <figure class="shot shot--dark">
+                <img src="assets/guide/presentation-standard.png" width="1600" height="900" loading="lazy" alt="Navy cover slide: NevronCore in bold white, subtitle Guest experience, the white corner-bracket frame at right, logo bottom left and the slogan Be content! bottom right.">
+                <figcaption>Cover</figcaption>
+              </figure>
+              <figure class="shot shot--dark">
+                <img src="assets/guide/presentation-standard-2.png" width="1600" height="900" loading="lazy" alt="Navy slide with two donut rings in blue and orange, each with a leader line up to a percentage callout.">
+                <figcaption>Donut build, final step</figcaption>
+              </figure>
+              <figure class="shot">
+                <img src="assets/guide/presentation-standard-3.png" width="1600" height="900" loading="lazy" alt="Three grey chevron panels across a white slide, filled left to right: Frequent problems, Poor service quality, Lower business success.">
+                <figcaption>Three-column panel build</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
         <div class="skill" id="presentation-abstract">
           <div class="skill__grid">
             <div class="skill__text">
@@ -150,7 +184,7 @@
           </div>
         </div>
 
-        <!-- 2 -->
+        <!-- 3 -->
         <div class="skill" id="nevron-document">
           <div class="skill__grid">
             <div class="skill__text">
@@ -179,7 +213,7 @@
           </div>
         </div>
 
-        <!-- 3 -->
+        <!-- 4 -->
         <div class="skill" id="nevron-document-nocover">
           <div class="skill__grid">
             <div class="skill__text">
@@ -204,7 +238,7 @@
           </div>
         </div>
 
-        <!-- 4 -->
+        <!-- 5 -->
         <div class="skill" id="datasheet">
           <div class="skill__grid">
             <div class="skill__text">
@@ -229,7 +263,7 @@
           </div>
         </div>
 
-        <!-- 5 -->
+        <!-- 6 -->
         <div class="skill" id="service-report">
           <div class="skill__grid">
             <div class="skill__text">
@@ -254,7 +288,7 @@
           </div>
         </div>
 
-        <!-- 6 -->
+        <!-- 7 -->
         <div class="skill" id="offer">
           <div class="skill__grid">
             <div class="skill__text">
@@ -297,7 +331,7 @@
           <li class="step">
             <div>
               <h3>A plain Node script fills the house template</h3>
-              <p>Four builders serve all six skills. No dependencies, no
+              <p>Five builders serve all seven skills. No dependencies, no
                 <code>npm install</code>.</p>
             </div>
           </li>

@@ -1,7 +1,8 @@
 # Imagery themes
 
 Which art direction a generated or chosen image should follow. Shared by every
-skill that puts a photograph on a page — `offer`, `presentation-abstract`.
+skill that puts a photograph on a page — `offer`, `presentation-standard`,
+`presentation-abstract`.
 
 **Tokens and imagery are two separate layers.** A theme is a token set; the art
 direction is chosen independently. Abundance runs on Hospitality's colours and

@@ -1,7 +1,7 @@
 {
   "name": "nevron-brand",
-  "description": "Keeps Nevron work on brand and produces branded deliverables. Ships the brand agent (colours, typography, logos, icon verification, format guidelines) and six skills: full house documents, short documents without a cover, product datasheets, service reports, client offers, and abstract pitch decks.",
-  "version": "2.0.0",
+  "description": "Keeps Nevron work on brand and produces branded deliverables. Ships the brand agent (colours, typography, logos, icon verification, format guidelines) and seven skills: full house documents, short documents without a cover, product datasheets, service reports, client offers, abstract pitch decks, and business presentation decks built from the house PowerPoint layouts.",
+  "version": "2.1.0",
   "author": {
     "name": "NevronNativeAI",
     "url": "https://github.com/NevronNativeAI"

@@ -1,0 +1,625 @@
+[
+  {
+    "layout": "notice",
+    "houseSlide": 1,
+    "capture": "house-01.png",
+    "reference": "reference-1.png",
+    "diagnostics": [
+      {
+        "shape": "6",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "cover-photo",
+    "houseSlide": 2,
+    "capture": "house-02.png",
+    "reference": "reference-2.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "cover",
+    "houseSlide": 3,
+    "capture": "house-03.png",
+    "reference": "reference-3.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "cover-wave",
+    "houseSlide": 4,
+    "capture": "house-04.png",
+    "reference": "reference-4.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "donut-step-1",
+    "houseSlide": 5,
+    "capture": "house-05.png",
+    "reference": "reference-5.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "donut-step-2",
+    "houseSlide": 6,
+    "capture": "house-06.png",
+    "reference": "reference-6.png",
+    "diagnostics": [
+      {
+        "shape": "4",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "5",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "donut-step-3",
+    "houseSlide": 7,
+    "capture": "house-07.png",
+    "reference": "reference-7.png",
+    "diagnostics": [
+      {
+        "shape": "4",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "5",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "donut-step-4",
+    "houseSlide": 8,
+    "capture": "house-08.png",
+    "reference": "reference-8.png",
+    "diagnostics": [
+      {
+        "shape": "6",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "donut-step-5",
+    "houseSlide": 9,
+    "capture": "house-09.png",
+    "reference": "reference-9.png",
+    "diagnostics": [
+      {
+        "shape": "5",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "6",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "9",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "10",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "donut-step-6",
+    "houseSlide": 10,
+    "capture": "house-10.png",
+    "reference": "reference-10.png",
+    "diagnostics": [
+      {
+        "shape": "8",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "14",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "17",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "panel-step-1",
+    "houseSlide": 11,
+    "capture": "house-11.png",
+    "reference": "reference-11.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "panel-step-2",
+    "houseSlide": 12,
+    "capture": "house-12.png",
+    "reference": "reference-12.png",
+    "diagnostics": [
+      {
+        "shape": "9",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "18",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "panel-step-3",
+    "houseSlide": 13,
+    "capture": "house-13.png",
+    "reference": "reference-13.png",
+    "diagnostics": [
+      {
+        "shape": "9",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "32",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "4",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "panel-step-4",
+    "houseSlide": 14,
+    "capture": "house-14.png",
+    "reference": "reference-14.png",
+    "diagnostics": [
+      {
+        "shape": "9",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "21",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "36",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "8",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "19",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "section",
+    "houseSlide": 15,
+    "capture": "house-15.png",
+    "reference": "reference-15.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "phone-hero",
+    "houseSlide": 16,
+    "capture": "house-16.png",
+    "reference": "reference-16.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "text-phone-cloud",
+    "houseSlide": 17,
+    "capture": "house-17.png",
+    "reference": "reference-17.png",
+    "diagnostics": [
+      {
+        "shape": "6",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "text-browser-screen",
+    "houseSlide": 18,
+    "capture": "house-18.png",
+    "reference": "reference-18.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets",
+    "houseSlide": 19,
+    "capture": "house-19.png",
+    "reference": "reference-19.png",
+    "diagnostics": [
+      {
+        "shape": "12",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "devices",
+    "houseSlide": 20,
+    "capture": "house-20.png",
+    "reference": "reference-20.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "integration-diagram",
+    "houseSlide": 21,
+    "capture": "house-21.png",
+    "reference": "reference-21.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "quadrant-matrix",
+    "houseSlide": 22,
+    "capture": "house-22.png",
+    "reference": "reference-22.png",
+    "diagnostics": [
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "quadrant-callouts",
+    "houseSlide": 23,
+    "capture": "house-23.png",
+    "reference": "reference-23.png",
+    "diagnostics": [
+      {
+        "shape": "5",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "section-subtitle",
+    "houseSlide": 24,
+    "capture": "house-24.png",
+    "reference": "reference-24.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "split",
+    "houseSlide": 25,
+    "capture": "house-25.png",
+    "reference": "reference-25.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-screen-short",
+    "houseSlide": 26,
+    "capture": "house-26.png",
+    "reference": "reference-26.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-screen-tall",
+    "houseSlide": 27,
+    "capture": "house-27.png",
+    "reference": "reference-27.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-screen-poster",
+    "houseSlide": 28,
+    "capture": "house-28.png",
+    "reference": "reference-28.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "sentiment-grid",
+    "houseSlide": 29,
+    "capture": "house-29.png",
+    "reference": "reference-29.png",
+    "diagnostics": [
+      {
+        "shape": "8",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "section-subtitle-variant",
+    "houseSlide": 30,
+    "capture": "house-30.png",
+    "reference": "reference-30.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "bullets-phone",
+    "houseSlide": 31,
+    "capture": "house-31.png",
+    "reference": "reference-31.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-phone-dense",
+    "houseSlide": 32,
+    "capture": "house-32.png",
+    "reference": "reference-32.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-two-phones",
+    "houseSlide": 33,
+    "capture": "house-33.png",
+    "reference": "reference-33.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "statement",
+    "houseSlide": 34,
+    "capture": "house-34.png",
+    "reference": "reference-34.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "photo-callout-step-1",
+    "houseSlide": 35,
+    "capture": "house-35.png",
+    "reference": "reference-35.png",
+    "diagnostics": [
+      {
+        "shape": "8",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "photo-callout-step-2",
+    "houseSlide": 36,
+    "capture": "house-36.png",
+    "reference": "reference-36.png",
+    "diagnostics": [
+      {
+        "shape": "6",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "steps-3",
+    "houseSlide": 37,
+    "capture": "house-37.png",
+    "reference": "reference-37.png",
+    "diagnostics": [
+      {
+        "shape": "27",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "10",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "11",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "12",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "13",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "cards-3-light",
+    "houseSlide": 38,
+    "capture": "house-38.png",
+    "reference": "reference-38.png",
+    "diagnostics": [
+      {
+        "shape": "18",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "27",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "31",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "8",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "proposal-qr",
+    "houseSlide": 39,
+    "capture": "house-39.png",
+    "reference": "reference-39.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "proposal-tray",
+    "houseSlide": 40,
+    "capture": "house-40.png",
+    "reference": "reference-40.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "proposal-card",
+    "houseSlide": 41,
+    "capture": "house-41.png",
+    "reference": "reference-41.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "proposal-envelope-grid",
+    "houseSlide": 42,
+    "capture": "house-42.png",
+    "reference": "reference-42.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "proposal-origami",
+    "houseSlide": 43,
+    "capture": "house-43.png",
+    "reference": "reference-43.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "section-subtitle-high",
+    "houseSlide": 44,
+    "capture": "house-44.png",
+    "reference": "reference-44.png",
+    "diagnostics": [
+      {
+        "shape": "7",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "stats",
+    "houseSlide": 45,
+    "capture": "house-45.png",
+    "reference": "reference-45.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "photo-panels-3",
+    "houseSlide": 46,
+    "capture": "house-46.png",
+    "reference": "reference-46.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "photo-cards-6",
+    "houseSlide": 47,
+    "capture": "house-47.png",
+    "reference": "reference-47.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "text-circular-diagram",
+    "houseSlide": 48,
+    "capture": "house-48.png",
+    "reference": "reference-48.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "bullets-system-diagram",
+    "houseSlide": 49,
+    "capture": "house-49.png",
+    "reference": "reference-49.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "cards-3",
+    "houseSlide": 50,
+    "capture": "house-50.png",
+    "reference": "reference-50.png",
+    "diagnostics": [
+      {
+        "shape": "17",
+        "kind": "vertical-text-overflow"
+      },
+      {
+        "shape": "19",
+        "kind": "vertical-text-overflow"
+      }
+    ]
+  },
+  {
+    "layout": "cards-8",
+    "houseSlide": 51,
+    "capture": "house-51.png",
+    "reference": "reference-51.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "product-hero-room",
+    "houseSlide": 52,
+    "capture": "house-52.png",
+    "reference": "reference-52.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "product-hero-screens",
+    "houseSlide": 53,
+    "capture": "house-53.png",
+    "reference": "reference-53.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "closing-frame",
+    "houseSlide": 54,
+    "capture": "house-54.png",
+    "reference": "reference-54.png",
+    "diagnostics": []
+  },
+  {
+    "layout": "closing",
+    "houseSlide": 55,
+    "capture": "house-55.png",
+    "reference": "reference-55.png",
+    "diagnostics": []
+  }
+]

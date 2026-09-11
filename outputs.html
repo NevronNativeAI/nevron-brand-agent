@@ -33,6 +33,7 @@
     <p class="rail__label">On this page</p>
     <nav class="rail__nav rail__toc" id="toc">
       <a href="#choose">Which one to use</a>
+      <a href="#presentation-standard">Presentation deck</a>
       <a href="#presentation-abstract">Abstract deck</a>
       <a href="#nevron-document">Full document</a>
       <a href="#nevron-document-nocover">Short document</a>
@@ -54,7 +55,7 @@
       <div class="hero__inner">
         <p class="hero__eyebrow"><i></i> Outputs</p>
         <h1>What each skill takes, and what comes back.</h1>
-        <p class="hero__lede">Six skills, four builders, one house style. Every render on this
+        <p class="hero__lede">Seven skills, five builders, one house style. Every render on this
           page came out of the example that ships with the skill.</p>
       </div>
     </header>
@@ -69,6 +70,7 @@
           <table>
             <thead><tr><th>If you need</th><th>Use</th><th>You get</th></tr></thead>
             <tbody>
+              <tr><td>A customer deck, a product overview, a pitch with numbers</td><td><a href="#presentation-standard">presentation-standard</a></td><td>16:9 HTML, PDF</td></tr>
               <tr><td>A deck about an idea, a philosophy or a partnership</td><td><a href="#presentation-abstract">presentation-abstract</a></td><td>16:9 HTML, PDF</td></tr>
               <tr><td>Anything with a cover and a contents page</td><td><a href="#nevron-document">nevron-document</a></td><td>A4 PDF</td></tr>
               <tr><td>A letter, memo, legal document or meeting notes</td><td><a href="#nevron-document-nocover">nevron-document-nocover</a></td><td>A4 PDF</td></tr>
@@ -83,8 +85,52 @@
           reaches <code>datasheet</code> on its own.</p>
       </section>
 
+      <section id="presentation-standard">
+        <p class="sec__num">02 — Presentation deck</p>
+        <h2>Built from the layouts the house deck actually uses</h2>
+        <div class="cmd"><span>/nevron-brand:presentation-standard</span><button type="button" data-copy>Copy</button></div>
+
+        <p class="lede">An extractor reads the house PowerPoint into a scene graph and the renderer
+          draws only from that, so a layout is the house layout rather than an impression of it.
+          All 55 house slides are named; progressive builds stay sequences, not summaries.</p>
+
+        <div class="skill__shots" style="max-width:760px">
+          <figure class="shot shot--dark">
+            <img src="assets/guide/presentation-standard.png" width="1600" height="900" loading="lazy" alt="Navy cover slide: NevronCore in bold white, subtitle Guest experience, the white corner-bracket frame at right, logo bottom left and the slogan Be content! bottom right.">
+            <figcaption>Cover</figcaption>
+          </figure>
+          <figure class="shot shot--dark">
+            <img src="assets/guide/presentation-standard-2.png" width="1600" height="900" loading="lazy" alt="Navy slide with two donut rings in blue and orange, each with a leader line up to a percentage callout.">
+            <figcaption>Donut build, final step of six</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/guide/presentation-standard-3.png" width="1600" height="900" loading="lazy" alt="Three grey chevron panels across a white slide, filled left to right: Frequent problems, Poor service quality, Lower business success.">
+            <figcaption>Three-column panel build</figcaption>
+          </figure>
+        </div>
+
+        <h4>You hand it</h4>
+        <ul>
+          <li>A <code>deck.json</code> — which layout each slide uses, and the copy</li>
+          <li>Images for the image slots, and values for any chart</li>
+        </ul>
+
+        <div class="note">
+          <p>Progressive builds are sequences rather than single slides: <code>donut-build</code>
+            reveals one chart across six, <code>panel-build</code> fills three columns across four.
+            Any house slide is also reachable directly with <code>houseSlide: 42</code>.</p>
+        </div>
+
+        <div class="note">
+          <p class="note__title">In the browser</p>
+          <p>The HTML deck is a presentation, not a scrolling page. Arrow keys move,
+            <code>O</code> opens an overview of every slide, <code>F</code> is fullscreen, and a
+            number followed by Enter jumps. None of that reaches the PDF.</p>
+        </div>
+      </section>
+
       <section id="presentation-abstract">
-        <p class="sec__num">02 — Abstract deck</p>
+        <p class="sec__num">03 — Abstract deck</p>
         <h2>The deck you give when the point is an idea</h2>
         <div class="cmd"><span>/nevron-brand:presentation-abstract</span><button type="button" data-copy>Copy</button></div>
 
@@ -109,7 +155,7 @@
       </section>
 
       <section id="nevron-document">
-        <p class="sec__num">03 — Full document</p>
+        <p class="sec__num">04 — Full document</p>
         <h2>Cover, contents, numbered body</h2>
         <div class="cmd"><span>/nevron-brand:nevron-document</span><button type="button" data-copy>Copy</button></div>
 
@@ -143,7 +189,7 @@
       </section>
 
       <section id="nevron-document-nocover">
-        <p class="sec__num">04 — Short document</p>
+        <p class="sec__num">05 — Short document</p>
         <h2>Same engine, no front matter</h2>
         <div class="cmd"><span>/nevron-brand:nevron-document-nocover</span><button type="button" data-copy>Copy</button></div>
 
@@ -169,7 +215,7 @@
       </section>
 
       <section id="datasheet">
-        <p class="sec__num">05 — Product datasheet</p>
+        <p class="sec__num">06 — Product datasheet</p>
         <h2>The InDesign house style, without InDesign</h2>
         <div class="cmd"><span>/nevron-brand:datasheet</span><button type="button" data-copy>Copy</button></div>
 
@@ -197,7 +243,7 @@
       </section>
 
       <section id="service-report">
-        <p class="sec__num">06 — Service report</p>
+        <p class="sec__num">07 — Service report</p>
         <h2>What an engineer leaves behind</h2>
         <div class="cmd"><span>/nevron-brand:service-report</span><button type="button" data-copy>Copy</button></div>
 
@@ -224,7 +270,7 @@
       </section>
 
       <section id="offer">
-        <p class="sec__num">07 — Client offer</p>
+        <p class="sec__num">08 — Client offer</p>
         <h2>A priced <i>ponudba</i> as a page you send</h2>
         <div class="cmd"><span>/nevron-brand:offer</span><button type="button" data-copy>Copy</button></div>
 
@@ -251,7 +297,7 @@
       </section>
 
       <section id="limits">
-        <p class="sec__num">08 — Limits</p>
+        <p class="sec__num">09 — Limits</p>
         <h2>What it will not do</h2>
 
         <ul>
